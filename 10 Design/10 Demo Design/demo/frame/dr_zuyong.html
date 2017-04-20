@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../jscript/My97DatePicker/skin/WdatePicker.css"  rel="stylesheet" type="text/css" />
+ 
+<link rel="stylesheet" type="text/css"
+	href="../js/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css"
+	href="../js/easyui/themes/icon.css" />
+<script type="text/javascript" src="../js/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../jscript/My97DatePicker/WdatePicker.js">
+	
+</script>
+
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+.word-4 {	color: #085b85;
+}
+.word2 {	color: #085b85;
+	text-decoration:underline;
+}
+.word-6 {	color: #085b85;
+	font-size:14px;
+}
+.word3 {	color: #085b85;
+	font-size:14px;
+}
+-->
+</style>
+</head>
+
+<body style="background-color:transparent">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td width="11" valign="top" class="td-bg"><img src="../images/right-1.jpg" /></td>
+    <td align="center" valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="31" align="left" valign="middle" style="background:url(../images/right-3.jpg)"><img src="../images/right-4.jpg" width="9" height="8" align="absmiddle" /> 当前位置 &gt; 日常查询 &gt; 公墓租用业务查询</td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" style="font-size:12px;">&nbsp;</td>
+      </tr>
+    </table>
+      <table width="98%" cellpadding="0" cellspacing="1" bgcolor="#a6c6da">
+
+        <tr>
+         
+          <td width="20%" height="35" align="right" bgcolor="#D4E5F4">区县：</td>
+          <td width="30%" align="left" bgcolor="#FFFFFF">&nbsp;
+          <SELECT name="textfield2"  class="input-1" style="height:20px">
+            <OPTION  selected>---请选择---</OPTION><OPTION>东城区</OPTION><OPTION>西城区</OPTION><OPTION>海淀区</OPTION></SELECT>
+          </td>
+           <td width="20%" align="right" bgcolor="#D4E5F4">公墓机构：</td>
+          <td width="30%" align="left" bgcolor="#FFFFFF">&nbsp;
+            <SELECT name="textfield2"  class="input-1" style="height:20px">
+            <OPTION  selected>---请选择---</OPTION>
+            <OPTION>八宝山革命公墓</OPTION>
+            <OPTION>万安公墓</OPTION>
+            <OPTION>金山陵园</OPTION>
+            <OPTION>万佛华侨陵园</OPTION>
+            </SELECT>
+            </td>
+        </tr>
+        <tr>
+          <td width="20%" height="35" align="right" bgcolor="#D4E5F4">业务编号：</td>
+          <td width="30%" align="left" bgcolor="#FFFFFF">&nbsp;
+          <input name="textfield2" type="text" id="textfield2" class="input-1" />
+          </td>
+          <td align="right" bgcolor="#D4E5F4">业务分类：</td>
+          <td align="left" bgcolor="#FFFFFF">&nbsp;
+          <select class="input-1" style="height:20px"><OPTION  selected>---请选择---</OPTION><option value='0'>墓地业务</option><option value='1' >骨灰堂业务</option></select>
+          </td>
+        </tr>
+		<tr>
+          <td width="20%" height="35" align="right" bgcolor="#D4E5F4">逝者姓名：</td>
+          <td width="30%" align="left" bgcolor="#FFFFFF">&nbsp;
+          <input name="textfield2" type="text" id="textfield2" class="input-1" />
+          </td>
+          <td width="20%" height="35" align="right" bgcolor="#D4E5F4">租穴人：</td>
+          <td width="30%" align="left" bgcolor="#FFFFFF">&nbsp;
+          <input name="textfield2" type="text" id="textfield2" class="input-1" />
+          </td>
+        </tr>
+        <tr>
+          <td height="20" align="right" bgcolor="#D4E5F4">办理时间：</td>
+          <td align="left" bgcolor="#FFFFFF">&nbsp;
+          <input
+								name="textfield3" type="text" id="textfield3" class="Wdate"
+								onfocus="WdatePicker()" />到<input
+								name="textfield3" type="text" id="textfield3" class="Wdate"
+								onfocus="WdatePicker()" /></td>
+          <td width="20%" height="35" align="right" bgcolor="#D4E5F4"></td>
+          <td width="30%" align="left" bgcolor="#FFFFFF">
+          </td>
+        </tr>
+        <tr>
+          <td height="35" colspan="4" align="center" bgcolor="#FFFFFF">
+          <img src="../images/bnt-cx.jpg" width="60" height="23" />
+          </td>
+        </tr>
+      </table>
+      <table width="98%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="40" align="left">&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+      </table>
+      <table width="98%" cellpadding="0"cellspacing="1" bgcolor="#a6c6da">
+        <tr>
+          <td height="30" align="center" bgcolor="#D4E5F4">序号</td>
+          <td align="center" bgcolor="#D4E5F4">业务编号</td>
+		  <td align="center" bgcolor="#D4E5F4">公墓机构</td>  
+          <td align="center" bgcolor="#D4E5F4">租穴人</td>
+          <td align="center" bgcolor="#D4E5F4">性别</td>
+          <td align="center" bgcolor="#D4E5F4">逝者姓名</td>
+          <td align="center" bgcolor="#D4E5F4">穴别</td>
+          <td align="center" bgcolor="#D4E5F4">位置信息</td>
+          <td align="center" bgcolor="#D4E5F4">租穴人电话</td>
+          <td align="center" bgcolor="#D4E5F4">办理日期</td>
+          <td align="center" bgcolor="#D4E5F4">经办人</td>    
+          <td align="center" bgcolor="#D4E5F4">操作</td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">1</td>
+          <td align="center" bgcolor="#FFFFFF" class="word-7">20140075</td>
+		  <td align="center" bgcolor="#FFFFFF">八宝山革命公墓</td>
+          <td align="center" bgcolor="#FFFFFF">张或</td>
+          <td align="center" bgcolor="#FFFFFF">男</td>
+          <td align="center" bgcolor="#FFFFFF">赵风</td>
+          <td align="center" bgcolor="#FFFFFF">单穴</td>
+          <td align="center" bgcolor="#FFFFFF">富贵园B区13排</td>
+          <td  align="center" bgcolor="#FFFFFF">1381122122</td>
+          <td align="center" bgcolor="#FFFFFF">2013-10-24</td>
+          <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="../frame/bzzjbz_rerent_detail.html" >查看</a></td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">2</td>
+          <td align="center" bgcolor="#FFFFFF" class="word-7">20140076</td>
+		  <td align="center" bgcolor="#FFFFFF">八宝山革命公墓</td>
+          <td align="center" bgcolor="#FFFFFF">李成</td>
+          <td align="center" bgcolor="#FFFFFF">男</td>
+          <td align="center" bgcolor="#FFFFFF">赵力</td>
+          <td align="center" bgcolor="#FFFFFF">双穴</td>
+          <td align="center" bgcolor="#FFFFFF">富贵园B区13排</td>
+          <td  align="center" bgcolor="#FFFFFF">1341284924</td>
+          <td align="center" bgcolor="#FFFFFF">2013-11-2</td>
+          <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="../frame/bzzjbz_rerent_detail.html" >查看</a></td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">3</td>
+          <td align="center" bgcolor="#FFFFFF" class="word-7">20140077</td>
+		  <td align="center" bgcolor="#FFFFFF">八宝山革命公墓</td>
+          <td align="center" bgcolor="#FFFFFF">刘力</td>
+          <td align="center" bgcolor="#FFFFFF">男</td>
+          <td align="center" bgcolor="#FFFFFF">刘红</td>
+          <td align="center" bgcolor="#FFFFFF">双穴</td>
+          <td align="center" bgcolor="#FFFFFF">富贵园B区13排</td>
+          <td  align="center" bgcolor="#FFFFFF">18838765691</td>
+          <td align="center" bgcolor="#FFFFFF">2012-10-2</td>
+          <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="../frame/bzzjbz_rerent_detail.html" >查看</a></td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">4</td>
+          <td align="center" bgcolor="#FFFFFF" class="word-7">20130095</td>
+		  <td align="center" bgcolor="#FFFFFF">凤凰山陵园</td>
+          <td align="center" bgcolor="#FFFFFF">张或</td>
+          <td align="center" bgcolor="#FFFFFF">男</td>
+          <td align="center" bgcolor="#FFFFFF">赵风</td>
+          <td align="center" bgcolor="#FFFFFF">单穴</td>
+          <td align="center" bgcolor="#FFFFFF">富贵园B区13排</td>
+          <td  align="center" bgcolor="#FFFFFF">1381122122</td>
+          <td align="center" bgcolor="#FFFFFF">2013-10-24</td>
+          <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="../frame/bzzjbz_rerent_detail.html" >查看</a></td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">5</td>
+          <td align="center" bgcolor="#FFFFFF" class="word-7">20160076</td>
+		  <td align="center" bgcolor="#FFFFFF">凤凰山陵园</td>
+          <td align="center" bgcolor="#FFFFFF">李成</td>
+          <td align="center" bgcolor="#FFFFFF">男</td>
+          <td align="center" bgcolor="#FFFFFF">赵玉芬</td>
+          <td align="center" bgcolor="#FFFFFF">双穴</td>
+          <td align="center" bgcolor="#FFFFFF">富贵园B区13排</td>
+          <td  align="center" bgcolor="#FFFFFF">1341284924</td>
+          <td align="center" bgcolor="#FFFFFF">2013-11-2</td>
+          <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="../frame/bzzjbz_rerent_detail.html" >查看</a></td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">6</td>
+          <td align="center" bgcolor="#FFFFFF" class="word-7">21160088</td>
+		  <td align="center" bgcolor="#FFFFFF">万安公墓</td>
+          <td align="center" bgcolor="#FFFFFF">李湘</td>
+          <td align="center" bgcolor="#FFFFFF">男</td>
+          <td align="center" bgcolor="#FFFFFF">李刚</td>
+          <td align="center" bgcolor="#FFFFFF">双穴</td>
+          <td align="center" bgcolor="#FFFFFF">紫竹园B区12排</td>
+          <td  align="center" bgcolor="#FFFFFF">13412224924</td>
+          <td align="center" bgcolor="#FFFFFF">2014-11-2</td>
+          <td  align="center" bgcolor="#FFFFFF">张竹</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="../frame/bzzjbz_rerent_detail.html" >查看</a></td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">7</td>
+          <td align="center" bgcolor="#FFFFFF" class="word-7">20150087</td>
+		  <td align="center" bgcolor="#FFFFFF">万安公墓</td>
+          <td align="center" bgcolor="#FFFFFF">刘力</td>
+          <td align="center" bgcolor="#FFFFFF">男</td>
+          <td align="center" bgcolor="#FFFFFF">刘立</td>
+          <td align="center" bgcolor="#FFFFFF">双穴</td>
+          <td align="center" bgcolor="#FFFFFF">富贵园B区13排</td>
+          <td  align="center" bgcolor="#FFFFFF">18838765691</td>
+          <td align="center" bgcolor="#FFFFFF">2012-10-2</td>
+          <td  align="center" bgcolor="#FFFFFF">张竹</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="../frame/bzzjbz_rerent_detail.html" >查看</a></td>
+        </tr>
+      </table>
+      <table width="98%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="30" align="right">当前第1页&nbsp;&nbsp;&nbsp;&nbsp;共1页&nbsp;&nbsp;&nbsp;&nbsp;7条/页&nbsp;&nbsp;&nbsp;&nbsp;上一页&nbsp;&nbsp;&nbsp;&nbsp;下一页</td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+
+	<class name="com.topsuntech.gUnit.gEU_dict.en.MetaData"
+		table="SJZD_NODE">
+		<id name="id" type="long">
+			<generator class="sequence">
+				<param name="sequence">SJZD_NODE_SEQ</param>
+			</generator>
+
+		</id>
+		<property name="node_level" type="integer" />
+		<property name="node_typename" type="string" />
+		<property name="node_value" type="string" />
+		<property name="parentid" type="long" />
+		<property name="node_index" type="long" />
+		<property name="node_name" type="string" />
+		<property name="institutionid" type="long" />
+		<property name="state" type="integer" />
+		<list name="details" table="SJZD_NODE" inverse="false"
+			cascade="all" lazy="true">
+			<key column="parentid" />
+			<index column="node_index" />
+			<one-to-many
+				class="com.topsuntech.gUnit.gEU_dict.en.MetaData" />
+		</list>
+	</class>
+</hibernate-mapping>

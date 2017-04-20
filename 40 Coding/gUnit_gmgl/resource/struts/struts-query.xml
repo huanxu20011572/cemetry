@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="dqForm" type="com.topsuntech.gUnit.gEU_query.framework.actionforms.DynamicQueryForm"/>
+		<form-bean name="projectConfigForm" type="com.topsuntech.gUnit.gEU_DynamicQuery.framework.actionforms.ProjectConfigForm"/>
+	</form-beans>
+
+	<!-- ========== Global Forward Definitions ============================== -->
+	<global-forwards>
+		<forward name="error" path="../../common/error.jsp" />
+	</global-forwards>
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+	<action-mappings>
+
+		<action path="/dqAction" 
+			type="com.topsuntech.gUnit.gEU_query.framework.actions.DynamicQueryAction" 
+			name="dqForm"
+			scope="request" 
+			parameter="method">
+			<forward name="editlist" path="/dynamic_edit_list.jsp"/>
+			<forward name="editrole" path="/dynamic_edit_role.jsp"/>
+			<forward name="querylist" path="/dynamic_query_list.jsp"/>
+		</action>
+		
+		<action path="/listProject" type="com.topsuntech.gUnit.gEU_DynamicQuery.framework.actions.DynamicQueryAction" parameter="method">
+			<forward name="success" path="/dqAction.do?method=editList"/>
+		</action>
+
+		<action path="/editNoSave" type="com.topsuntech.gUnit.gEU_DynamicQuery.framework.actions.DynamicQueryAction" parameter="method">
+			<forward name="edit" path="/edit.jsp"/>
+		</action>
+
+		<action path="/editSave" name="projectConfigForm" type="com.topsuntech.gUnit.gEU_DynamicQuery.framework.actions.DynamicQueryAction" scope="session" parameter="method">
+			<forward name="edit" path="/edit.jsp"/>
+			<forward name="editcondition" path="/editcondition.jsp"/>
+		</action>
+
+		<action path="/designPage" name="projectConfigForm" type="com.topsuntech.gUnit.gEU_DynamicQuery.framework.actions.DynamicQueryAction" parameter="method">
+			<forward name="success" path="/design.jsp"/>
+		</action>
+
+		<action path="/getInfo" type="com.topsuntech.gUnit.gEU_DynamicQuery.framework.actions.DQAjaxAction" parameter="method">
+		</action>
+
+		<action path="/userQuery" type="com.topsuntech.gUnit.gEU_DynamicQuery.framework.actions.UserQueryAction" parameter="method">
+			<forward name="list" path="/selectquery.jsp"/>
+		</action>
+
+	</action-mappings>
+	
+	<message-resources parameter="com.topsuntech.gUnit.gEU_util.resources.resources" null="false"/>
+
+</struts-config>

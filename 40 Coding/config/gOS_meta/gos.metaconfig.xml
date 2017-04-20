@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="gb2312"?> 
+<classes>
+	
+	<!-- 数据字典 -->	
+	 <class>
+        <name>com.topsuntech.gUnit.gEU_dict.en.MetaData</name>
+        <desc>数据字典</desc>
+	 </class>
+
+
+
+	
+	<class>
+     <name>com.topsuntech.gUnit.gEU_taskFilter.log.entity.LogRecord</name>
+     <desc>日志</desc>
+  </class>
+  <class>
+     <name>com.topsuntech.gUnit.gEU_taskFilter.log.entity.LogRecordContent</name>
+     <desc>日志内容</desc>
+  </class>
+  
+	
+
+</classes>

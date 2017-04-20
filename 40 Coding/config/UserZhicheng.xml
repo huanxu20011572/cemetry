@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- 
+	这个类用来存储用户职称信息
+--><zhicheng>
+	<userZhicheng id="1" name="助理工程师" />
+	<userZhicheng id="2" name="工程师" />
+	<userZhicheng id="3" name="高级工程师" />
+<userZhicheng id="4" name="其他" /></zhicheng>

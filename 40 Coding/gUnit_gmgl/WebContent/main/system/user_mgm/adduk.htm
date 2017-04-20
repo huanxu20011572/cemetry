@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>导入UKey</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<script language="JavaScript">
+	function chksubmit(){
+		if(form1.name.value == ''){
+			alert('填写名字');
+			return false;
+		}
+		if(form1.canumber.value == ''){
+			alert('填写证书号!');
+			return false;
+		}
+		
+		return true;
+	}
+</script>
+<body>
+<form name="form1" method="post" action="ukaction.jsp" onSubmit="return chksubmit();">
+<table width="75%" border="1">
+  <tr>
+      <td width="28%">名字:</td>
+    <td width="72%"><input name="name" type="text" id="name" size="50"></td>
+  </tr>
+  <tr>
+      <td>UK证书号:</td>
+    <td><input name="canumber" type="text" id="canumber" size="50"></td>
+  </tr>
+  <tr>
+    <td>
+        <input type="submit"  value="确定" >
+     </td>
+    <td><input type="reset" value="重置"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

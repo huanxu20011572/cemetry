@@ -1,0 +1,64 @@
+
+[{    
+    "id":1,    
+    "text":"墓位区排", 
+	"state":"open",   		
+    "children":[{      
+    "id":1,    
+    "text":"富贵园A区", 
+    "state":"open",	
+    "children":[{    
+        "text":"1排",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排"
+    },{    
+        "text":"3排"
+    },{    
+        "text":"4排"
+    }]    
+},{    
+    "text":"富贵园B区",    
+    "state":"open",    
+    "children":[{    
+        "text":"1排",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排"
+    },{    
+        "text":"3排"
+    },{    
+        "text":"4排"
+    }]    
+},{    
+    "text":"菊花园A区",    
+    "state":"open",    
+    "children":[{    
+        "text":"1排",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排"
+    },{    
+        "text":"3排"
+    },{    
+        "text":"4排"
+    }]    
+},{    
+    "text":"菊花园B区",    
+    "state":"open",    
+    "children":[{      
+        "text":"1排",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排"
+    },{    
+        "text":"3排"
+    },{    
+        "text":"4排"
+    }]    
+}]  
+}] 

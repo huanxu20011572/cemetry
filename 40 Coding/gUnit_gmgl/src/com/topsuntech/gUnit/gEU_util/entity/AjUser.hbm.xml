@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+
+<class name="com.topsuntech.gUnit.gEU_util.entity.AjUser" table="gos_user" >
+	
+		<id column="id" name="id" type="java.lang.Long">
+			<generator class="sequence">
+				<param name="sequence">GOS_USER_SEQ</param>
+			</generator>
+		</id>
+    <property  name="loginid" type="string" />
+    <property  name="password" type="string" />
+    <property  name="name"     type="string" />
+    <property  name="gender"  type="string"  />
+    <property  name="deptid"  type="long"  />
+<!--     <property  name="num" type="string"  column="USER_CODE"  /> -->
+    <property  name="num" type="string"  />
+    <property  name="jiguan" type="string" />
+    <property  name="birthday" type="date" />
+    <property  name="birthlocation"  type="string" />
+    <property  name="nation"  type="string" />
+    <property  name="xueli"  type="string" />
+    <property  name="xuewei"  type="string" />
+    <property  name="zhuanye"  type="string"  />
+    <property  name="yuanxiao" type="string"  />
+    <property  name="zhengzhimianmao"  type="string" />    
+    <property  name="rudangshijian"   type="date" />
+    <property  name="workyear"  type="date"  />
+    <property  name="callname"  type="string" />
+    <property  name="positionid"  type="string" />
+    <property  name="identitynum" type="string"  />
+    <property  name="worknum"  type="string"  />
+    <property  name="address"  type="string"  />
+    <property  name="homephone" type="string"  />
+    <property  name="officephone" type="string" />
+    <property  name="mobile"  type="string" />
+    <property  name="publicmoneynum"  type="string" />
+    <property  name="oldsupportnum"  type="string" />
+    <property  name="housepaynum"  type="string" />
+    <property  name="securitynum"   type="string"/>    
+    <property  name="priority"  type="string"   />
+    <property  name="memo" type="string" />    
+    <property  name="createdate"  type="date"   />
+    <property  name="creatorid"  type="long" />
+    <property  name="deleted" type="boolean" />
+    <property  name="biyetime"	type="date"  />
+    <property  name="xzyear" type="date"  />
+    <property  name="retire"	type="string" />   
+    <property name="registstatus" type="int" />
+	  <property name="type" />	
+	  <property name="deletereason" type="string"/>
+	  <property name="emailid" />
+	  <property name="workdeptid" insert="false" update="false"/>
+	  <property name="canumber" />
+		<many-to-one
+	    	name="workdept"
+	    	class="com.topsuntech.gOS.user.en.office.Office"
+	    	column="workdeptid"
+	    />
+    
+<!--     <property name="orderByItem" column="ORDERBY_ITEM" /> -->
+<!--     <property name="sfzf" column="SFZF" /> -->
+<!--     <property name="zfNumber" column="ZF_NUMBER" /> -->
+    <property name="systemRole" column="SYSTEM_ROLE" />
+    
+</class>
+</hibernate-mapping>

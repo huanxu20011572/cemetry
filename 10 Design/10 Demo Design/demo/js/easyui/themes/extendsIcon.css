@@ -1,0 +1,21 @@
+.icon-ext-setting{
+	background:url('extendsIcons/setting.png') no-repeat center center;
+}
+.icon-ext-stop{
+	background:url('extendsIcons/stop.png') no-repeat center center;
+}
+.icon-ext-car{
+	background:url('extendsIcons/car.png') no-repeat center center;
+}
+.icon-ext-enterprise{
+	background:url('extendsIcons/enterprise.png') no-repeat center center;
+}
+.icon-ext-phone{
+	background:url('extendsIcons/phone.gif') no-repeat center center;
+}
+.icon-ext-delete{
+	background:url('extendsIcons/delete.png') no-repeat center center;
+}
+.icon-ext-export{
+	background:url('extendsIcons/iconset.png') 10% 20% no-repeat center center;
+} 

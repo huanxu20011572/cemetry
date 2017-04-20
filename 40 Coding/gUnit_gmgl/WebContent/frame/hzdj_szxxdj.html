@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+.word-4 {	color: #085b85;
+}
+.word2 {	color: #085b85;
+	text-decoration:underline;
+}
+.word-6 {	color: #085b85;
+	font-size:14px;
+}
+.word3 {	color: #085b85;
+	font-size:14px;
+}
+-->
+</style>
+</head>
+
+<body style="background-color:transparent">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"
+		height="100%">
+		<tr>
+			<td width="11" valign="top" class="td-bg"><img
+				src="../images/right-1.jpg" /></td>
+			<td align="center" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="31" align="left" valign="middle"
+							style="background: url(../images/right-3.jpg)"><img
+							src="../images/right-4.jpg" width="9" height="8"
+							align="absmiddle" /> 当前位置 &gt; 合葬登记 &gt; 逝者信息登记</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF" style="font-size: 12px;">&nbsp;</td>
+					</tr>
+				</table> <!-- 输入域 -->
+				 
+			 
+					<table id="baseInfo" width="98%" cellpadding="0" cellspacing="1"
+						bgcolor="#a6c6da">
+						<tr>
+							<td width="15%" height="35" align="right" bgcolor="#D4E5F4">逝者姓名：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield" type="text" id="textfield" class="input-1" />
+							</td>
+							<td width="15%" align="right" bgcolor="#D4E5F4">性别：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="sex" type="radio" id="textfield5" />男  
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input
+								name="sex" type="radio" id="textfield5" checked="checked" />女
+							</td>
+						</tr>
+                        <tr>
+							<td width="15%" height="35" align="right" bgcolor="#D4E5F4">证件类别：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <select name="zhou" id="zhou"  class="input-1"  style="height:20px" >                
+                              <option value="火化证" selected>火化证</option>
+                              <option value="死亡证">死亡证</option>
+                              <option value="迁坟证">迁坟证</option>
+                              <option value="骨灰寄存证">骨灰寄存证</option>
+                              <option value="其他">其他</option>
+                            </select>
+							</td>
+							<td width="15%" align="right" bgcolor="#D4E5F4">证件编号：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield" type="text" id="textfield" class="input-1" />
+							</td>
+						</tr>
+                        <tr>
+							<td width="15%" height="35" align="right" bgcolor="#D4E5F4">国籍：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; 
+                            <select name="zhou" id="zhou"  class="input-1"  style="height:20px" >                
+                              <option value="中国" selected>中国</option>
+                              <option value="俄罗斯">俄罗斯</option>
+                              <option value="美国">美国</option>
+                            </select>
+							</td>
+							<td width="15%" align="right" bgcolor="#D4E5F4">民族：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;
+							<select name="zhou" id="zhou"  class="input-1"  style="height:20px" >                
+                              <option value="汉族" selected>汉族</option>
+                              <option value="满族">满族</option>
+                            </select>
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">年龄：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield6" type="text" id="textfield6" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">与承租人关系：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <select name="textfield3" id="cemetery_type"  class="input-1"  style="height:20px" >
+                                <option value='-1'>------选择------</option>
+                                <option value='010020'>夫妻</option>
+                                <option value='010012'>父子</option>
+                                <option value='010023'>爷孙</option>
+                                </select> 
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">出生日期：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3"    class="input-1" onfocus="WdatePicker()"/>
+							</td>
+							<td align="right" bgcolor="#D4E5F4">辞世日期：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4"   class="input-1" onfocus="WdatePicker()"/>
+							</td>
+						</tr>
+                        <tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">预约安放日期：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3"    class="input-1" onfocus="WdatePicker()"/>
+							</td>
+							<td align="right" bgcolor="#D4E5F4">实际安放日期：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4"   class="input-1" onfocus="WdatePicker()"/>
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">安放物：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; 
+                            <input name="textfield6" type="text" id="textfield6" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">施工人：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; 
+                            <input name="textfield6" type="text" id="textfield6" class="input-1" />
+							</td>
+						</tr>
+                        <tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">登记人：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; 陈小丽
+							</td>
+							<td align="right" bgcolor="#D4E5F4">登记日期：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; 2010-01-01</td>
+						</tr>
+						<tr height='40px'>
+							
+                            <td align="right" bgcolor="#D4E5F4">备注：</td>
+							<td  height='35px' colspan='3' align="left" bgcolor="#FFFFFF">&nbsp; <textarea name="textarea" class="input-1" style='height:40px;width:90%'></textarea></td>
+							</td>
+						</tr>
+						 
+					</table>
+
+					<!-- 保存 -->
+					 <table width="98%" cellpadding="0" cellspacing="0">
+        <tr>
+			      <td height="60" width="44%" align="right">
+                  </td>
+                  <td height="60" width="6%" align="center">
+                  &nbsp;&nbsp;
+					<form action="../frame/hzdj_dengji.html"method="post">
+              			<input name="button" type="submit" class="button-z" id="button" value="保存" />
+              		</form>
+			      </td>
+                  <td height="60" width="6%" align="center">
+                  &nbsp;&nbsp;
+					<form action="../frame/hzdj_dengji.html"method="post">
+              			<input name="button" type="submit" class="button-z" id="button" value="返回" />
+              		</form>
+			      </td>
+                  <td height="60" width="44%" align="right">
+                  </td>
+        </tr>
+      </table>
+ 
+		</td>
+		</tr>
+	</table>
+</body>
+</html>

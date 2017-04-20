@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+    PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+    "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>tree</shortname>
+    <uri>http://www.topsuntech.com/jsptags/tree-taglib</uri>
+    <info>
+        A tag library used to generate tree.
+    </info>
+
+    <tag>
+        <name>priorityTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.PriorityTreeTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+            Generate priority tree.
+        </info>
+    </tag>
+
+    <tag>
+        <name>gUnitTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.GUnitTreeTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+            Generate priority tree.
+        </info>
+    </tag>
+    
+    <tag>
+	<name>customePriorityTree</name>
+	<tagclass>com.topsuntech.gOS.user.tags.CustomePriorityTreeTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+	    Get a customed priority tree.
+	</info>
+    </tag>
+
+    <tag>
+        <name>roleTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.RoleTreeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate role tree.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officePosition</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficePositionTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office position list.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officePosition1</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficePositionTag1</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office position list without select name.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officeTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeTreeTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+            Generate office tree.
+        </info>
+    </tag>
+    
+    <tag>
+        <name>officeChooseTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeChooseTreeTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+            Generate office choose tree.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officeRatioTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeRatioTreeTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+            Generate office ratio tree.
+        </info>
+    </tag>
+
+    <tag>
+        <name>specifyOfficeTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.SpecifyOfficeTreeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate Specify office tree.
+        </info>
+    </tag>
+    
+    <tag>
+        <name>bmryOfficeTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.BmryOfficeTreeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate Bmry office tree.
+        </info>
+    </tag>
+    
+    <tag>
+        <name>specifyOfficeChooseTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.SpecifyOfficeChooseTreeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate specify office choose tree.
+        </info>
+    </tag>
+
+    <tag>
+        <name>specifyOfficeRatioTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.SpecifyOfficeRatioTreeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate specify office ratio tree.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officeLevel</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeLevelTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office level list.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officeCat</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeCatTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office cat list.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officeBZXS</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeBZXSTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office BZXS list.
+        </info>
+    </tag>
+    
+    <tag>
+    	<name>registStatus</name>
+    	<tagclass>com.topsuntech.gOS.user.tags.RegistStatusTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate regist status.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officeJFXS</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeJFXSTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office JFXS list.
+        </info>
+    </tag>
+
+    <tag>
+        <name>officeUserTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeUserTreeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office user tree.
+        </info>
+    </tag>
+
+    <tag>
+    	<name>nationSelect</name>
+        <tagclass>com.topsuntech.gOS.user.tags.NationSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate Nation Select.
+        </info>
+    </tag>
+    
+    <tag>
+    	<name>genderSelect</name>
+        <tagclass>com.topsuntech.gOS.user.tags.GenderSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate Gender Select.
+        </info>
+    </tag>
+    
+    <tag>
+    	<name>xueliSelect</name>
+        <tagclass>com.topsuntech.gOS.user.tags.XueliSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate Xueli Select.
+        </info>
+    </tag>
+    
+    <tag>
+    	<name>xueweiSelect</name>
+        <tagclass>com.topsuntech.gOS.user.tags.XueweiSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate Xuewei Select.
+        </info>
+    </tag>
+    
+    <tag>
+    	<name>callnameSelect</name>
+        <tagclass>com.topsuntech.gOS.user.tags.CallnameSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate Callname Select.
+        </info>
+    </tag>
+    
+      
+    <tag>
+        <name>TreeByDeptids</name>
+        <tagclass>com.topsuntech.gOS.user.tags.OfficeTreeByDeptidsTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate OfficeTreeByDeptids office tree.
+        </info>
+    </tag>
+    
+    <tag>
+    	<name>priorityByIdsTree</name>
+        <tagclass>com.topsuntech.gOS.user.tags.PriorityTreeByIdsTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate priority Tree.
+        </info>
+    </tag>
+    
+</taglib>

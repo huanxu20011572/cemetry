@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+	<form-bean name="officeForm" type="com.topsuntech.gOS.user.actions.OfficeForm" />
+	<form-bean name="moveOfficeForm" type="com.topsuntech.gOS.user.actions.MoveOfficeForm" />
+	<form-bean name="regionForm" type="com.topsuntech.gOS.user.actions.RegionForm" />
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+  </global-forwards>
+  <!-- ========== Action Mapping Definitions ============================== -->
+
+  <action-mappings>
+    <action type="org.apache.struts.actions.SwitchAction" path="/toModule" />
+
+    <action path="/officeUpdate" name="officeForm" type="com.topsuntech.gOS.user.actions.OfficeAction" scope="session">
+      <forward name="success" path="/officeSelect.do?action=list" redirect="true"/>
+      <forward name="showEdit" path="/office_edit.jsp" />
+      <forward name="error" path="/office_edit.jsp" />
+    </action>
+
+    <action path="/officeAdd" name="officeForm" type="com.topsuntech.gOS.user.actions.OfficeAction" scope="session">
+      <forward name="success" path="/officeSelect.do?action=list" redirect="true"/>
+      <forward name="showAdd" path="/office_add.jsp"/>
+      <forward name="showChildAdd" path="/child_office_add.jsp"/>
+      <forward name="error" path="/office_add.jsp"/>
+      <forward name="errorChild" path="/child_office_add.jsp"/>
+    </action>
+
+    <action path="/officeDelete" type="com.topsuntech.gOS.user.actions.OfficeAction">
+      <forward name="confirm" path="/office_delete_confirm.jsp"/>
+      <forward name="success" path="/officeSelect.do?action=list" redirect="true"/>
+    </action>
+
+    <action path="/officeDeleteAll" type="com.topsuntech.gOS.user.actions.OfficeAction">
+      <forward name="confirm" path="/office_deleteall_confirm.jsp"/>
+      <forward name="success" path="/officeSelect.do?action=list" redirect="true"/>
+    </action>
+
+    <action path="/officeSelect" type="com.topsuntech.gOS.user.actions.OfficeAction">
+      <forward name="success" path="/office_detail.jsp"/>
+      <forward name="list" path="/office_list.jsp" />
+      <forward name="listByDept" path="/office_listByDept.jsp" />
+      <forward name="choose" path="/office_choose.jsp" />
+    </action>
+
+    <action path="/officeMove" name="moveOfficeForm" type="com.topsuntech.gOS.user.actions.OfficeAction">
+      <forward name="success" path="/officeSelect.do?action=list" redirect="true"/>
+      <forward name="showMoveTo" path="/office_move.jsp"/>      
+      <forward name="moveToError" path="/office_move.jsp"/>
+      <forward name="showMove" path="/office_move1.jsp"/>      
+      <forward name="moveError" path="/office_move1.jsp"/>
+    </action>
+
+    <action path="/userMove" type="com.topsuntech.gOS.user.actions.UserAction">
+      <forward name="showMove" path="/user_move.jsp"/>
+      <forward name="move" path="/user_move2.jsp"/>
+      <forward name="success" path="/office_list.jsp"/>
+      <forward name="chooseUser" path="/main/system/user_mgm/user_choose.jsp" contextRelative="true" />
+    </action>
+    
+  	<!-- ==================Region =====================-->
+	<action path="/regionAdd" name="regionForm" type="com.topsuntech.gOS.user.actions.RegionAction" scope="session">
+      <forward name="success" path="/region_list.jsp" redirect="true"/>
+      <forward name="showAdd" path="/region_add.jsp"/>
+      <forward name="showChildAdd" path="/child_region_add.jsp"/>
+      <forward name="error" path="/region_add.jsp"/>
+      <forward name="errorChild" path="/child_region_add.jsp"/>
+    </action>
+    
+    <action path="/regionUpdate" name="regionForm" type="com.topsuntech.gOS.user.actions.RegionAction" scope="session">
+      <forward name="success" path="/region_list.jsp" redirect="true"/>
+      <forward name="showEdit" path="/region_edit.jsp" />
+      <forward name="error" path="/region_edit.jsp" />
+    </action>
+    
+    <action path="/regionSelect" type="com.topsuntech.gOS.user.actions.RegionAction">
+      <forward name="success" path="/region_detail.jsp"/>
+      <forward name="list" path="/region_list.jsp" />
+      <forward name="choose" path="/region_choose.jsp" />
+      <forward name="listoffice" path="/region_office_list.jsp"/>
+    </action>
+    
+    <action path="/regionDelete" type="com.topsuntech.gOS.user.actions.RegionAction">
+      <forward name="confirm" path="/region_delete_confirm.jsp"/>
+      <forward name="success" path="/regionSelect.do?action=list" redirect="true"/>
+    </action>
+    
+    <action path="/regionDeleteAll" type="com.topsuntech.gOS.user.actions.RegionAction">
+      <forward name="confirm" path="/region_deleteall_confirm.jsp"/>
+      <forward name="success" path="/regionSelect.do?action=list" redirect="true"/>
+    </action>
+    
+    <action path="/regionMove" name="regionForm" type="com.topsuntech.gOS.user.actions.RegionAction">
+      <forward name="success" path="/regionSelect.do?action=list" redirect="true"/>
+      <forward name="showMoveTo" path="/region_move.jsp"/>      
+      <forward name="moveToError" path="/region_move.jsp"/>
+      <forward name="showMove" path="/region_move1.jsp"/>      
+      <forward name="moveError" path="/region_move1.jsp"/>
+    </action>
+    <!-- ==================Region =====================-->  
+   
+  </action-mappings>
+
+  <message-resources
+    parameter="com.topsuntech.gOS.user.ApplicationResources"
+    null="false" />
+  <!-- ========== Message Resources Definitions =========================== -->
+</struts-config>

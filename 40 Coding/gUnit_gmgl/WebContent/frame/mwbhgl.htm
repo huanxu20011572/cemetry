@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<title>无标题文档</title>
+		<script src="../jscript/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+		<script src="../jscript/jquery-easyui-1.3.2//jquery.easyui.min.js"></script>
+		<link href="../jscript/jquery-easyui-1.3.2//themes/default/easyui.css" rel="stylesheet">
+		<link href="../jscript/jquery-easyui-1.3.2//themes/icon.css" rel="stylesheet" />
+		<script src="../jscript/jquery-easyui-1.3.2//locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body style="background-color:transparent">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td width="11" valign="top" class="td-bg"><img src="../images/right-1.jpg" /></td>
+    <td align="center" valign="top" >
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td height="31" align="left" valign="middle" style="background:url(../images/right-3.jpg)"><img src="../images/right-4.jpg" width="9" height="8" align="absmiddle" /> 当前位置 &gt; 系统维护管理 &gt; 墓位编号管理</td>
+	      </tr>
+	      <tr>
+	        <td bgcolor="#FFFFFF" style="font-size:12px;">&nbsp;</td>
+	      </tr>
+	    </table>
+
+						 <div class="easyui-layout" style="width:100%;height:450px;">
+						     <div data-options="region:'west',title:'墓位区排',split:true" style="width:200px;">
+									<ul id="lefttree"></ul>
+								</div>   
+							  <div id="mainPanle" region="center"  style="padding:10px 0 10px 10px;" >
+                              <div id="list">
+					        <table width="98%" border="0" cellspacing="0" cellpadding="0">
+					          <tr>
+          <td height="40" align="left"><input name="button2" type="submit" class="button-z2" id="button2" value="新建墓位"  onclick="javascript:add()"/> &nbsp;&nbsp;
+            <input name="button" type="submit" class="button-z2" id="button" value="修改墓位" /></td>
+        </tr>
+    </table>     
+<table width="98%" cellpadding="0"cellspacing="1" bgcolor="#a6c6da">
+
+        <tr>
+          <td height="30" align="center" bgcolor="#D4E5F4">序号</td>
+          <td align="center" bgcolor="#D4E5F4">业务编号</td>
+          <td align="center" bgcolor="#D4E5F4">墓型</td>
+          <td align="center" bgcolor="#D4E5F4">状态</td>
+          </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">1</td>
+          <td align="center" bgcolor="#FFFFFF">001</td>
+          <td align="center" bgcolor="#FFFFFF">怀思碑</td>
+          <td align="center" bgcolor="#FFFFFF">租用</td>
+          </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">2</td>
+          <td align="center" bgcolor="#FFFFFF">002</td>
+          <td align="center" bgcolor="#FFFFFF">怀思碑</td>
+          <td align="center" bgcolor="#FFFFFF">空闲</td>
+          </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">3</td>
+          <td align="center" bgcolor="#FFFFFF">003</td>
+          <td align="center" bgcolor="#FFFFFF">怀思碑</td>
+          <td align="center" bgcolor="#FFFFFF">租用</td>
+          </tr>
+      </table>      
+            </div>
+            <div id="detail" style="display:none">   
+	        <table width="98%" border="0" cellspacing="0" cellpadding="0">
+					          <tr>
+          <td height="40" align="left"><input name="button" type="submit" class="button-z2" id="button" value="保存" onclick="javascript:save()"/></td>
+        </tr>
+    </table>  
+      <table width="98%" cellpadding="0" cellspacing="1" bgcolor="#a6c6da">
+
+        <tr>
+          <td width="19%" height="27" align="right" bgcolor="#D4E5F4">业务编号：</td>
+          <td width="31%" height="27" align="left" bgcolor="#FFFFFF">&nbsp;
+            001</td>
+          <td width="20%" height="27" align="right" bgcolor="#D4E5F4">墓型：</td>
+          <td width="30%" height="27" align="left" bgcolor="#FFFFFF">&nbsp;
+            <input name="textfield2" type="text" id="textfield2" class="input-1" />
+            <input  type="button" class="button-z2" id="select_cemetery_type_btn" value="选择墓型" /></td>
+          </tr>
+        <tr>
+          <td height="27" align="right" bgcolor="#D4E5F4">状态：</td>
+          <td height="27" colspan="3" align="left" bgcolor="#FFFFFF">&nbsp; <select name="textfield3" id="cemetery_type" style="height:20px;width:183px" >
+<option value='-1'>------选择------</option>
+<option value='010020'>租用</option>
+<option value='010012'>空闲</option>
+</select> 
+          </td>
+        </tr>
+      </table>
+</div>
+                              </div>
+					
+					   </div>	
+					   
+		
+    </td>
+  </tr>
+</table>    
+
+		<!--弹出墓型bai 2014-08-06 beign -->
+				<div class="easyui-window" id="select_cemetery_type_window" data-options="modal:true,right:'10px',down:'10px',closed:true,closable:true,minimizable:false,maximizable:false,resizable:false,collapsible:false" style="width:300px;height:300px;padding:10px;" title="选择墓型">
+
+		<div class="easyui-layout" data-options="fit:true">
+			<div data-options="region:'center'" style="padding: 10px;">
+				<div id="location_tree" class="easyui-tree"
+					data-options="animate:true,checkbox:true,url:'data/tree_data_select_cemetery_type.json'"></div>
+			</div>
+			<div data-options="region:'south',border:false"
+				style="text-align: right; padding: 5px 0 0;">
+				<input id="select_cemetery_type_save" type="button" value="保存"
+					class="yellowBtn" />
+				 <input id="select_cemetery_type_cancel" type="button"
+					value="取消" class="whiteBtn" />
+			</div>
+		</div>
+	</div>
+		<!--弹出墓型bai 2014-08-06 end -->
+
+<script type="text/javascript">
+	$(function(){
+		  $('#lefttree').tree({
+		    url:'data/tree_data.json',
+		    animate:true
+		  });
+
+////墓型弹出bai 2014-07-24 begin
+		$("#select_cemetery_type_btn").click(function(){
+			$("#select_cemetery_type_window").window("open");
+		});
+
+		$("#select_cemetery_type_save").click( function(){
+			$("#select_cemetery_type_window").window("close");
+		} );
+		$("#select_cemetery_type_cancel").click( function(){
+			$("#select_cemetery_type_window").window("close");
+		} );
+		
+////墓型弹出bai 2014-07-24 end
+
+  });
+  
+  function add(){
+	$("#detail").show();
+	$("#list").hide();
+}
+function save(){
+	$("#detail").hide();
+	$("#list").show();
+}
+
+
+</script>
+
+</body>  
+</html>

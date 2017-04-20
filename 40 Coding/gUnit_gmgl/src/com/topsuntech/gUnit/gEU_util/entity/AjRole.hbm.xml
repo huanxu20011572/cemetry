@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+<hibernate-mapping>
+	<class name="com.topsuntech.gUnit.gEU_util.entity.AjRole" table="GOS_ROLE">
+		<id name="id">
+<!--Oracle
+-->
+			<generator class="sequence">
+				<param name="sequence">GOS_ROLE_SEQ</param>
+			</generator>
+<!--
+-->
+<!--MSSQL
+
+			<generator class="identity"/>
+-->
+		</id>
+		<property name="name"/>
+		<property name="createDate" column="CREATEDATE"/>
+		<property name="creatorId" column="CREATORID"/>
+<!-- 		<property name="creatorName" column="CREATOR_NAME"/> -->
+		<property name="priority"/>
+		<property name="description"/>
+<!-- 		<property name="category"/> -->
+	</class>
+</hibernate-mapping>

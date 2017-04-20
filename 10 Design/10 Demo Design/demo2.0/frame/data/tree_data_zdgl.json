@@ -1,0 +1,52 @@
+
+[{    
+    "id":1,    
+    "text":"字典管理", 
+	"state":"open",   		
+    "children":[{      
+    "id":1,    
+    "text":"费用分类", 
+    "state":"open",	
+    "children":[{    
+        "text":"管理费",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"出车费"
+    },{    
+        "text":"看护费"
+    }]    
+},{    
+    "text":"墓位状态",    
+    "state":"open",    
+    "children":[{    
+        "text":"开发",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"空闲"
+    },{    
+        "text":"锁定"
+    },{    
+        "text":"保留"
+    },{    
+        "text":"预订"
+    },{    
+        "text":"占用"
+    },{    
+        "text":"迁出"
+    }]    
+},{    
+    "text":"穴别",    
+    "state":"open",    
+    "children":[{    
+        "text":"单穴",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"双穴"
+    },{    
+        "text":"多穴"
+    }]    
+}]  
+}] 

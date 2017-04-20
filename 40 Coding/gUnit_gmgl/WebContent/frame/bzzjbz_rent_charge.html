@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../jscript/My97DatePicker/skin/WdatePicker.css"
+	" rel="stylesheet" type="text/css" />
+ 
+<link rel="stylesheet" type="text/css"
+	href="../js/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css"
+	href="../js/easyui/themes/icon.css" />
+<script type="text/javascript" src="../jscript/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../jscript/jquery-easyui-1.3.2/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../jscript/My97DatePicker/WdatePicker.js">
+	
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#display_userInfo_div").css("display","block");
+	$("#userinfo_div").css("display","none");
+	$("#charge_div").css("display","none");
+	$("#display_userInfo_div").click(function(){
+		$("#baseinfo_div").css("display","none");
+		$("#charge_div").css("display","none");
+		$("#userinfo_div").css("display","block");
+	});
+	
+	$("#display_userInfocharge_div").click(function(){
+		$("#baseinfo_div").css("display","none");
+		$("#charge_div").css("display","block");
+		$("#userinfo_div").css("display","none");
+		
+	});
+	
+	
+	$("#return_baseInfo_div").click(function(){
+		$("#userinfo_div").css("display","none");
+		$("#charge_div").css("display","none");
+		$("#baseinfo_div").css("display","block");
+	});
+	$("#display_charge_div").click(function(){
+		$("#userinfo_div").css("display","none");
+		$("#charge_div").css("display","block");
+		$("#baseinfo_div").css("display","none");
+	});
+	$("#return_userInfo_div").click(function(){
+		$("#charge_div").css("display","none");
+		$("#userinfo_div").css("display","none");
+		$("#baseinfo_div").css("display","block");
+	});
+	$("#return_baseinfo_div").click(function(){
+		$("#charge_div").css("display","none");
+		$("#userinfo_div").css("display","none");
+		$("#baseinfo_div").css("display","block");
+	});
+	$("#save_all").click(function(){
+		 alert("保存租用墓地信息成功！");
+	}); 
+	$("#category_window").window("close");
+	$("#category_window_btn").click(function(){
+		$("#category_tree").tree("loadData", treeData);
+		$("#category_window").window("open");
+	});
+	$("#rent_save_btn").click( function(){
+		var node = $('#category_tree').tree('getChecked');	
+		if(node.length<=0){
+		  alert("请选择一项分类");
+		}else{
+			$("#rent_input_category").val(node[0].text);
+			
+			$("#category_window").window("close");
+		}
+		
+	});
+	$("#rent_cancel_btn").click( function(){
+		$("#category_window").window("close");
+	} );
+
+	
+	
+	
+	var treeData =
+				[ {
+				"text" : " 业务分类",
+				"children" : [ {
+				"id" : 1,
+				"text" : "墓地业务"
+
+				}, {
+				"id" : 2,
+				"text" : "骨灰堂业务",
+				"children" : [ {
+					"text" : "骨灰堂"
+				} ]
+				}, {
+				"id" : 3,
+				"text" : "立体安葬业务",
+				"children" : [ {
+					"text" : "骨灰墙"
+				}, {
+					"text" : "骨灰廊"
+				} ]
+				}, {
+				"id" : 4,
+				"text" : "生态葬业务",
+				"children" : [ {
+					"text" : "草坪葬"
+				}, {
+					"text" : "水葬"
+				}, {
+					"text" : "树葬"
+				} ]
+				} ]
+				} ];
+	$("#category_tree").tree("loadData", treeData);
+	
+	var chargeGridData1=[ {"id":1,"text":"管理费用","children":[{"id":21,"text":"卫生费用","attributes":{"price":200 }}]},
+	                     {"id":2,"text":"敛葬费用","children":[{"id":21,"text":"出车费用","attributes":{"price":300 }}]},
+	                     {"id":3,"text":"其它费用", "children":[{"id":31,"text":"看护费","attributes":{"price":400 }}]}];
+	$("#charge_pop_btn").click(function(){
+		$("#charge_treeGrid").tree("loadData", chargeGridData1);
+		$("#charge_item_window").window("open");
+	});
+
+	
+	$("#charge_save_btn").click(function(){
+	    var rows=$("#charge_treeGrid").tree("getChecked");
+		$.each(rows ,function(){
+		 if(this.attributes){
+		var price=this.attributes.price;
+		  if(price){
+		   $("#charge_item_name").val(this.text);
+	    	$("#charge_item_price").val(price);
+	    	$("#charge_item_cntPrice").val(price*$("#charge_item_cnt").val());}}
+		});
+	    
+		$("#charge_item_window").window("close");
+	});
+ 
+	function doOnChange(id){
+	   	$("#charge_item_cntPrice").val($("#charge_item_price").val()*$("#charge_item_cnt").val());
+	}
+	$("#charge_cancel_btn").click(function(){
+		$("#charge_item_window").window("close");
+	});
+	
+});
+function doOnChange(id){
+   	$("#charge_item_cntPrice").val($("#charge_item_price").val()*$("#charge_item_cnt").val());
+}
+</script>
+<title>收费项目登记</title>
+<style type="text/css">
+<!--
+.word-4 {
+	color: #085b85;
+}
+
+.word2 {
+	color: #085b85;
+	text-decoration: underline;
+}
+
+.word-6 {
+	color: #085b85;
+	font-size: 14px;
+}
+
+.word3 {
+	color: #085b85;
+	font-size: 14px;
+}
+-->
+</style>
+</head>
+
+<body style="background-color: transparent">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"
+		height="100%">
+		<tr>
+			<td width="11" valign="top" class="td-bg"><img
+				src="../images/right-1.jpg" /></td>
+			<td align="center" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="31" align="left" valign="middle"
+							style="background: url(../images/right-3.jpg)"><img
+							src="../images/right-4.jpg" width="9" height="8"
+							align="absmiddle" /> 当前位置 &gt; 公墓业务管理 &gt; 收费项目登记</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF" style="font-size: 12px;">&nbsp;</td>
+					</tr>
+				</table> <!-- 输入域 -->
+				 
+				 
+				<table   width="98%" cellpadding="0" cellspacing="1"
+					bgcolor="#a6c6da">
+
+					<tr>
+						<td width="15%" height="35" align="right" bgcolor="#D4E5F4">项目名称：</td>
+						<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; 
+						<table>
+						<tr>
+						<td><input
+							name="textfield" type="text" id="charge_item_name" class="input-6" /></td>
+						<td>
+						 
+						<input id="charge_pop_btn" name="button" type="button" class="button-z2"   value="项目分类" />			
+						</td>
+						</tr>
+						</table>
+						 </td>
+						<td width="15%" align="right" bgcolor="#D4E5F4">单价：</td>
+						<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; &nbsp; <input
+							name="textfield" type="text" id="charge_item_price" class="input-1"  /></td>
+					</tr>
+					<tr>
+						<td height="35" align="right" bgcolor="#D4E5F4">数量：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield6" type="text" id="charge_item_cnt" class="input-1" value="1" onchange="doOnChange(this.id)"/>
+						</td>
+						<td align="right" bgcolor="#D4E5F4">应收款：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield6" type="text" id="charge_item_cntPrice" class="input-1" />
+						</td>
+					</tr>
+					<tr>
+						<td height="35" align="right" bgcolor="#D4E5F4">已收款：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield3" type="text" id="textfield3" class="input-1" />
+						</td>
+						<td align="right" bgcolor="#D4E5F4">本次收款：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield4" type="text" id="textfield4" class="input-1" />
+						</td>
+					</tr>
+					<tr>
+						<td height="35" align="right" bgcolor="#D4E5F4">优惠价格：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield3" type="text" id="textfield3" class="input-1" />
+						</td>
+						<td align="right" bgcolor="#D4E5F4"></td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp;</td>
+					</tr>
+
+
+
+				</table> <!-- 保存 -->
+				  <table width="98%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="60" align="center"><img src="../images/right-9.jpg" width="60" height="24" align="absmiddle" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/right-21.jpg" width="60" height="24" align="absmiddle" /></td>
+        </tr>
+      </table>
+		<div class="easyui-window" id="charge_item_window" data-options="modal:true,right:'10px',down:'10px',closed:true,closable:true,minimizable:false,maximizable:false,resizable:false,collapsible:false" style="width:300px;height:300px;padding:10px;" title="业务分类">
+
+		<div class="easyui-layout" data-options="fit:true">
+			<div data-options="region:'center'" style="padding: 10px;">
+				<div id="charge_treeGrid" class="easyui-tree"
+					data-options="animate:true,checkbox:true"></div>
+			</div>
+			<div data-options="region:'south',border:false"
+				style="text-align: right; padding: 5px 0 0;">
+				 
+					 <input id="charge_save_btn" name="button" type="button" class="button-z2" id="button" value="保存" />
+					  <input id="charge_cancel_btn" name="button" type="button" class="button-z2" id="button" value="取消" />
+				 
+			</div>
+		</div>
+	</div>
+		</td>
+		</tr>
+	</table>
+		 
+</body>
+</html>

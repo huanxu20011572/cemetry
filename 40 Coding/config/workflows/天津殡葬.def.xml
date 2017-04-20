@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="gb2312"?>
+<workflow>
+	<property>
+		<arg name="group"></arg>
+		<arg name="form"/>
+		<arg name="type"/>
+		<arg name="description"/>
+		<arg name="lastModified">1139403736343</arg>
+		<arg name="name">新申请</arg>
+		<arg name="editor"/>
+		<arg name="advice">1#同意,2#不同意</arg>
+	</property>
+	<initial-actions>
+		<action id="0" name="启动任务" due="-1">
+			<restrict-to>
+			</restrict-to>
+			<pre-functions>
+				<function type="class" name="保存启动人">
+					<arg name="class.name">com.topsuntech.gOS.workflow.function.Creator</arg>
+				</function>
+			</pre-functions>
+			<results>
+				<unconditional-result old-status="完成" status="待办" step="2" owner="$$$">
+				</unconditional-result>
+			</results>
+		</action>
+	</initial-actions>
+	<steps>
+		<step id="2" name="街道（审核）">
+			<pre-functions>
+				<function type="class" name="test">
+					<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveActionRelationDataSaver</arg>
+					<arg name="actionId">2</arg>
+					<arg name="deptLevel">3</arg>
+					<arg name="jgmx">3001</arg>
+					<arg name="businesstype">452</arg>
+				</function>
+				<function type="class" name="test">
+					<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveCreatorARDSaver</arg>
+					<arg name="actionId">2</arg>
+				</function>
+			</pre-functions>
+			<actions>
+				<action id="2" name="街道（审核）" due="-1">
+					<restrict-to>
+						<conditions type="AND">
+							<condition type="class" name="null">
+								<arg name="class.name">com.topsuntech.gOS.workflow.condition.StatusCondition</arg>
+								<arg name="status">待办</arg>
+								<arg name="deptLevel">3</arg>
+								<arg name="jgmx">3001</arg>
+								<arg name="businesstype">452</arg>
+							</condition>
+						</conditions>
+					</restrict-to>
+					<results>
+						<result id="5840" old-status="完成" status="待办" step="3" owner="$$$">
+							<conditions type="AND">
+								<condition type="class" name="null">
+									<arg name="key">spyj</arg>
+									<arg name="value">上报</arg>
+									<arg name="class.name">com.topsuntech.gOS.workflow.condition.TransientCondition</arg>
+								</condition>
+							</conditions>
+							<post-functions>
+								<function type="class" name="上报">
+									<template>上报</template>
+									<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveFinishFunction</arg>
+									<arg name="newStatus" alias="" description="">2</arg>
+								</function>
+							</post-functions>
+						</result>
+						
+						<result id="5832" old-status="完成" status="待办" step="1" owner="$$$">
+							<conditions type="AND">
+								<condition type="class" name="null">
+									<arg name="key">spyj</arg>
+									<arg name="value">承办结束</arg>
+									<arg name="class.name">com.topsuntech.gOS.workflow.condition.TransientCondition</arg>
+								</condition>
+							</conditions>
+							<post-functions>
+								<function type="class" name="承办结束">
+									<template>承办结束</template>
+									<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveFinishFunction</arg>
+									<arg name="newStatus" alias="" description="">5</arg>
+								</function>
+							</post-functions>
+						</result>
+						<unconditional-result old-status="完成" status="待办" step="3" owner="$$$">
+						</unconditional-result>
+					</results>
+				</action>
+			</actions>
+		</step>		
+		
+		
+		
+		<step id="3" name="区级（审批）">
+			<pre-functions>
+				<function type="class" name="test">
+					<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveActionRelationDataSaver</arg>
+					<arg name="actionId">3</arg>
+					<arg name="deptLevel">2</arg>
+					<arg name="jgmx">2001</arg>
+					<arg name="businessType">452</arg>
+				</function>
+				<function type="class" name="test">
+					<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveCreatorARDSaver</arg>
+					<arg name="actionId">3</arg>
+				</function>
+			</pre-functions>
+			<actions>
+				<action id="3" name="区级（审批）" due="-1">
+					<restrict-to>
+						<conditions type="AND">
+							<condition type="class" name="null">
+								<arg name="class.name">com.topsuntech.gOS.workflow.condition.StatusCondition</arg>
+								<arg name="status">待办</arg>
+								<arg name="deptLevel">2</arg>
+								<arg name="jgmx">2001</arg>
+								<arg name="businessType">452</arg>
+							</condition>
+						</conditions>
+					</restrict-to>
+					<results>
+						<result id="5833" old-status="完成" status="待办" step="1" owner="$$$">
+							<conditions type="AND">
+								<condition type="class" name="null">
+									<arg name="key">spyj</arg>
+									<arg name="value">承办结束</arg>
+									<arg name="class.name">com.topsuntech.gOS.workflow.condition.TransientCondition</arg>
+								</condition>
+							</conditions>
+							<post-functions>
+								<function type="class" name="承办结束">
+									<template>承办结束</template>
+									<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveFinishFunction</arg>
+									<arg name="newStatus" alias="" description="">5</arg>
+								</function>
+							</post-functions>
+						</result>
+						<result id="5830" old-status="完成" status="待办" step="2" owner="$$$">
+							<conditions type="AND">
+								<condition type="class" name="null">
+									<arg name="key">spyj</arg>
+									<arg name="value">退回</arg>
+									<arg name="class.name">com.topsuntech.gOS.workflow.condition.TransientCondition</arg>
+								</condition>
+							</conditions>
+						  <post-functions>
+								<function type="class" name="退回">
+									<template>退回</template>
+									<arg name="class.name">com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveFinishFunction</arg>
+									<arg name="newStatus" alias="" description="">6</arg>
+								</function>
+							</post-functions>
+						</result>						
+						
+						<unconditional-result old-status="完成" status="待办" step="2" owner="$$$">
+						</unconditional-result>
+					</results>
+				</action>
+			</actions>
+		</step>
+		<finish id="1" name="结束">
+		</finish>
+	</steps>
+	<bounds>
+		<bound id="5833" height="14" width="46" x="660" y="123"/>
+		<bound id="1" height="29" width="29" x="735" y="200"/>
+		<bound id="2" height="56" width="114" x="560" y="115"/>
+		<bound id="0" height="26" width="118" x="405" y="50"/>
+		<bound id="5830" height="26" width="118" x="405" y="50"/>
+	</bounds>
+	<connects>
+		<connect from="5833" to="1">
+			<point x="706" y="130"/>
+			<point x="745" y="130"/>
+			<point x="749" y="200"/>
+		</connect>
+		<connect from="0" to="2">
+			<point x="429" y="69"/>
+			<point x="432" y="115"/>
+		</connect>
+		<connect from="5830" to="1">
+			<point x="496" y="125"/>
+			<point x="500" y="90"/>
+			<point x="610" y="90"/>
+			<point x="614" y="115"/>
+		</connect>
+	</connects>
+</workflow>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+<class name="com.topsuntech.gUnit.gEU_util.entity.SjRegion" table="gos_region">
+<id column="id" name="id" type="java.lang.Long">
+<generator class="sequence">
+	<param name="sequence">gos_region_seq</param>
+</generator>
+</id>
+<property column="NAME" length="32" name="name" type="java.lang.String"/>
+<property column="LEVELID" length="25" name="levelId" type="java.lang.Long"/>
+<property column="CREATEDATE" name="createDate" length="7" type="java.util.Date"/>
+<property column="CREATORID" length="25" name="creatOrid" type="java.lang.Long"/>
+<property column="PARENTID" length="25" name="parentId" type="java.lang.Long"/>
+<property column="DISPORDER" length="2" name="disporder" type="java.lang.Long"/>
+<property column="STANDARD_NO" length="20" name="standardNo" type="java.lang.String"/>
+<property column="USE_FLAG" length="1" name="useFlag" type="java.lang.Long"/>
+<!-- <property column="REGION_CODE" length="20" name="regionCode" type="java.lang.String"/> -->
+<!-- <property column="ORDERBY_ITEM" name="orderByItem"/> -->
+<property column="SHORTNAME"  name="shortName" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

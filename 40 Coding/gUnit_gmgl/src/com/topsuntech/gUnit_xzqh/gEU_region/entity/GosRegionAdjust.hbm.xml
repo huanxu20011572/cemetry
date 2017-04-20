@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+    <class name="com.topsuntech.gUnit_xzqh.gEU_region.entity.GosRegionAdjust" table="GOS_REGION_ADJUST" >
+        <id name="id" column="ID" type="java.lang.Long">
+            <generator class="sequence" >
+            	<param name="sequence">GOS_REGION_ADJUST_SEQ</param>
+            </generator>
+        </id>
+        <property name="adjustType" column="ADJUST_TYPE"  type="java.lang.Long" />
+        <property name="adjustLevel"  column="ADJUST_LEVEL" type="java.lang.Long" />
+        <property name="adjustCountyIds" column="ADJUST_COUNTY_IDS"  type="java.lang.String" />
+        <property name="adjustCountyNames" column="ADJUST_COUNTY_NAMES"  type="java.lang.String" />
+        <property name="adjustStreetIds" column="ADJUST_STREET_IDS"  type="java.lang.String" />
+        <property name="adjustStreetNames" column="ADJUST_STREET_NAMES"  type="java.lang.String" />
+        <property name="adjustCommunityIds" column="ADJUST_COMMUNITY_IDS"  type="java.lang.String" />
+        <property name="adjustCommunityNames" column="ADJUST_COMMUNITY_NAMES"  type="java.lang.String" />
+        <property name="newCountyIds" column="NEW_COUNTY_IDS"  type="java.lang.String" />
+        <property name="newCountyNames" column="NEW_COUNTY_NAMES"  type="java.lang.String" />
+        <property name="newStreetIds" column="NEW_STREET_IDS"  type="java.lang.String" />
+        <property name="newStreetNames" column="NEW_STREET_NAMES"  type="java.lang.String" />
+        <property name="newCommunityIds"  column="NEW_COMMUNITY_IDS" type="java.lang.String" />
+        <property name="newCommunityNames"  column="NEW_COMMUNITY_NAMES" type="java.lang.String" />
+        <property name="stopDate" column="STOP_DATE"  type="java.util.Date" />
+        <property name="isStop" column="IS_STOP"  type="java.lang.Long" />
+        <property name="createDate" column="CREATE_DATE"  type="java.util.Date" />
+        <property name="useFlag" column="USE_FLAG"  type="java.lang.Long" />
+        <property name="createUserId" column="CREATE_USER_ID" type="java.lang.Long" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- 
+	这个类用来存储用户删除理由
+--><delReason>
+	<DeleteReason id="1" name="辞退" />
+	<DeleteReason id="2" name="离职" />
+<DeleteReason id="3" name="退休" /><DeleteReason id="4" name="其他" /></delReason>

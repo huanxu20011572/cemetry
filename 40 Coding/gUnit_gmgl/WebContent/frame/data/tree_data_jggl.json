@@ -1,0 +1,52 @@
+
+[{    
+    "id":1,    
+    "text":"机构管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序", 
+	"state":"open",   		
+    "children":[{      
+    "id":1,    
+    "text":"市属公墓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序", 
+    "state":"open",	
+    "children":[{    
+        "text":"八宝山公墓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"万安公墓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"福田公墓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"太子峪陵园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    }]    
+},{    
+    "text":"通州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序",    
+    "state":"open",    
+    "children":[{    
+        "text":"惠灵山陵园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    }]    
+},{    
+    "text":"昌平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序",    
+    "state":"open",    
+    "children":[{    
+        "text":"炎黄陵园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"佛山陵园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"凤凰山陵园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"天寿陵园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    }]    
+},{    
+    "text":"延庆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序",    
+    "state":"open",    
+    "children":[{      
+        "text":"八达岭陵园&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"长城华人怀思堂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    }]    
+}]  
+}] 

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <!-- ========== Form Bean Definitions =================================== -->
+    <form-beans>
+	  	<form-bean name="sjRegionForm" type="com.topsuntech.gUnit.gEU_system.framework.actionforms.SjRegionForm"/>
+	  	<form-bean name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actionforms.SjDeptForm"/>
+	  	<form-bean name="sjUserForm" type="com.topsuntech.gUnit.gEU_system.framework.actionforms.SjUserForm"/>
+    </form-beans>
+
+    <!-- ========== Global Forward Definitions ============================== -->
+    <global-forwards>
+		<forward name="error" path="/../../common/error.jsp" />
+    </global-forwards>
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+    <action-mappings>
+		<action path="/doAdd" name="sjRegionForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRegionAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/region_redirt.jsp" />
+		</action>
+		
+		<action path="/toUpdate" name="sjRegionForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRegionAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/region_edit.jsp" />
+		</action>				
+		
+		<action path="/doUpdate" name="sjRegionForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRegionAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/region_redirt.jsp" />
+		</action>		
+		
+		<action path="/doDelete" name="sjRegionForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRegionAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/region_redirt.jsp" />
+		</action>			
+		
+		<action path="/doAddDept" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success" path="/officeActionForward.do" />
+		</action>
+
+	   <action path="/toAddDept" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/dept_add.jsp" />
+		</action>
+		
+		<action path="/toUpdateDept" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/dept_edit.jsp" />
+		</action>				
+		
+		<action path="/doUpdateDept" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success" path="/officeActionForward.do" />
+		</action>		
+		
+		<action path="/doDeleteDept" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success" path="/officeActionForward.do" />
+		</action>		
+
+		<action path="/doStopDept" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/dept_redirt.jsp" />
+		</action>			
+		
+		<action path="/doQueryUserList" name="sjUserForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjLoginAction" scope="request" parameter="method">
+			<forward name="success" path="/user/user_list.jsp" />
+		</action>
+		
+		<action path="/doQueryUserAllList" name="sjUserForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" scope="request" parameter="method">
+			<forward name="success" path="/user/user_list.jsp" />
+		</action>
+		<action path="/updateUserPasswordAll" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/user/user_pwd.jsp" />
+  	</action>
+
+        <action path="/doQuerySubUserList" name="sjUserForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" scope="request" parameter="method">
+			<forward name="success" path="/../main/system/zxt_mgm/user_list.jsp" />
+		</action>
+
+		<action path="/toUserRoleList"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" scope="request" parameter="method">
+			<forward name="success" path="/../system/priority_mgm/actor_list" />
+		</action>			
+		
+		<action path="/doUpdateUserRole"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" scope="request" parameter="method">
+			<forward name="success" path="/user/user_redirt.jsp" />
+		</action>		
+		
+		<action path="/doShowSelectPriority"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" scope="request" parameter="method">
+			<forward name="success" path="/user/user_role_select_list.jsp" />
+		</action>				
+		
+		<action path="/updateRoleToUser"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" scope="request" parameter="method">
+			<forward name="success" path="/role_redirect.jsp" />
+		</action>				
+		
+		
+		<action path="/showUserEmail"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" scope="request" parameter="method">
+			<forward name="success" path="/user/user_email_update.jsp" />
+		</action>			
+				
+		<action path="/updateEmailToUser" name="sjUserForm"   type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" scope="request" parameter="method">
+			<forward name="success" path="/user/user_email_update_success.jsp" />
+		</action>				
+		
+		
+		<!-- ========== forward action ====== -->
+	  	<action path="/officeActionForward" type="com.topsuntech.gOS.identity.model.action.ParameterForwardAction" parameter="inputPath:idStr=id">
+		    <forward name="allDept" path="/office_list.jsp?" redirect="true"/>
+		    <forward name="subDept" path="/../main/system/zxt_mgm/sub_office_tree.jsp" redirect="true"/>
+	    </action>
+		
+		<!--测试:start -->			
+		<action path="/doStart"  type="com.topsuntech.gUnit.gEU_tree.test.TreadTestAction" scope="request" parameter="method">
+			<forward name="success" path="/showResult.jsp" />
+		</action>			
+		
+		<action path="/doRead"  type="com.topsuntech.gUnit.gEU_tree.test.TreadTestAction" scope="request" parameter="method">
+			<forward name="success" path="/showStatus.jsp" />
+		</action>			
+		
+		<!--测试 :end -->		
+		
+		
+		<action path="/regionOrder"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRegionAction" scope="request" parameter="method">
+			<forward name="success" path="/../main/system/office_mgm/region_orderlist.jsp" />
+		</action>			
+		
+	  <action path="/moveUp"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRegionAction" scope="request" parameter="method">
+			<forward name="success" path="/../main/system/office_mgm/region_redirect.jsp" />
+		</action>						
+		
+		<action path="/userOrder" name="sjUserForm"   type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" scope="request" parameter="method">
+			<forward name="success" path="/../main/system/user_mgm/user_orderlist.jsp" />
+		</action>		
+		
+		<action path="/userMove" name="sjUserForm"   type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" scope="request" parameter="method">
+			<forward name="success" path="/../main/system/user_mgm/ajuser_redirect.jsp" />
+		</action>	
+		
+	<action path="/deptOrder" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success"  path="/../main/system/office_mgm/dept_orderlist.jsp" />
+		</action>		
+		
+		<action path="/deptMove" name="sjDeptForm" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjDeptAction" scope="request" parameter="method">
+			<forward name="success"  path="/../main/system/office_mgm/dept_redirect.jsp" />
+		</action>		
+		
+		<action path="/changeOrderItem" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/../main/system/user_mgm/user_orderlist.jsp" />
+  	</action>
+		
+	</action-mappings>
+
+	  <message-resources parameter="com.topsuntech.gUnit.gEU_util.resources.resources" null="false" />
+
+</struts-config>

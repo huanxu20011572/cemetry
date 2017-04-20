@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>gEU_mjzz</shortname>
+    <uri>http://www.topsuntech.com/gTaglib-bjjz</uri>
+    
+    <tag>
+        <name>dict</name>
+        <tagclass>com.topsuntech.gUnit_cnpo.guikou.framework.taglib.MjzzDictId2NameTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <attribute>
+            <name>key</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>    
+    	<name>dic2name</name>    	          
+    	<tagclass>com.topsuntech.gUnit.gEU_dict.taglib.DictionaryNamedTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the funeral goods and  catalog tree</info>
+        <attribute>
+    	   <name>dicCode</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+        <attribute>
+    	   <name>insi</name>
+    	   <required>false</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>  
+    <tag>    
+    	<name>regionCode2Name</name>    	          
+    	<tagclass>com.topsuntech.gUnit.gEU_dict.taglib.RegionCode2NameTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the funeral goods and  catalog tree</info>
+        <attribute>
+    	   <name>regionCode</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>      
+    </tag>
+    <tag>    
+    	<name>hangye2Name</name>    	          
+    	<tagclass>com.topsuntech.gUnit.gEU_dict.taglib.Xiaolei2NameTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the funeral goods and  catalog tree</info>
+        <attribute>
+    	   <name>nodeValue</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+        <attribute>
+    	   <name>insi</name>
+    	   <required>false</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>
+</taglib>

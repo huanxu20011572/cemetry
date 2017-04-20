@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <!-- ========== Form Bean Definitions =================================== -->
+    <form-beans>
+	  	<form-bean name="gosRegionAdjustForm" type="com.topsuntech.gUnit_xzqh.gEU_region.framework.actionForms.GosRegionAdjustForm"/>
+	  	<form-bean name="gosRegionWarnForm" type="com.topsuntech.gUnit_xzqh.gEU_region.framework.actionForms.GosRegionWarnForm"/>
+    </form-beans>
+
+    <!-- ========== Global Forward Definitions ============================== -->
+    <global-forwards>
+		<forward name="error" path="/../../common/error.jsp" />
+    </global-forwards>
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+    <action-mappings>
+		<action path="/doAddAdjust" name="gosRegionAdjustForm" type="com.topsuntech.gUnit_xzqh.gEU_region.framework.actions.GosRegionAdjustAction" scope="request" parameter="method">
+			<forward name="success" path="/office_dynamic/region_success.jsp" />
+			<forward name="error" path="/office_dynamic/region_error.jsp" />
+			<forward name="mergerSuccess" path="/office_dynamic/merger_list.jsp" />
+			<forward name="devideSuccess" path="/office_dynamic/devide_list.jsp" />
+			<forward name="detailSuccess" path="/office_dynamic/message_info.jsp" />
+		</action>
+		
+		
+	</action-mappings>
+
+	  <message-resources parameter="com.topsuntech.gUnit.gEU_util.resources.resources" null="false" />
+
+</struts-config>

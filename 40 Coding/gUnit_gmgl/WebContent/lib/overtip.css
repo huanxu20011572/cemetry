@@ -1,0 +1,8 @@
+#tipBoxABC {position: absolute; 
+width: 160px; 
+z-index: 100;
+border: 1pt black solid;
+font-family:ËÎÌו;
+font-size: 9pt;
+background: #FFFF00; 
+visibility: hidden}

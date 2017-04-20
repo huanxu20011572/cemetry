@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>gTag</shortname>
+    <uri>http://www.topsuntech.com/gTaglib-calendar</uri>
+    
+    <tag>
+        <name>calendar</name>
+        <tagclass>com.topsuntech.gUnit.gEU_rcap.web.taglib.CalendarTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>onClick</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>href</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>action</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>taskflow</name>
+        <tagclass>com.topsuntech.gUnit.gEU_dbsy.web.taglib.BusinessTaskFlowTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <attribute>
+            <name>task</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>img</name>
+        <tagclass>com.topsuntech.gUnit.gEU_wslt.web.taglib.ExpressionTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+    </tag>
+    
+    <tag>
+        <name>forumhost</name>
+        <tagclass>com.topsuntech.gUnit.gEU_wslt.web.taglib.UserTestTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>test</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>oneuser</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

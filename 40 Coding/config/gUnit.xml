@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="GB2312"?>
+<gUnits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gUnit.xsd">
+
+	<gTUnit description="支撑平台" id="gTU_zcpg" name="支撑平台" url="">					
+			
+			 <gEUnit description="系统管理" id="gEU_xtgl" name="系统管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="xtgl-01" description="区划管理"	id="90010001" name="区划管理" url=""> </privilege>	
+						<privilege privilege_id="xtgl-02" description="机构管理"	id="90010002" name="机构管理" url=""> </privilege>
+						<privilege privilege_id="xtgl-03" description="角色管理"	id="90010003" name="角色管理" url=""> </privilege>
+						<privilege privilege_id="xtgl-05" description="用户管理"	id="90010005" name="用户管理" url=""> </privilege>
+						<privilege privilege_id="xtgl-06" description="字典管理"	id="90010006" name="字典管理" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+			
+			<gEUnit description="子系统管理" id="gEU_xtgll" name="子系统管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="xtgll-01" description="子管理员管理"	id="90010101" name="子管理员管理" url=""> </privilege>	
+						<privilege privilege_id="xtgll-02" description="下属子系统管理员"	id="90010102" name="下属子系统管理员" url=""> </privilege>
+						<privilege privilege_id="xtgll-03" description="子用户管理"	id="90010103" name="子用户管理" url=""> </privilege>
+						<privilege privilege_id="xtgll-04" description="子角色管理"	id="90010104" name="子角色管理" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+	</gTUnit>		
+ 
+ 
+	<gTUnit description="北京公墓管理系统" id="gTU_gmgl" name="北京公墓管理系统" url="">					
+			
+			 <gEUnit description="售前管理" id="gEU_sqgl" name="售前管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="sqgl-01" description="墓区信息快速查询"	id="101011" name="墓区信息快速查询" url=""> </privilege>	
+						<privilege privilege_id="sqgl-02" description="来访登记"	id="101012" name="来访登记" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+			 <gEUnit description="业务办理" id="gEU_ywbl" name="业务办理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="ywbl-01" description="租用登记"	id="102011" name="租用登记" url=""> </privilege>	
+						<privilege privilege_id="ywbl-02" description="续租登记"	id="102012" name="续租登记" url=""> </privilege>
+						<privilege privilege_id="ywbl-03" description="合葬登记"	id="102013" name="合葬登记" url=""> </privilege>
+						<privilege privilege_id="ywbl-04" description="迁出登记"	id="102014" name="迁出登记" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+			
+			 <gEUnit description="售后管理" id="gEU_shgl" name="售后管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="shgl-01" description="承租人信息变更"	id="103011" name="承租人信息变更" url=""> </privilege>	
+						<privilege privilege_id="shgl-02" description="补证业务登记"	id="103012" name="补证业务登记" url=""> </privilege>
+						<privilege privilege_id="shgl-03" description="服务事项登记"	id="103013" name="服务事项登记" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+			 <gEUnit description="档案管理" id="gEU_dagl" name="档案管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="dagl-01" description="档案查询"	id="104011" name="档案查询" url=""> </privilege>	
+						<privilege privilege_id="dagl-02" description="档案补录"	id="104012" name="档案补录" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+			 <gEUnit description="综合统计" id="gEU_zhtj" name="综合统计" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="zhtj-01" description="墓区信息一览表(市)"	id="105011" name="墓区信息一览表(市)" url=""> </privilege>
+						<privilege privilege_id="zhtj-02" description="墓区信息一览表"	id="105012" name="墓区信息一览表" url=""> </privilege>
+						<privilege privilege_id="zhtj-03" description="土地使用情况统计(市)"	id="105013" name="土地使用情况统计(市)" url=""> </privilege>
+						<privilege privilege_id="zhtj-04" description="土地使用情况统计"	id="105014" name="土地使用情况统计" url=""> </privilege>
+						<privilege privilege_id="zhtj-05" description="同期业务对比表"	id="105015" name="同期业务对比表" url=""> </privilege>
+						<privilege privilege_id="zhtj-06" description="墓型明细统计"	id="105016" name="墓型明细统计" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+			<gEUnit description="墓区管理" id="gEU_mqgl" name="墓区管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="mqgl-01" description="墓型管理"	id="106011" name="墓型管理" url=""> </privilege>
+						<privilege privilege_id="mqgl-02" description="区排管理"	id="106012" name="区排管理" url=""> </privilege>
+						<privilege privilege_id="mqgl-03" description="墓位管理"	id="106013" name="墓位管理" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+			<gEUnit description="商品管理" id="gEU_spgl" name="商品管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="spgl-01" description="入库信息"	id="107011" name="入库信息" url=""> </privilege>
+						<privilege privilege_id="spgl-02" description="出库信息"	id="107012" name="出库信息" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+			<gEUnit description="费用管理" id="gEU_fygl" name="费用管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="fygl-01" description="费用分类维护"	id="108011" name="费用分类维护" url=""> </privilege>
+						<privilege privilege_id="fygl-02" description="费用明细维护"	id="108012" name="费用明细维护" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+			<gEUnit description="分类管理" id="gEU_flgl" name="分类管理" url="">
+					<url></url>
+					<privileges>				
+						<privilege privilege_id="flgl-01" description="分类管理"	id="109011" name="分类管理" url=""> </privilege>
+					</privileges>
+			</gEUnit>
+
+	</gTUnit>			
+	
+</gUnits>

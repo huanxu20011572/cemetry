@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<wfbuilder-config>
+	<view-builder type=" mview" viewName="GOS_WFPROPERTYENTRY_VIEW">
+		<data sourceName="userList" type="string"/>
+		<data sourceName="status" type="string"/>
+		<data sourceName="creator" type="string"/>
+		<data sourceName="deptLevel" type="string"/>
+		<data sourceName="approveUnitCode" type="string"/>
+		<data sourceName="provinceId" type="long"/>
+		<data sourceName="cityId" type="long"/>
+		<data sourceName="countyId" type="long"/>
+		<data sourceName="streetId" type="long"/>
+		<data sourceName="communityId" type="long"/>
+		<data sourceName="businesstype" type="string"/>
+		<data sourceName="canOperate" type="long"/>
+		<data sourceName="systemFlag" type="string"/>
+	</view-builder>
+	<builder-category name="common" desc="">
+		<relation-builder className="com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveRelationBuilder">
+			<param relationType="value" sourceName="status" method="=" targetNames="待办" targetType="string" structType=""/>
+		</relation-builder>
+		<relation-builder className="com.topsuntech.gUnit_tjbz.gEU_approve.workflow.ApproveCreatorRelationBuilder">
+		</relation-builder> 
+	</builder-category>
+</wfbuilder-config>

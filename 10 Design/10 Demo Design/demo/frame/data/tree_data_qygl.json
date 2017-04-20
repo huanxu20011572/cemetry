@@ -1,0 +1,44 @@
+
+[{    
+    "id":1,    
+    "text":"区域管理&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序", 
+	"state":"open",   		
+    "children":[{      
+    "id":1,    
+    "text":"北京市&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序",    
+    "state":"open",    
+    "children":[{    
+        "text":"东城区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"西城区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"朝阳区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"海淀区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"丰台区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"石景山区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"门头沟区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"房山区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"通州区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"顺义区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"大兴区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"昌平区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"平谷区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"怀柔区&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"密云县&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    },{    
+        "text":"延庆县&nbsp;&nbsp;&nbsp;&nbsp;增加下级&nbsp;&nbsp;修改&nbsp;&nbsp;删除&nbsp;&nbsp;排序"
+    }]    
+}]  
+}] 

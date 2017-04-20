@@ -1,0 +1,26 @@
+
+[{    
+    "id":1,    
+    "text":"费用分类", 
+	"state":"open",   		
+    "children":[{      
+    "id":1,    
+    "text":"安葬证" 
+},{    
+    "text":"管理费",    
+    "state":"open",    
+    "children":[{    
+        "text":"墓穴管理费 ",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"墓穴工程费"
+    },{    
+        "text":"骨灰安葬"
+    },{    
+        "text":"接待费"
+    }]    
+},{    
+    "text":"工程费"   
+}]  
+}] 

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+    PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+    "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>config-generated</shortname>
+    <uri>http://www.topsuntech.com/jsptags/config-generated-taglib</uri>
+    <info>
+        A tag library used to generate config list.
+    </info>
+    
+        <tag>
+        <name>selectedJfxs</name>
+        <tagclass>com.topsuntech.gOS.config.user.jfxs.tags.JfxsSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected Jfxs.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectedLicenseCat</name>
+        <tagclass>com.topsuntech.gOS.config.license.licenseCat.tags.LicenseCatSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected LicenseCat.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectedLevel</name>
+        <tagclass>com.topsuntech.gOS.config.user.level.tags.LevelSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected Level.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectedOfficeCat</name>
+        <tagclass>com.topsuntech.gOS.config.office.officeCat.tags.OfficeCatSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected OfficeCat.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectedFirstcat</name>
+        <tagclass>com.topsuntech.gOS.config.home.firstcat.tags.FirstcatSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected Firstcat.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectedAppServerCat</name>
+        <tagclass>com.topsuntech.gOS.config.license.appServerCat.tags.AppServerCatSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected AppServerCat.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectedMpfl</name>
+        <tagclass>com.topsuntech.gOS.config.user.mpfl.tags.MpflSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected Mpfl.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>selectedBzxs</name>
+        <tagclass>com.topsuntech.gOS.config.user.bzxs.tags.BzxsSelectTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all selected Bzxs.
+        </info>
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+
+
+    
+</taglib>

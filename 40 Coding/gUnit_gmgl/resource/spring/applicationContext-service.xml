@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName">
+
+	<bean id="chargeDataService"
+		class="com.topsuntech.gUnit_gmgl.gEU_charge.service.ChargeDataService" />
+
+	<bean id="chargeTypeService"
+		class="com.topsuntech.gUnit_gmgl.gEU_charge.service.ChargeTypeService" />
+	<bean id="businessDataService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.BusinessDataService" />
+	<bean id="dictService"
+		class=" com.topsuntech.gUnit_gmgl.gEU_system.service.DictService" />
+	<bean id="cemeteryCommodityService"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.service.CemeteryCommodityService" />
+	<bean id="cemeteryTypeService"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.service.CemeteryTypeService" />
+	<bean id="cemeteryCertificateService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.CemeteryCertificateService" />
+	<bean id="cemeteryLocationService"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.service.CemeteryLocationService" />
+	<bean id="cemeteryZoneService"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.service.CemeteryZoneService" />
+	<bean id="cemeteryRegistryService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.CemeteryRegistryService" />
+	<bean id="cemeteryFileService"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.service.CemeteryFileService" />
+	<bean id="archivesCemeteryFileService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.ArchivesCemeteryFileService" />
+	<bean id="departedService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.DepartedService" />
+	<bean id="archivesDepartedService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.ArchivesDepartedService" />
+	<bean id="cemeteryChargeService"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.service.CemeteryChargeService" />
+	<bean id="archivesCemeteryChargeService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.ArchivesCemeteryChargeService" />
+	<bean id="visitReturnService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.VisitReturnService" />
+	<bean id="firstPageService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.FirstPageService" />
+	<bean id="archivesCemeteryRegistryService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.ArchivesCemeteryRegistryService">
+		<property name="dictService" ref="dictService" />
+	</bean>
+	<bean id="cemeteryServiceService"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.service.CemeteryServiceService" />
+</beans>

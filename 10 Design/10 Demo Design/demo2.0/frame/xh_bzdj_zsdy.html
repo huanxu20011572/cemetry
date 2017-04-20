@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../jscript/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+.word-4 {	color: #085b85;
+}
+.word2 {	color: #085b85;
+	text-decoration:underline;
+}
+.word-6 {	color: #085b85;
+	font-size:14px;
+}
+.word3 {	color: #085b85;
+	font-size:14px;
+}
+-->
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#cemetrery_rerent_add").click(function(){
+	 
+	  if($("input[name='checkCol'][checked]").length<1)
+	   { 
+	     alert("选择合葬数据");
+	     return false;
+       }
+    });
+});
+ 
+</script>
+</head>
+
+<body style="background-color:transparent">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td width="11" valign="top" class="td-bg"><img src="../images/right-1.jpg" /></td>
+    <td align="center" valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="31" align="left" valign="middle" style="background:url(../images/right-3.jpg)"><img src="../images/right-4.jpg" width="9" height="8" align="absmiddle" /> 当前位置 &gt;打印</td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" style="font-size:12px;">&nbsp;</td>
+      </tr>
+    </table>
+	 <table width="98%" cellpadding="0" cellspacing="0" bgcolor="#a6c6da">
+        <tr>
+		  <td width='90%'  bgcolor="#FFFFFF"></td>
+		  <td align="right" bgcolor="#FFFFFF">
+		     <form action="../frame/xh_zydj_dj.html"method="post">
+		         <input name="button" type="submit" class="button-z" id="button" value="打印" />
+		     </form>
+	      </td>
+		  <td bgcolor="#FFFFFF" align ='right'>
+		     <form action="../frame/xh_bzyw.html"method="post">
+	              <input name="button2" type="submit" class="button-z" id="button2" value="返回" />
+		     </form>
+		  </td>
+        </tr>
+      </table>
+        <table border=2 cellSpacing=0 borderColor=#cccccc cellPadding=3 width="100%" bgColor=#ffffff>
+    <tr>
+      <td rowSpan=2 width='10%' align='right'>&nbsp;故人姓名</td>
+      <td width='10%'>&nbsp;男/女</td>
+      <td width='10%'>&nbsp;</td>
+      <td width='10%' rowSpan=2 align='right'>&nbsp;租赁日期</td>
+      <td width='10%'>&nbsp;</td>
+      <td width='10%' rowspan="7">&nbsp;</td>
+      <td rowspan="7" width='40%'>&nbsp;右侧</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      
+      
+    </tr>
+    <tr>
+      <td align='right'>&nbsp;墓型</td>
+      <td colspan='2'>&nbsp;</td>
+     
+      <td align='right'>&nbsp;护盒尺寸</td>
+      <td>&nbsp;</td>
+     
+     
+    </tr>
+    <tr>
+      <td align='right'>&nbsp;安葬位置</td>
+      <td colspan='2'>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      
+    
+    </tr>
+    <tr>
+      <td align='right'>&nbsp;承租人姓名</td>
+      <td>&nbsp;</td>
+      <td align='right'>&nbsp;业务编号</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      
+     
+    </tr>
+    <tr>
+      <td align='right'>&nbsp;证件号码</td>
+      <td colspan='4'>&nbsp;</td>     
+    </tr>
+    <tr height=150>
+      <td colSpan=5 align=right>&nbsp;
+	  发证部门盖章（盖 章）<br>
+
+       20XX年X月X日
+       </td>
+       
+     
+      
+    </tr>
+  </table>
+  
+       </td>
+  </tr>
+</table>
+</body>
+</html>

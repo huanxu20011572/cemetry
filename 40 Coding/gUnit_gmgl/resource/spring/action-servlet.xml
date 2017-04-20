@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName">
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+	</bean>
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="charge/chargeTypeController.fj">chargeTypeController</prop>
+				<prop key="charge/chargeDataController.fj">chargeDataController</prop>
+ 				<prop key="dict/dictController.fj">dictController</prop>
+ 				<prop key="file/cemeteryFileController.fj">cemeteryFileController</prop>
+ 				<prop key="file/archivesCemeteryFileController.fj">archivesCemeteryFileController</prop>
+				
+				<prop key="business/firstPageController.fj">firstPageController</prop>
+				<prop key="business/businessDataController.fj">businessDataController</prop>
+				<prop key="business/visitReturnController.fj">visitReturnController</prop>
+				<prop key="business/cemeteryRegistryController.fj">cemeteryRegistryController</prop>
+				<prop key="business/departedController.fj">departedController</prop>
+				<prop key="archives/archivesDepartedController.fj">archivesDepartedController</prop>
+
+				<prop key="cemetery/cemeteryChargeController.fj">cemeteryChargeController</prop>
+				<prop key="archives/archivesCemeteryChargeController.fj">archivesCemeteryChargeController</prop>
+				<prop key="cemetery/cemeteryCommodityController.fj">cemeteryCommodityController</prop>
+				<prop key="cemetery/cemeteryTypeController.fj">cemeteryTypeController</prop>
+				<prop key="cemetery/cemeteryLocationController.fj">cemeteryLocationController</prop>
+				<prop key="cemetery/cemeteryZoneController.fj">cemeteryZoneController</prop>
+
+				<prop key="archives/cemeteryCertificateController.fj">cemeteryCertificateController</prop>
+				<prop key="archives/archivesCemeteryRegistryController.fj">archivesCemeteryRegistryController</prop>
+			    <prop key="archives/cemeteryServiceController.fj">cemeteryServiceController</prop>
+			    
+			    <prop key="reprot/reprotController.fj">reprotController</prop>
+			
+			</props>
+		</property>
+	</bean>
+
+	<bean id="methodResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName">
+			<value>method</value>
+		</property>
+		<property name="defaultMethodName">
+			<value>list</value>
+		</property>
+	</bean>
+
+    <bean id="multipartResolver"  
+            class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+            <!-- set the max upload size100MB -->  
+            <property name="maxUploadSize">  
+                <value>104857600</value>  
+            </property>  
+            <property name="maxInMemorySize">  
+                <value>4096</value>  
+            </property>  
+        </bean>  
+        
+    <bean id="reprotController"
+		class="com.topsuntech.gUnit_gmgl.gEU_reprot.framework.ReprotController">
+		<property name="methodNameResolver" ref="methodResolver" />
+	</bean>
+
+    <bean id="cemeteryFileController"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.framework.CemeteryFileController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryFileService" ref="cemeteryFileService" />
+	</bean>
+    <bean id="archivesCemeteryFileController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.ArchivesCemeteryFileController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="archivesCemeteryFileService" ref="archivesCemeteryFileService" />
+	</bean>
+
+	<bean id="chargeTypeController"
+		class="com.topsuntech.gUnit_gmgl.gEU_charge.framework.ChargeTypeController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="chargeTypeService" ref="chargeTypeService" />
+	</bean>
+
+	<bean id="chargeDataController"
+		class="com.topsuntech.gUnit_gmgl.gEU_charge.framework.ChargeDataController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="chargeDataService" ref="chargeDataService" />
+	</bean>
+
+	<bean id="dictController"
+		class="com.topsuntech.gUnit_gmgl.gEU_system.framework.DictController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="dictService" ref="dictService" />
+	</bean>  
+	
+	<bean id="businessDataController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.BusinessDataController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="businessDataService" ref="businessDataService" />
+	</bean>
+	<bean id="cemeteryCommodityController"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.framework.CemeteryCommodityController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryCommodityService" ref="cemeteryCommodityService" />
+	</bean>
+	<bean id="cemeteryTypeController"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.framework.CemeteryTypeController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryTypeService" ref="cemeteryTypeService" />
+	</bean>
+	<bean id="cemeteryCertificateController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.CemeteryCertificateController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryCertificateService" ref="cemeteryCertificateService" />
+	</bean>
+	<bean id="cemeteryLocationController"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.framework.CemeteryLocationController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryLocationService" ref="cemeteryLocationService" />
+			<property name="dictService" ref="dictService" />
+	</bean>
+	<bean id="cemeteryZoneController"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.framework.CemeteryZoneController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryZoneService" ref="cemeteryZoneService" />
+	</bean>
+	<bean id="cemeteryRegistryController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.CemeteryRegistryController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryRegistryService" ref="cemeteryRegistryService" />
+	</bean>
+	<bean id="departedController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.DepartedController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="departedService" ref="departedService" />
+	</bean>
+	<bean id="archivesDepartedController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.ArchivesDepartedController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="archivesDepartedService" ref="archivesDepartedService" />
+	</bean>
+	<bean id="cemeteryChargeController"
+		class="com.topsuntech.gUnit_gmgl.gEU_cemetery.framework.CemeteryChargeController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryChargeService" ref="cemeteryChargeService" />
+	</bean>
+	<bean id="archivesCemeteryChargeController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.ArchivesCemeteryChargeController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="archivesCemeteryChargeService" ref="archivesCemeteryChargeService" />
+	</bean>
+	<bean id="visitReturnController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.VisitReturnController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="visitReturnService" ref="visitReturnService" />
+	</bean>
+	<bean id="firstPageController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.FirstPageController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="firstPageService" ref="firstPageService" />
+	</bean>
+	<bean id="archivesCemeteryRegistryController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.ArchivesCemeteryRegistryController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryLocationService" ref="cemeteryLocationService" />
+		
+		<property name="archivesCemeteryRegistryService" ref="archivesCemeteryRegistryService" />
+	</bean>
+	<bean id="cemeteryServiceController"
+		class="com.topsuntech.gUnit_gmgl.gEU_business.framework.CemeteryServiceController">
+		<property name="methodNameResolver" ref="methodResolver" />
+		<property name="cemeteryServiceService" ref="cemeteryServiceService" />
+	</bean>
+</beans>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+<class name="com.topsuntech.gUnit.gEU_util.user.entity.UserInfo" table="gos_user">
+	<id column="ID" name="id" type="long">
+			<generator class="sequence">
+				<param name="sequence">GOS_USER_SEQ</param>
+			</generator>
+	</id>
+	
+	<property column="LOGINID"  name="loginId" type="string"/>
+	
+	<property column="PASSWORD"  name="password" type="string"/>
+	
+	<property column="NAME"  name="name" type="string"/>
+	
+	<property column="GENDER"  name="gender" type="string"/>
+	
+	<property column="DEPTID"  name="deptId" type="long"/>
+	
+	<property column="NUM"  name="num" type="string"/>
+	
+	<property column="JIGUAN"  name="jiguan" type="string"/>
+	
+	<property column="BIRTHDAY"  name="birthDay" type="date"/>
+	
+	<property column="BIRTHLOCATION"  name="birthLocation" type="string"/>
+	
+	<property column="NATION"  name="nation" type="string"/>
+	
+	<property column="XUELI"  name="xueli" type="string"/>
+	
+	<property column="XUEWEI"  name="xuewei" type="string"/>
+	
+	<property column="ZHUANYE"  name="zhuanye" type="string"/>
+	
+	<property column="YUANXIAO"  name="yuanxiao" type="string"/>
+	
+	<property column="ZHENGZHIMIANMAO"  name="zhengZhiMianMao" type="string"/>
+	
+	<property column="RUDANGSHIJIAN"  name="ruDangShiJian" type="date"/>
+	
+	<property column="WORKYEAR"  name="workYear" type="date"/>
+	
+	<property column="CALLNAME"  name="callName" type="string"/>
+	
+	<property column="POSITIONID"  name="positionId" type="string"/>
+	
+	<property column="IDENTITYNUM"  name="identityNum" type="string"/>
+	
+	<property column="WORKNUM"  name="workNum" type="string"/>
+	
+	<property column="ADDRESS"  name="address" type="string"/>
+	
+	<property column="HOMEPHONE"  name="homePhone" type="string"/>
+	
+	<property column="OFFICEPHONE"  name="officePhone" type="string"/>
+	
+	<property column="MOBILE"  name="mobile" type="string"/>
+	
+	<property column="PUBLICMONEYNUM"  name="publicMoneyNum" type="string"/>
+	
+	<property column="OLDSUPPORTNUM"  name="oldSupportNum" type="string"/>
+	
+	<property column="HOUSEPAYNUM"  name="housePayNum" type="string"/>
+	
+	<property column="SECURITYNUM"  name="securityNum" type="string"/>
+	
+	<property column="CREATEDATE"  name="createDate" type="date"/>
+	
+	<property column="CREATORID"  name="creatorId" type="long"/>
+	
+	<property column="PRIORITY"  name="priority" type="string"/>
+	
+	<property column="MEMO"  name="memo" type="string"/>
+	
+	<property column="DELETED"  name="deleted" type="long"/>
+	
+	<property column="BIYETIME"  name="biyeTime" type="date"/>
+	
+	<property column="XZYEAR"  name="xzyear" type="date"/>
+	
+	<property column="RETIRE"  name="retire" type="string"/>
+	
+	<property column="REGISTSTATUS"  name="registStatus" type="long"/>
+	
+	<property column="DELETEREASON"  name="deleteReason" type="string"/>
+	
+	<property column="WORKDEPTID"  name="workDeptId" type="long"/>
+	
+	<property column="TYPE"  name="type" type="long"/>
+	
+	<property column="EMAILID"  name="emailId" type="string"/>
+	
+	<property column="CANSMS"  name="cansms" type="long"/>
+	
+	<property column="CANUMBER"  name="canumber" type="string"/>
+	
+	<property column="SED_DEPT_ID"  name="sedDeptId" type="long"/>
+	
+	<property column="ROLE_ID"  name="roleId" type="long"/>
+	
+	
+	
+</class>
+</hibernate-mapping>

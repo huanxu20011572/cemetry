@@ -1,0 +1,75 @@
+.buttonOut, .buttonOver, .buttonDown, .buttonSelected {
+    font-family: tahoma, arial;
+    font-size: 8pt;
+    border: 1 solid #E7E7E6; 
+    padding: 1; 
+    cursor: default;
+    padding-left: 5;
+    padding-right: 5;
+    height: 16;
+}
+
+.buttonIcon {
+    vertical-align: middle;
+}
+
+.buttonOut {
+    filter: gray();
+}
+
+.buttonOver {
+    border-top: 1 solid buttonhighlight;
+    border-left: 1 solid buttonhighlight;
+    border-bottom: 1 solid buttonshadow; 
+    border-right: 1 solid buttonshadow; 
+}
+
+.buttonDown {
+    border-top: 1 solid buttonshadow;
+    border-left: 1 solid buttonshadow;
+    border-bottom: 1 solid buttonhighlight; 
+    border-right: 1 solid buttonhighlight;  
+}
+
+.buttonSelected {
+    border-top: 1 solid buttonshadow;
+    border-left: 1 solid buttonshadow;
+    border-bottom: 1 solid buttonhighlight; 
+    border-right: 1 solid buttonhighlight; 
+    background-color: #F6F5F5;
+}
+
+.break {
+    width: 2; 
+    height: 15; 
+    border-left: 1 solid buttonshadow;
+    border-right: 1 solid buttonhighlight;
+}
+
+.toolbarStart {
+    width: 3; 
+    height: 14; 
+    border-top: 1 solid buttonhighlight;
+    border-left: 1 solid buttonhighlight;
+    border-bottom: 1 solid buttonshadow;
+    border-right: 1 solid buttonshadow;
+    margin-left: 1;
+    margin-right: 3;
+}
+
+.toolbarHolder {
+    display: inline-block;
+    border: 2 groove; 
+    margin: 0;
+    background: #E7E7E6;
+}
+.ConfigTable {
+	width: 100%;
+}
+.tr4 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	background-color: #FBF7EC;
+	text-align: center;
+}

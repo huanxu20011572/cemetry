@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="gb2312"?> 
+<classes>
+	
+	<class type="user">
+		<name>com.topsuntech.TableTest</name>
+		<desc>测试表</desc>
+	</class>	
+	<class type="test">
+		<name>com.topsuntech.AllDataType</name>
+		<desc>所有数据类型测试表</desc>
+	</class>
+
+  
+    <!-- yhbm -->
+	<!--
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.priority.Role</name>
+		<desc>角色表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.priority.Priority</name>
+		<desc>权限表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.user.User</name>
+		<desc>用户表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.office.Office</name>
+		<desc>部门表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.office.OfficeLeader</name>
+		<desc>部门领导表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.region.Region</name>
+		<desc>区域表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.userext.Userext</name>
+		<desc>用户扩展表</desc>
+	</class>
+		-->
+    <!-- addressbook -->	
+	<class type="user">
+		<name>com.topsuntech.gOS.addressbook.en.AddressBook</name>
+		<desc>地址簿表</desc>
+	</class>    
+
+    <!-- logger -->	
+	<class type="user">
+		<name>com.topsuntech.gOS.logger.en.ApplicationLog</name>
+		<desc>日志表</desc>
+	</class>
+	
+	<!-- txl -->
+	<class type="user">
+		<name>com.topsuntech.gOS.contact.en.contact.Contact</name>
+		<desc>联系人</desc>
+	</class>	
+	<class type="user">
+		<name>com.topsuntech.gOS.card.en.card.Card</name>
+		<desc>名片</desc>
+	</class>	
+	<class type="user">
+		<name>com.topsuntech.gOS.pubcontact.en.pubcontact.PubContact</name>
+		<desc>公共联系人</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.generator.ui.projectmanage.en.projectmanage.ProjectManage</name>
+		<desc>项目</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.generator.ui.autoconfig.en.autoconfig.AutoConfig</name>
+		<desc>自动配置</desc> 
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.generator.ui.autotable.en.autotable.AutoTable</name>
+		<desc>自动生成表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.generator.ui.globalconfig.en.globalconfig.GlobalConfig</name>
+		<desc>自动生成器全局配置</desc>
+	</class>
+	
+	<class type="user">
+		<name>com.topsuntech.gOS.projectmanagement.project.en.project.Project</name>
+		<desc>工程项目</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.schedulemanagement.schedule.en.schedule.schedule</name>
+		<desc>上报计划通知</desc>
+	</class>
+
+	<class type="user">
+		<name>com.topsuntech.gOS.testmodule.testsingle.en.testsingle.TestSingle</name>
+		<desc>测试单表</desc>
+	</class>
+
+	<class type="user">
+		<name>com.ietech.test.testmulti.en.testmulti.TestMulti</name>		
+		<desc>测试多表1</desc>
+	</class>
+	<class type="user">
+		<name>com.ietech.test.testmulti.en.testmultidept.TestMultiDept</name>		
+		<desc>测试多表2</desc>
+	</class>
+	
+	<class type="user">
+		<name>com.thirdparty.gOS.autocode.util.Code</name>		
+		<desc>物资编码</desc>
+	</class>
+	
+	<!--       wdgl            -->
+	<class>
+		<name>com.topsuntech.gOS.macro.en.macro.Macro</name>
+		<desc>宏</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.stable.en.stable.Stable</name>
+		<desc>静态表格</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.dtable.en.dtable.Dtable</name>
+		<desc>动态表格</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.stencil.en.stencil.Stencil</name>
+		<desc>模版</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.document.en.document.Document</name>
+		<desc>文档</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.macroreplace.en.macroreplace.MacroReplace</name>
+		<desc>宏替换</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.doctype.en.doctype.Doctype</name>
+		<desc>文档类型</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.section.en.section.Section</name>
+		<desc>段落</desc>
+	</class>
+	<!--       wdgl            -->
+	
+	<!-- GOS_DICTIONARY -->
+	<class>
+		<name>com.topsuntech.gOS.dictionary.Dictionary</name>
+		<desc>字典表</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.dictionary.DictionaryItem</name>
+		<desc>字典项</desc>
+	</class>
+	<class>
+		<name>com.topsuntech.gOS.dictionary.DictionaryProxy</name>
+		<desc>字典表</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.dictionary.DictionaryItemProxy</name>
+		<desc>字典项</desc>
+	</class>
+	
+	
+
+	<class>
+		<name>com.topsuntech.gOS.dynamicQuery.en.dynamicQuery.DynamicQuery</name>
+		<desc>动态查询</desc>
+	</class>	
+	
+	<class>
+		<name>com.topsuntech.gOS.dynamicQuery.en.dynamicQuery.QueryInstance</name>
+		<desc>带参数的动态查询实例的信息</desc>
+	</class>	
+	
+	<class>
+		<name>com.topsuntech.gOS.dynamicQuery.en.dynamicQuery.QueryParam</name>
+		<desc>带参数的动态查询的查询实例的参数信息</desc>
+	</class>
+	<class>
+		<name>com.topsuntech.gOS.meta.MetaResource</name>
+		<desc>元数据资源</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gOS.meta.MetaProperty</name>
+		<desc>元数据属性</desc>
+	</class>
+	
+	
+<!-- 社会救助 -->
+	<class>
+		<name>com.topsuntech.gUnit.gEU_dictionary.entity.MjzzDict</name>
+		<desc>数据字典</desc>
+	</class>
+		
+	<!-- 救助管理 -->			
+	
+	
+	<!-- 救助管理 -->			
+	
+
+
+</classes>
+

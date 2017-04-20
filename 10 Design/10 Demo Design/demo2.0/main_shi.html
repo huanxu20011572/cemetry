@@ -1,0 +1,183 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>工作区</title>
+</head>
+<body bgcolor="#268ef0">
+<script type="text/jscript">
+var isShow=true;
+
+function changeLeft(){
+	var leftTab = document.all("leftTab");
+	var contentTab = document.all("contentTab");
+	var top2 = document.all("top2");
+	var imgName = document.all("imgName");
+	if(isShow==true){
+		leftTab.style.display = 'none';
+		contentTab.style.width='100%';
+		isShow=false;
+		imgName.src="images/left-hid.jpg";
+		top2.style.left = "0";
+	}else{
+		leftTab.style.display = '';
+		contentTab.style.width='';
+		isShow=true;
+		imgName.src="images/left-dis.jpg";
+		top2.style.left = "195";
+	}
+}
+
+function changetop(){
+	var imgName1 = document.all("imgName1");
+	var top2 = document.all("top1");
+	if (parent.full.rows.indexOf("0,*,")!=-1){
+		parent.full.rows="109,*,"+parent.full.rows.split(",")[2]
+		imgName1.src="images/top-dis.gif";
+	}
+	else{
+		parent.full.rows="0,*,"+parent.full.rows.split(",")[2]
+		imgName1.src="images/top-hid.gif";
+	}
+}
+
+function showHidden(index){
+	for (var i=1;i<=90;i++){
+		if(document.getElementById ("sl"+i) != null && document.getElementById ("dl"+i) != null){
+			document.getElementById ("sl"+i).className ="mar-t leftdiv-bt-2"; 
+			document.getElementById ("dl"+i).style.display="none";
+		}
+	}
+	document.getElementById ("sl"+index).className ="mar-t leftdiv-bt-1"; 
+	document.getElementById ("dl"+index).style.display="block";
+}
+
+function showHidden1(index){
+	for (var i=1;i<=900;i++){
+		if(document.getElementById ("b"+i) != null){
+			document.getElementById ("b"+i).className ="td-line-2 word-1"; 
+		}
+	}
+	document.getElementById ("b"+index).className ="td-line-1 word-2"; 
+}
+
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td width="195" align="right" valign="top" bgcolor="#60c6f6" id="leftTab"><table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="214" height="10"><img src="images/left-4.jpg" width="195" height="55" /></td>
+        </tr>
+      <tr>
+        <td height="300" align="center" valign="top">
+          <div style="overflow:auto; width:90%;">
+			<!-- 档案管理-->
+          <table border="0" align="center" cellpadding="0" cellspacing="0" class="mar-t leftdiv-bt-2"id="sl4">
+            <tr>
+              <td height="27" valign="middle"  class="" style="cursor:pointer" onClick="showHidden(4)">档案管理</td>
+            </tr>
+          </table>
+          <table width="154" border="0" align="center" cellpadding="0" cellspacing="0" id="dl4" style="display:none">
+            <tr>
+              <td align="center" bgcolor="#7bd0f8">
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b41" onClick="showHidden1(41)"><a href="frame/archives-query.html" target="frame1">档案查询</a></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="images/left-3.jpg" width="154" height="10"></td>
+            </tr>
+          </table>
+		  <!-- 综合统计-->
+          <table border="0" align="center" cellpadding="0" cellspacing="0" class="mar-t leftdiv-bt-2"id="sl5">
+            <tr>
+              <td height="27" valign="middle"  class="" style="cursor:pointer" onClick="showHidden(5)">综合统计</td>
+            </tr>
+          </table>
+          <table width="154" border="0" align="center" cellpadding="0" cellspacing="0" id="dl5" style="display:none">
+            <tr>
+              <td align="center" bgcolor="#7bd0f8"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b53" onClick="showHidden1(53)"><a href="frame/report-sjjgywtj.html" target="frame1">墓区信息一览表</a></td>
+                </tr>
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b54" onClick="showHidden1(54)"><a href="frame/report-sjztywtj.html" target="frame1">业务情况统计表</a></td>
+                </tr>
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b56" onClick="showHidden1(56)"><a href="frame/report-tdsj.html" target="frame1">土地使用情况统计</a></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="images/left-3.jpg" width="154" height="10"></td>
+            </tr>
+          </table>
+          <!-- 系统管理 -->
+          <table border="0" align="center" cellpadding="0" cellspacing="0" class="mar-t leftdiv-bt-2"id="sl10">
+            <tr>
+              <td height="27" valign="middle"  class="" style="cursor:pointer" onClick="showHidden(10)">系统管理</td>
+            </tr>
+          </table>
+          <table width="154" border="0" align="center" cellpadding="0" cellspacing="0" id="dl10" style="display:none">
+            <tr>
+              <td align="center" bgcolor="#7bd0f8"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b101" onClick="showHidden1(101)"><a href="frame/xt_jggl.html" target="frame1">机构管理</a></td>
+                </tr>
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b102" onClick="showHidden1(102)"><a href="frame/jsgl.html" target="frame1">角色管理</a></td>
+                </tr>
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b103" onClick="showHidden1(103)"><a href="frame/yhgl.html" target="frame1">用户管理</a></td>
+                </tr>
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b104" onClick="showHidden1(104)"><a href="frame/zdgl.html" target="frame1">字典管理</a></td>
+                </tr>
+             </table></td>
+            </tr>
+            <tr>
+              <td><img src="images/left-3.jpg" width="154" height="10"></td>
+            </tr>
+          </table>
+          <!-- 数据对接 -->
+          <table border="0" align="center" cellpadding="0" cellspacing="0" class="mar-t leftdiv-bt-2"id="sl6">
+            <tr>
+              <td height="27" valign="middle"  class="" style="cursor:pointer" onClick="showHidden(6)">公墓数据对接</td>
+            </tr>
+          </table>
+          <table width="154" border="0" align="center" cellpadding="0" cellspacing="0" id="dl6" style="display:none">
+            <tr>
+              <td align="center" bgcolor="#7bd0f8"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b61" onClick="showHidden1(61)"><a href="frame/ws_mudi.html" target="frame1">公墓基础信息</a></td>
+                </tr>
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b62" onClick="showHidden1(62)"><a href="frame/ws_feiyong.html" target="frame1">公墓费用信息</a></td>
+                </tr>
+                <tr>
+                  <td height="26" class="td-line-2 word-1" id="b63" onClick="showHidden1(63)"><a href="frame/ws_anzang.html" target="frame1">公墓安葬信息</a></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="images/left-3.jpg" width="154" height="10"></td>
+            </tr>
+          </table>
+
+          </div>
+          </td>
+        </tr>
+      <tr>
+        <td height="10">&nbsp;</td>
+        </tr>
+    </table></td>
+    <td valign="top" id="contentTab" class="td-bg-2"><iframe frameborder="0"  width="100%" src="frame/default.html" height="100%" scrolling="auto" id="frame1" name="frame1"allowtransparency="true"  ></iframe></td>
+  </tr>
+</table>
+<div style="position:absolute; left: 50%; top: 0px;" id="top1"><img src="images/top-dis.gif" width="75" height="9" style="cursor:pointer;" id="imgName1" onClick="changetop()"/></div>
+
+<div style="position:absolute; left: 195px; top:40%" id="top2"><img src="images/left-dis.jpg" width="9" height="75" style="cursor:pointer;" id="imgName" onClick="changeLeft()"/></div>
+</body>
+</html>

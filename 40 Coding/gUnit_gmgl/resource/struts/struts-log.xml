@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+	<form-bean name="applicationLogForm" type="com.topsuntech.gOS.logger.actions.ApplicationLogForm" />
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+  </global-forwards>
+  <!-- ========== Action Mapping Definitions ============================== -->
+
+  <action-mappings>
+    <action path="/logSelect" type="com.topsuntech.gOS.logger.actions.ApplicationLogAction" scope="session">
+      <forward name="detail" path="/log_detail.jsp"/>
+      <forward name="searchResult" path="/log_search_result.jsp"/>
+      <forward name="error" path="/log_search_result.jsp"/>
+    </action>      
+    
+    <action path="/delete" type="com.topsuntech.gOS.logger.actions.ApplicationLogAction">
+      <forward name="success" path="/logSelect.do?action=searchResult"/>
+    </action>
+
+  </action-mappings>
+
+  <!-- ========== Message Resources Definitions =========================== -->
+</struts-config>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+	<form-bean name="userForm" type="com.topsuntech.gOS.user.actions.UserForm" />
+	<!--   add by lzx  -->
+	<form-bean name="registForm" type="com.topsuntech.gOS.user.actions.RegistForm" />
+	<form-bean name="delReasonForm" type="com.topsuntech.gOS.user.actions.DelReasonForm" />
+	<form-bean name="searchForm" type="com.topsuntech.gOS.user.actions.SearchForm" />
+	<!--   add by lzx finished -->	
+	<form-bean name="SjUserForm" type="com.topsuntech.gUnit.gEU_system.framework.actionforms.SjUserForm" />
+	
+	<form-bean name="userQueryForm" type="com.topsuntech.gOS.identity.model.action.UnavailDynaActionForm">
+		<form-property name="dept" type="java.lang.String"/>
+		<form-property name="deptid" type="java.lang.Long"/>
+		<form-property name="userName" type="java.lang.String"/>
+		<form-property name="roleId" type="java.lang.String"/>
+		<form-property name="priorityId" type="java.lang.String"/>
+		<form-property name="priorityName" type="java.lang.String"/>
+		<form-property name="category" type="java.lang.String"/>
+		<form-property name="currentPage" type="java.lang.Integer"/>
+	</form-bean>
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+  </global-forwards>
+  <!-- ========== Action Mapping Definitions ============================== -->
+
+  <action-mappings>
+    <action type="org.apache.struts.actions.SwitchAction" path="/toModule" />
+
+    <action path="/userUpdate" name="userForm" type="com.topsuntech.gOS.user.actions.UserAction" scope="session">
+      <forward name="success" path="/userSelect.do?action=list" />
+      <forward name="edit" path="/user_edit.jsp" />
+      <forward name="error" path="/user_edit.jsp" />
+      <forward name="refresh" path="/refresh.jsp" />
+    </action>
+    
+    <action path="/userInfoModify" name="userForm" type="com.topsuntech.gOS.user.actions.UserAction" scope="session">
+      <forward name="success" path="/../../index.do" redirect="true"/>
+      <forward name="modify" path="/userinfo_modify.jsp" />
+      <forward name="error" path="/userinfo_modify.jsp" />
+    </action>
+
+    <action path="/userAdd" name="userForm" type="com.topsuntech.gOS.user.actions.UserAction" scope="session">
+      <forward name="add" path="/user_add.jsp"/>    
+      <forward name="searchAdd" path="/user_search_add.jsp"/>    
+      <forward name="success" path="/userSelect.do?action=list"/>
+      <forward name="error" path="/user_add.jsp"/>
+    </action>
+
+    <action path="/userClone" name="userForm" type="com.topsuntech.gOS.user.actions.UserAction" scope="session">
+      <forward name="success" path="/userSelect.do?action=list"/>
+      <forward name="clone" path="/user_clone.jsp"/>
+      <forward name="error" path="/user_clone.jsp"/>
+    </action>
+
+    <action path="/userDelete" type="com.topsuntech.gOS.user.actions.UserAction">
+      <forward name="confirm" path="/user_delete_confirm.jsp"/>
+      <forward name="success" path="/userSelect.do?action=list"/>
+    </action>
+
+    <action path="/userDeleteAll" type="com.topsuntech.gOS.user.actions.UserAction">
+      <forward name="deleteConfirm" path="/user_deleteall_confirm.jsp"/>
+      <forward name="changeRoleConfirm" path="/user_changeall_confirm.jsp"/>
+      <forward name="success" path="/userSelect.do?action=list"/>
+    </action>
+
+    <action path="/actorSelect" type="com.topsuntech.gOS.user.actions.UserAction">
+      <forward name="success" path="/actor_priority_detail.jsp"/>
+    </action>
+    
+    <action path="/userSelect" type="com.topsuntech.gOS.user.actions.UserAction">
+      <forward name="showPriority" path="/user_priority_detail.jsp"/>
+      <forward name="success" path="/user_detail.jsp"/>
+      <forward name="list" path="/user_list.jsp"/>
+      <forward name="search" path="/user_search.jsp"/>
+      <forward name="searchResult" path="/user_search_result.jsp"/>
+      <forward name="listByDept" path="/user_listByDept.jsp"/> 
+      <forward name="viewByDept" path="/user_viewByDept.jsp"/>     
+    </action>
+	 <action path="/PriorityDetail"  type="com.topsuntech.gOS.user.actions.UserAction" >    
+		 <forward name="showPriority" path="/../zxt_mgm/subman_23.jsp"/>
+	 </action>
+	 <action path="/ZiPriorityDetail"  type="com.topsuntech.gOS.user.actions.UserAction" >    
+		 <forward name="showPriority" path="/../zxt_mgm/zisubman_23.jsp"/>
+	 </action>
+    <action path="/userChoose" type="com.topsuntech.gOS.user.actions.UserAction">
+      <forward name="officeChoose" path="/main/system/office_mgm/office_choose.jsp" contextRelative="true"/> 
+      <forward name="actorChoose" path="/actor_choose.jsp"/>               
+      <forward name="listActor" path="/actor_list.jsp"/>
+      <forward name="priority" path="/user_priority_detail.jsp"/>
+    </action>    
+    
+    <!--   add by lzx  Regist-->
+    <action path="/registAdd" name="registForm" type="com.topsuntech.gOS.user.actions.RegistAction" scope="session">
+      <forward name="success" path="/user_regist_result.jsp" />
+      <forward name="error" path="/user_regist.jsp" />
+    </action>
+    
+    <action path="/registCheck" name="registForm" type="com.topsuntech.gOS.user.actions.RegistAction" scope="session">
+      <forward name="list" path="/userSelect.do?action=list"/>
+      <forward name="listByDept" path="/user_listByDept.jsp"/>
+    </action>
+    
+    <action path="/modify" name="registForm" type="com.topsuntech.gOS.user.actions.RegistAction" scope="session">
+      <forward name="showmodify" path="/usermodify.jsp"/>
+      <forward name="success" path="/modifyresult.jsp"/>
+    </action>
+    
+    <!---->
+    
+    <action path="/delSelect" name="delReasonForm" type="com.topsuntech.gOS.user.actions.DelReasonAction" scope="session">
+      <forward name="list" path="/delete_list.jsp" />
+      <forward name="listByDeptids" path="/delete_listByDepts.jsp" />
+      <forward name="error" path="/delete_list.jsp" />
+    </action>
+    
+    <action path="/userSearch" name="searchForm" type="com.topsuntech.gOS.user.actions.SearchAction" scope="session">
+    	<forward name="search" path="/user_search_new.jsp"/>
+    	<forward name="searchresult" path="/user_search_list.jsp"/>
+    </action>
+    <!--   add by lzx finished -->
+    
+    <!--   add by lxr start -->
+    <action path="/updateUserRole"  type="com.topsuntech.gUnit.gEU_util.user.framework.actions.UserAction" 
+      parameter="method" scope="request">
+      
+      <forward name="success" path="/userSearch.do?action=searchresult" />
+    </action>    
+    <!--   add by lxr finished -->
+    
+    <!-- added by pengzuocong start -->
+	<action path="/editPassword" type="com.topsuntech.gUnit.gEU_util.user.framework.actions.UserAction" 
+      parameter="method" scope="request">	  
+	</action>
+	<!-- added by pengzuocong end -->
+	
+	<!-- ========== New Action Definitions ============================== -->
+	
+	<action path="/userQueryList" name="userQueryForm" type="com.topsuntech.gOS.identity.model.action.IdyMethodAction" parameter="userQuery.execute:userList" scope="session">
+  		<forward name="success" path="/user_list.jsp" />
+  	</action>
+  	
+	<action path="/saveUser" name="SjUserForm" type="com.topsuntech.gOS.identity.user.action.UserAction" parameter="doMethod">
+    	<forward name="success" path="/user_redirect_list.jsp" />
+
+  	</action>
+  
+  	<action path="/deleteUser" name="userForm" type="com.topsuntech.gOS.identity.user.action.UserAction" parameter="doMethod">
+    	<forward name="success" path="/userActionForward.do"/>
+  	</action>
+  
+  	<action path="/showUser" type="com.topsuntech.gOS.identity.user.action.UserAction" parameter="doMethod">
+    	<forward name="success" path="/user_edit.jsp"/>
+  	</action>
+  	<action path="/queryUser" type="com.topsuntech.gOS.identity.user.action.UserAction" parameter="doMethod">
+    	<forward name="success" path="/user_detail.jsp"/>
+  	</action>
+
+
+  	<action path="/updateUser" name="SjUserForm" type="com.topsuntech.gOS.identity.user.action.UserAction" parameter="doMethod">
+    	<forward name="success" path="/userActionForward.do" />
+  	</action>
+  
+  	<action path="/changePassword" name="userForm" type="com.topsuntech.gOS.identity.user.action.UserAction" parameter="doMethod">
+    	<forward name="success" path="/userActionForward.do"/>
+  	</action>
+  	
+  	<action path="/changePwd"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/userActionForward.do"/>
+  	</action>
+
+	<action path="/reSaveUser"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/userActionForward.do"/>
+  	</action>
+
+  	<!-- ========== forward action ====== -->
+  	<action path="/userActionForward" type="com.topsuntech.gOS.identity.model.action.ParameterForwardAction" parameter="inputPath">
+	    <forward name="allList" path="user_redirect_allList.jsp" redirect="true"/>
+	    <forward name="subUsers" path="user_redirect_subUsers.jsp" redirect="true"/>
+	    <forward name="deptUsers" path="/../../../tree/user/bendept_usermanager.jsp" redirect="true"/>
+    </action>
+    
+    
+    <!-- ========== ajj Action Definitions ====== -->
+  	<action path="/editMyPassword" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="method">
+    	<forward name="success" path="/pwdclose.jsp"/>
+  	</action>
+  	
+  	<action path="/showChoosePriorityRole" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/priority_role_choose.jsp"/>
+    	<forward name="rolesFrame" path="/priority_role_choose_roles_frame.jsp"/>
+  	</action>
+  	
+ <action path="/showUserProAll" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/user_pro.jsp"/>
+  	</action>
+
+  	<action path="/updateSystemRoleAndPriority" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+  	</action>
+
+   <action path="/showSysList" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/porperty_list.jsp"/>    	
+  	</action>
+  	
+   <action path="/updatePorperty" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+    	<forward name="success" path="/update_success.jsp"/>    	
+  	</action>
+  </action-mappings>
+  
+  <message-resources
+    parameter="com.topsuntech.gOS.user.ApplicationResources"
+    null="false" />
+  <!-- ========== Message Resources Definitions =========================== -->
+</struts-config>

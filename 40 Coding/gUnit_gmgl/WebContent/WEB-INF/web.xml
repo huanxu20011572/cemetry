@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee-web-app_2_4.xsd" version="2.4">
+	<display-name>bj_cemetery</display-name>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+<!-- 	spring begin -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/applicationContext*.xml,classpath*:topsun/applicationContext*.xml</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>actionfj</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath*:spring/action-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>actionfj</servlet-name>
+		<url-pattern>*.fj</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*.fj</url-pattern>
+	</filter-mapping>
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<filter>
+		<filter-name>hibernateFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+<!-- 	spring end -->
+
+<!-- topsun begin -->
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.topsuntech.gOS.sso.ssoimpl.server.LoginFilter</filter-class>
+		<init-param>
+			<param-name>loginState</param-name>
+			<param-value>com.topsuntech.gOS.sso.loginimpl.server.LoginUserCodeState</param-value>
+		</init-param>
+		<init-param>
+			<param-name>loginActionUrl</param-name>
+			<param-value>/gUnit_gmgl/login.do</param-value>
+		</init-param>
+		<init-param>
+			<param-name>validateLoginState</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>loginUrl</param-name>
+			<param-value>/gUnit_gmgl/login_timeout.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>excludeUrl</param-name>
+			<param-value>/gUnit_gmgl/,/gUnit_gmgl/login.do,/gUnit_gmgl/login.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>LoginFilterfj</filter-name>
+		<filter-class>com.topsuntech.gOS.sso.ssoimpl.server.LoginFilter</filter-class>
+		<init-param>
+			<param-name>loginState</param-name>
+			<param-value>com.topsuntech.gOS.sso.loginimpl.server.LoginUserCodeState</param-value>
+		</init-param>
+		<init-param>
+			<param-name>loginActionUrl</param-name>
+			<param-value>/gUnit_gmgl/login.do</param-value>
+		</init-param>
+		<init-param>
+			<param-name>validateLoginState</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>loginUrl</param-name>
+			<param-value>/gUnit_gmgl/login_timeout.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>excludeUrl</param-name>
+			<param-value>/gUnit_gmgl/,/gUnit_gmgl/login.do,/gUnit_gmgl/login.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilterfj</filter-name>
+		<url-pattern>*.fj</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>TaskFilter</filter-name>
+		<filter-class>com.topsuntech.gUnit.gEU_taskFilter.TaskFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>GBK</param-value>
+		</init-param>
+		<init-param>
+			<param-name>taskCallable</param-name>
+			<param-value>com.topsuntech.gUnit.gEU_taskFilter.log.UserLogTask</param-value>
+		</init-param>
+
+	</filter>
+	<filter-mapping>
+		<filter-name>TaskFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>TaskFilter</filter-name>
+		<url-pattern>/reportServlet</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>TaskFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>com.topsuntech.gUnit.gEU_util.listener.BeanListener</listener-class>
+	</listener>
+
+
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>com.topsuntech.gOS.gFramework.MainServlet</servlet-class>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+<!-- 		struts begin -->
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/classes/struts/struts-config.xml</param-value>
+		</init-param>
+	    <init-param>
+	      <param-name>config/main/system/office_mgm</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-office.xml</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>config/main/system/priority_mgm</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-priority.xml</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>config/main/system/user_mgm</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-user.xml</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>config/main/system/zxt_mgm</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-userext.xml</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>config/main/system/log_mgm</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-log.xml</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>config/tree</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-tree.xml,/WEB-INF/classes/struts/struts-region.xml</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>config/main/query</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-query.xml</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>config/main/system/dict_mgm</param-name>
+	      <param-value>/WEB-INF/classes/struts/struts-dictionary.xml</param-value>
+	    </init-param>
+<!-- 		struts end -->
+		
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>GBK</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>viewpic</servlet-name>
+		<servlet-class>com.topsuntech.gUnit.common.web.util.ViewPicture</servlet-class>
+	</servlet>
+
+
+
+	<servlet-mapping>
+		<servlet-name>viewpic</servlet-name>
+		<url-pattern>/viewpic/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<!-- dynamic tree -->
+	<servlet>
+		<servlet-name>treeServlet</servlet-name>
+		<servlet-class>com.topsuntech.gUnit.gEU_tree.framework.servlet.TreeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>treeServlet</servlet-name>
+		<url-pattern>/treeServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- AJAX begin -->
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	<!-- AJAX end -->
+
+	<taglib>
+		<taglib-uri>gTaglib-ajgl</taglib-uri>
+		<taglib-location>/WEB-INF/tld/gTaglib-ajgl.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+		<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+		<taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>struts-bean</taglib-uri>
+		<taglib-location>/WEB-INF/tld/struts-bean.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>struts-html</taglib-uri>
+		<taglib-location>/WEB-INF/tld/struts-html.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>html-el</taglib-uri>
+		<taglib-location>/WEB-INF/tld/struts-html-el.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>gTaglib-gOS</taglib-uri>
+		<taglib-location>/WEB-INF/tld/gTaglib-gOS.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>gUnit</taglib-uri>
+		<taglib-location>/WEB-INF/tld/gUnit.tld</taglib-location>
+	</taglib>
+  <taglib>
+    <taglib-uri>gTaglib-shjz</taglib-uri>
+    <taglib-location>/WEB-INF/tld/gTaglib-shjz.tld</taglib-location>
+  </taglib>
+	<taglib>
+		<taglib-uri>http://www.topsuntech.com/jsptags/address-taglib</taglib-uri>
+		<taglib-location>/WEB-INF/tld/topsuntech-address.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://www.topsuntech.com/jsptags/tree-taglib</taglib-uri>
+		<taglib-location>/WEB-INF/tld/topsuntech-tree.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://www.topsuntech.com/jsptags/newtree-taglib</taglib-uri>
+		<taglib-location>/WEB-INF/tld/topsuntech-newtree.tld</taglib-location>
+	</taglib>
+<!-- topsun end -->
+
+	<!-- Log4j 初始化 -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
+
+	<!-- report servlet begin -->
+	<servlet>
+		<servlet-name>reportServlet</servlet-name>
+		<servlet-class>com.runqian.util.webutil.SetContextServlet</servlet-class>
+		<init-param>
+			<param-name>configFile</param-name>
+			<param-value>/WEB-INF/classes/quiee/reportConfig.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>reportServlet</servlet-name>
+		<url-pattern>/reportServlet</url-pattern>
+	</servlet-mapping>
+
+	<taglib>
+		<taglib-uri>/WEB-INF/runqianReport4.tld</taglib-uri>
+		<taglib-location>/WEB-INF/tld/runqianReport4.tld</taglib-location>
+	</taglib>
+	<!-- report servlet end -->
+
+	<error-page>
+ 	    <error-code>500</error-code>
+	    <location>/common/error.jsp</location>
+	</error-page>
+
+	<servlet>
+    	<servlet-name>Admin</servlet-name>
+    	<servlet-class>
+    		org.logicalcobwebs.proxool.admin.servlet.AdminServlet
+    	</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>Admin</servlet-name>
+    	<url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    
+	
+</web-app>

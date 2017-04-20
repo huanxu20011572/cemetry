@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../jscript/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css" />
+ 
+<link rel="stylesheet" type="text/css" href="../jscript/jquery-easyui-1.3.2/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="../jscript/jquery-easyui-1.3.2/themes/icon.css" />
+<script type="text/javascript" src="../jscript/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../jscript/My97DatePicker/WdatePicker.js">
+	
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+          var myDate = new Date();		 
+		   var currentDate=myDate.getYear()+'-'+myDate.getMonth()+'-'+myDate.getDate();
+		   var oldStartDate=(myDate.getYear()-2)+'-'+myDate.getMonth()+'-'+myDate.getDate();
+		   
+           $("#cemetery_StartTime_old").val(oldStartDate);
+		   $("#cemetery_EndTime_old").val(currentDate);
+		   $("#cemetery_StartTime").val(currentDate);
+		   $("#cemetery_EndTime").val(currentDate);
+	       $("#cemetreryBox_area").val("0");
+	   	   $("#cemetreryBox_size").val("0");
+		   $("#cemeteryBox_type").val("1");
+		   $("#cemetreryBox_MoneySum").val("0.00"); 
+		   $("#cemetreryBox_payment").val("0.00");  
+		   $("#cemetreryBox_MoneyOther").val("0.00");  
+	$("#cemetery_type").bind("change",function(){
+	   
+	  var realValue=$(this).children('option:selected').val();
+	  switch(realValue){
+	   case"010020":
+	       $("#cemetreryBox_area").val("1.0");
+	   	   $("#cemetreryBox_size").val("20");
+		   $("#cemeteryBox_type").val("0"); 
+		   $("#cemetreryBox_MoneySum").val("2956.00"); 
+		   $("#cemetreryBox_payment").val("2956.00");  
+		   $("#cemetreryBox_MoneyOther").val("0.00");  
+			
+	    break;
+	    case "010012":
+		   $("#cemetreryBox_area").val("1.2");
+	   	   $("#cemetreryBox_size").val("20");
+		   $("#cemeteryBox_type").val("1");
+		   $("#cemetreryBox_MoneySum").val("1156.00"); 
+		   $("#cemetreryBox_payment").val("1156.00");  
+		   $("#cemetreryBox_MoneyOther").val("0.00");  
+	    break;
+		case"010023":
+		 $("#cemetreryBox_area").val("1.3");
+	   	   $("#cemetreryBox_size").val("30");
+		   $("#cemeteryBox_type").val("1");
+		   $("#cemetreryBox_MoneySum").val("3156.00"); 
+		   $("#cemetreryBox_payment").val("3156.00");  
+		   $("#cemetreryBox_MoneyOther").val("0.00"); 
+		break;
+		
+		default:
+		$("#cemetreryBox_area").val("0");
+	   	   $("#cemetreryBox_size").val("0");
+		   $("#cemeteryBox_type").val("1");
+		   $("#cemetreryBox_MoneySum").val("0.00"); 
+		   $("#cemetreryBox_payment").val("0.00");  
+		   $("#cemetreryBox_MoneyOther").val("0.00");  
+		break;
+	  }
+	});
+	$("#save_all").click(function(){
+		 alert("保存租用墓地信息成功！");
+	}); 
+	$("#category_window").window("close");
+	$("#category_window_btn").click(function(){
+		$("#category_tree").tree("loadData", treeData);
+		$("#category_window").window("open");
+	});
+	$("#rent_save_btn").click( function(){
+		var node = $('#category_tree').tree('getChecked');	
+		if(node.length<=0){
+		  alert("请选择一项分类");
+		}else{
+			$("#rent_input_category").val(node[0].text);
+			$("#category_window").window("close");
+		}
+		
+	});
+	$("#rent_cancel_btn").click( function(){
+		$("#category_window").window("close");
+	} );
+
+	
+	
+	
+	var treeData =
+				[ {
+				"text" : " 业务分类",
+				"children" : [ {
+				"id" : 1,
+				"text" : "墓地业务"
+
+				}, {
+				"id" : 2,
+				"text" : "骨灰堂业务",
+				"children" : [ {
+					"text" : "骨灰堂"
+				} ]
+				}, {
+				"id" : 3,
+				"text" : "立体安葬业务",
+				"children" : [ {
+					"text" : "骨灰墙"
+				}, {
+					"text" : "骨灰廊"
+				} ]
+				}, {
+				"id" : 4,
+				"text" : "生态葬业务",
+				"children" : [ {
+					"text" : "草坪葬"
+				}, {
+					"text" : "水葬"
+				}, {
+					"text" : "树葬"
+				} ]
+				} ]
+				} ];
+	$("#category_tree").tree("loadData", treeData);
+	
+	var chargeGridData1=[{"id":1,"name":"管理费用","state":"closed","children":[
+	                      {"id":11,"name":"类别1","state":"closed","children":[{"id":111,"name":"明细1","price":100},{"id":112,"name":"明细2","price":100}]},
+	                      {"id":12,"name":"类别2","state":"closed","children":[{"id":121,"name":"明细21","price":100},{"id":122,"name":"明细22","price":100}]}]},
+	                     {"id":2,"name":"敛葬费用","children":[{"id":21,"name":"费用明细","price":300,}]},
+	                     {"id":3,"name":"其它费用", "children":[{"id":31,"name":"金字费用","price":300,}]}];
+	$("#charge_pop_btn").click(function(){
+		$("#charge_treeGrid").treegrid("loadData", chargeGridData1);
+		$("#charge_item_window").window("open");
+	});
+
+	
+	$("#charge_save_btn").click(function(){
+	    var row=$("#charge_treeGrid").treegrid("getSelected");
+	    if(row&&row.price){
+	    	$("#charge_item_name").val(row.name);
+	    	$("#charge_item_price").val(row.price);
+	    	$("#charge_item_cntPrice").val(row.price*$("#charge_item_cnt").val());
+	    }
+		$("#charge_item_window").window("close");
+	});
+ 
+	function doOnChange(id){
+	   	$("#charge_item_cntPrice").val($("#charge_item_price").val()*$("#charge_item_cnt").val());
+	}
+	$("#charge_cancel_btn").click(function(){
+		$("#charge_item_window").window("close");
+	});
+	$('#p').panel({  
+           title:'基础信息维护',  
+           tools: [{  
+              iconCls:'icon-extend-add',  
+              handler:function(){alert('基础信息维护')}  
+             }] }); 
+	$("#save_userInfo_btn").click(function(){
+	　 
+		window.showModalDialog("bzzjbz_rent_userInfo.html",null,"dialogWidth=800px;dialogHeight=350px");
+	}); 
+	$("#save_chargeInfo_btn").click(function(){
+	　 
+	window.showModalDialog("bzzjbz_rent_charge.html",null,"dialogWidth=800px;dialogHeight=300px");
+	});
+
+	$("#new_label").addClass ("tab-img-02").removeClass("tab-img-01");
+	$("#old_label").addClass ("tab-img-01").removeClass("tab-img-02");
+	$("#and_label").addClass ("tab-img-01").removeClass("tab-img-02");
+
+	$("#new_rerent_div").css("display","block");  
+	$("#old_rerent_div").css("display","none"); 
+	$("#and_rerent_div").css("display","none"); 
+	
+	$("#old_label").click(function(){
+		$("#old_label").addClass ("tab-img-02").removeClass("tab-img-01");
+		$("#new_label").addClass ("tab-img-01").removeClass("tab-img-02");
+		$("#and_label").addClass ("tab-img-01").removeClass("tab-img-02");
+
+		$("#old_rerent_div").css("display","block"); 
+		$("#new_rerent_div").css("display","none"); 
+		$("#and_rerent_div").css("display","none"); 
+	});
+	
+    $("#new_label").click(function(){
+		$("#new_label").addClass ("tab-img-02").removeClass("tab-img-01");
+		$("#old_label").addClass ("tab-img-01").removeClass("tab-img-02");
+		$("#and_label").addClass ("tab-img-01").removeClass("tab-img-02");
+  
+		$("#new_rerent_div").css("display","block");  
+		$("#old_rerent_div").css("display","none");  
+		$("#and_rerent_div").css("display","none");  
+	});
+
+    $("#and_label").click(function(){
+		$("#and_label").addClass ("tab-img-02").removeClass("tab-img-01");
+		$("#new_label").addClass ("tab-img-01").removeClass("tab-img-02");
+		$("#old_label").addClass ("tab-img-01").removeClass("tab-img-02");
+  
+		$("#and_rerent_div").css("display","block");  
+		$("#new_rerent_div").css("display","none");  
+		$("#old_rerent_div").css("display","none");  
+	});
+
+});
+function doOnChange(id){
+   	$("#charge_item_cntPrice").val($("#charge_item_price").val()*$("#charge_item_cnt").val());
+}
+</script>
+<title>墓地续租登记</title>
+</head>
+
+<body   style="background-color: transparent">
+ 
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"
+		height="100%">
+		<tr>
+			<td width="11" valign="top" class="td-bg"><img
+				src="../images/right-1.jpg" /></td>
+	  <td align="center" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="31" align="left" valign="middle"
+							style="background: url(../images/right-3.jpg)"><img
+							src="../images/right-4.jpg" width="9" height="8"
+							align="absmiddle" /> 当前位置 &gt; 公墓业务管理 &gt;查看</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF" style="font-size: 12px;">&nbsp;</td>
+					</tr>
+				</table> 
+				<!-- 输入域 -->
+			   <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+			      <tr>
+			        <td width="92%" bgcolor="#EBF4FA">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                    
+                    <tr>
+                        <td>
+    
+                        <table border="0" cellspacing="0" cellpadding="0" >
+                          <tr>
+                            <td width="20" align="right"><img src="../images/tab-01.jpg" width="8" height="27" /></td>
+                            <td width="99" align="center" class="tab-img-01" id="new_label"><a   style="cursor: pointer">租用登记</a></td>
+                            
+                            <td width="10" align="left" valign="bottom"><img src="../images/tab-03.jpg" /></td>
+    
+                          </tr>
+                        </table>
+                                            
+                      </td>
+                        
+                      <td>
+    
+                        <table width="141" border="0" cellspacing="0" cellpadding="0" >
+                          <tr>
+                            <td width="10" align="right"><img src="../images/tab-01.jpg" width="8" height="27" /></td>
+                            <td width="99" align="center" class="tab-img-01" id="old_label"> <a style="cursor: pointer">历次续租</a></td>
+                            
+                            <td width="10" align="left" valign="bottom"><img src="../images/tab-03.jpg" /></td>
+    
+                          </tr>
+                        </table>
+                                            
+                      </td>
+                      <td>
+    
+                        <table width="141" border="0" cellspacing="0" cellpadding="0" >
+                          <tr>
+                            <td width="10" align="right"><img src="../images/tab-01.jpg" width="8" height="27" /></td>
+                            <td width="99" align="center" class="tab-img-01" id="and_label"> <a style="cursor: pointer">合葬信息</a></td>
+                            
+                            <td width="22" align="left" valign="bottom"><img src="../images/tab-03.jpg" /></td>
+    
+                          </tr>
+                        </table>
+                                            
+                      </td>
+                    </tr>
+                    </table>
+                    
+                    
+                    </td>
+			     
+	            </tr>
+		      </table>
+			  <div id="and_rerent_div">
+			    <table width="98%" cellpadding="0"cellspacing="1" bgcolor="#a6c6da">
+                    
+                <tr>
+                  <td height="30" align="center" bgcolor="#D4E5F4">序号</td>
+                  <td align="center" bgcolor="#D4E5F4">业务编号</td>
+                  <td align="center" bgcolor="#D4E5F4">与租穴人关系</td>         
+                  <td align="center" bgcolor="#D4E5F4">姓名</td>
+                   <td align="center" bgcolor="#D4E5F4">逝者姓名</td>
+                  <td align="center" bgcolor="#D4E5F4">购墓时间</td>
+                  <td align="center" bgcolor="#D4E5F4">到期时间</td>
+                  <td align="center" bgcolor="#D4E5F4">年限</td>
+                  <td align="center" bgcolor="#D4E5F4">墓位金额（元）</td>
+                  <td align="center" bgcolor="#D4E5F4">其它金额（元）</td>
+                  <td align="center" bgcolor="#D4E5F4">经办人</td>   
+                  <td align="center" bgcolor="#D4E5F4">经办时间</td>
+                  <td align="center" bgcolor="#D4E5F4">操作</td> 
+                </tr>
+                <tr>
+                  <td width="4%" height="30" align="center" bgcolor="#FFFFFF">1</td>
+                  <td align="center" bgcolor="#FFFFFF" >20140075</td>
+                  <td align="center" bgcolor="#FFFFFF">本人</td>
+                  <td align="center" bgcolor="#FFFFFF">张或</td>
+                  <td align="center" bgcolor="#FFFFFF">张历明</td>
+                  <td align="center" bgcolor="#FFFFFF">2014-05-10</td>
+                  <td align="center" bgcolor="#FFFFFF">2017-05-10</td>
+                  <td align="center" bgcolor="#FFFFFF">3</td>
+                  <td align="center" bgcolor="#FFFFFF">15000.00</td>
+                  <td  align="center" bgcolor="#FFFFFF">3200.00</td>
+                  <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+                  <td align="center" bgcolor="#FFFFFF">2013-05-10</td>
+                  <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="#"   onclick="javascript:window.showModalDialog('bzzjbz_merge_v2.html','zx','')">查看</a></td>
+                </tr>
+                <tr>
+                  <td width="4%" height="30" align="center" bgcolor="#FFFFFF">2</td>
+                  <td align="center" bgcolor="#FFFFFF" >20140076</td>
+                  <td align="center" bgcolor="#FFFFFF">本人</td>
+                  <td align="center" bgcolor="#FFFFFF">李成</td>
+                  <td align="center" bgcolor="#FFFFFF">李玉奎</td>
+                  <td align="center" bgcolor="#FFFFFF">2014-07-20</td>
+                  <td align="center" bgcolor="#FFFFFF">2017-07-20</td>
+                  <td align="center" bgcolor="#FFFFFF">3</td>
+                  <td align="center" bgcolor="#FFFFFF">18000.00</td>
+                  <td  align="center" bgcolor="#FFFFFF">3000.00</td>
+                  <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+                  <td align="center" bgcolor="#FFFFFF">2014-07-20</td>
+                  <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="#"   onclick="javascript:window.showModalDialog('bzzjbz_merge_v2.html','zx','')">查看</a><a href="#" ></a></td>
+                </tr>
+                <tr>
+                  <td width="4%" height="30" align="center" bgcolor="#FFFFFF">3</td>
+                  <td align="center" bgcolor="#FFFFFF" >20140076</td>
+                  <td align="center" bgcolor="#FFFFFF">本人</td>
+                  <td align="center" bgcolor="#FFFFFF">王成</td>
+                  <td align="center" bgcolor="#FFFFFF">王洪刚</td>
+                  <td align="center" bgcolor="#FFFFFF">2013-07-20</td>
+                  <td align="center" bgcolor="#FFFFFF">2016-07-20</td>
+                  <td align="center" bgcolor="#FFFFFF">3</td>
+                  <td align="center" bgcolor="#FFFFFF">18000.00</td>
+                  <td  align="center" bgcolor="#FFFFFF">3000.00</td>
+                  <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+                  <td align="center" bgcolor="#FFFFFF">2013-07-20</td>
+                  <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="#"   onclick="javascript:window.showModalDialog('bzzjbz_merge_v2.html','zx','')">查看</a><a href="#" ></a></td>
+                </tr>
+              </table>
+      </div>
+			  <div id="old_rerent_div">
+			  
+			  <table width="98%" cellpadding="0"cellspacing="1" bgcolor="#a6c6da">
+        <tr>
+          <td height="30" align="center" bgcolor="#D4E5F4">序号</td>
+          <td align="center" bgcolor="#D4E5F4">业务编号</td>
+          <td align="center" bgcolor="#D4E5F4">与租穴人关系</td>         
+          <td align="center" bgcolor="#D4E5F4">姓名</td>
+          <td align="center" bgcolor="#D4E5F4">购墓时间</td>
+          <td align="center" bgcolor="#D4E5F4">到期时间</td>
+          <td align="center" bgcolor="#D4E5F4">年限</td>
+          <td align="center" bgcolor="#D4E5F4">墓位金额（元）</td>
+          <td align="center" bgcolor="#D4E5F4">其它金额（元）</td>
+          <td align="center" bgcolor="#D4E5F4">经办人</td>   
+          <td align="center" bgcolor="#D4E5F4">经办时间</td>
+          <td align="center" bgcolor="#D4E5F4">操作</td> 
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">1</td>
+          <td align="center" bgcolor="#FFFFFF" >20140075</td>
+          <td align="center" bgcolor="#FFFFFF">本人</td>
+          <td align="center" bgcolor="#FFFFFF">张或</td>
+          <td align="center" bgcolor="#FFFFFF">2014-05-10</td>
+          <td align="center" bgcolor="#FFFFFF">2017-05-10</td>
+          <td align="center" bgcolor="#FFFFFF">3</td>
+          <td align="center" bgcolor="#FFFFFF">15000.00</td>
+          <td  align="center" bgcolor="#FFFFFF">3200.00</td>
+          <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+          <td align="center" bgcolor="#FFFFFF">2014-05-10</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="#" onclick="javascript:window.showModalDialog('dr_xuzu_detail.html','zx','')">查看</a></td>
+        </tr>
+        <tr>
+          <td height="30" align="center" bgcolor="#FFFFFF">2</td>
+          <td align="center" bgcolor="#FFFFFF" >20140076</td>
+          <td align="center" bgcolor="#FFFFFF">本人</td>
+          <td align="center" bgcolor="#FFFFFF">李成</td>
+          <td align="center" bgcolor="#FFFFFF">2014-07-20</td>
+          <td align="center" bgcolor="#FFFFFF">2017-07-20</td>
+          <td align="center" bgcolor="#FFFFFF">3</td>
+          <td align="center" bgcolor="#FFFFFF">18000.00</td>
+          <td  align="center" bgcolor="#FFFFFF">3000.00</td>
+          <td  align="center" bgcolor="#FFFFFF">赵力风</td>
+          <td align="center" bgcolor="#FFFFFF">2013-07-20</td>
+          <td align="center" bgcolor="#FFFFFF"class="word-7"><a href="#" onclick="javascript:window.showModalDialog('dr_xuzu_detail.html','zx','')">查看</a></td>
+        </tr>
+      </table>
+	    </div>
+			  <div id="new_rerent_div" >
+			    <table id="baseInfo2" width="98%" cellpadding="0" cellspacing="1" bgcolor="#a6c6da">
+			      <tr>
+			        <td width="15%" height="35" align="right" bgcolor="#D4E5F4">业务编号：</td>
+			        <td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;923541</td>
+			        <td width="15%" align="right" bgcolor="#D4E5F4">租穴人：</td>
+			        <td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;王春</td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">性别：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;女</td>
+			        <td align="right" bgcolor="#D4E5F4">身份证：</td>
+			        <td align="left" bgcolor="#FFFFFF">110702122209030001</td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">邮编：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;10000</td>
+			        <td align="right" bgcolor="#D4E5F4">家庭住址：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 北京市通州</td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">工作单位：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 无 </td>
+			        <td align="right" bgcolor="#D4E5F4">联系电话：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 13819283850 </td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">联系人：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 高模 </td>
+			        <td align="right" bgcolor="#D4E5F4">电子邮件：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;gaomouomou@sina.com</td>
+		          </tr>
+			      <tr>
+			        <td width="15%" height="35" align="right" bgcolor="#D4E5F4">机构业务分类：</td>
+			        <td  colspan='3'width="35%" align="left" bgcolor="#FFFFFF">&nbsp; 墓地业务 </td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">购墓时间：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 2014-02-04 </td>
+			        <td align="right" bgcolor="#D4E5F4">到期时间：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;&nbsp; 2034-02-04 </td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">每期（年）：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 20 </td>
+			        <td height="35" align="right" bgcolor="#D4E5F4">墓型名称：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;莲花碑2号</td>
+		          </tr>
+			      <tr>
+			        <td align="right" bgcolor="#D4E5F4">穴别：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 双穴 </td>
+			        <td height="35" align="right" bgcolor="#D4E5F4">安葬位置：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;
+			          富贵A区1排33号 </td>
+		          </tr>
+			      <tr>
+			        <td align="right" bgcolor="#D4E5F4">占地面积（平方米）</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 1.2 </td>
+			        <td height="35" align="right" bgcolor="#D4E5F4">护盒尺寸：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 50*60*40 </td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">介绍站：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;无</td>
+			        <td align="right" bgcolor="#D4E5F4">墓位金额（元）：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp;
+			          23000</td>
+		          </tr>
+			      <tr>
+			        <td align="right" bgcolor="#D4E5F4">预交金额（元）：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 23000 </td>
+			        <td height="35" align="right" bgcolor="#D4E5F4">其它金额（元）：</td>
+			        <td align="left" bgcolor="#FFFFFF">&nbsp; 0 </td>
+		          </tr>
+			      <tr>
+			        <td height="35" align="right" bgcolor="#D4E5F4">经办人：</td>
+			        <td align="left"  bgcolor="#FFFFFF">&nbsp; 李东 </td>
+			        <td height="35" align="right" bgcolor="#D4E5F4">&nbsp;</td>
+			        <td align="left"  bgcolor="#FFFFFF">&nbsp;</td>
+		          </tr>
+			      <tr height='50px'>
+			        <td align="right" bgcolor="#D4E5F4">备注：</td>
+			        <td  colspan='3' align="left" bgcolor="#FFFFFF">&nbsp; 
+			          无 </td>
+		          </tr>
+		        </table>
+			    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			       <tr>
+			         <td>&nbsp;</td>
+	            </tr>
+	          </table>
+			  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+		        <tr>
+		          <td width="91%" bgcolor="#EBF4FA"><table width="200" border="0" cellspacing="0" cellpadding="0">
+		            <tr>
+		              <td width="20" align="right"><img src="../images/tab-01.jpg" width="8" height="27" /></td>
+		              <td width="99" align="center" class="tab-img-01">登记逝者信息 </td>
+		              <td width="81" align="left" valign="bottom"><img src="../images/tab-03.jpg" /></td>
+	                </tr>
+	              </table></td>
+		          <td width="9%" align="center" bgcolor="#EBF4FA">&nbsp;</td>
+	            </tr>
+	          </table>
+			  <table width="100%" cellpadding="0" cellspacing="1"   bgcolor="#a6c6da">
+			    <tr>
+			      <td width="7%" height="30" align="center" bgcolor="#D4E5F4">逝者姓名</td>
+			      <td width="7%" align="center" bgcolor="#D4E5F4">性别</td>
+			      <td width="7%" align="center" bgcolor="#D4E5F4">年龄</td>
+			      <td width="7%" align="center" bgcolor="#D4E5F4">籍贯</td>
+			      <td width="7%" align="center" bgcolor="#D4E5F4">民族</td>
+			      <td width="9%" align="center" bgcolor="#D4E5F4">与租穴人关系</td>
+			      <td width="7%" align="center" bgcolor="#D4E5F4">出生日期</td>
+			      <td width="7%" align="center" bgcolor="#D4E5F4">辞世日期</td>
+			      <td width="12%" align="center" bgcolor="#D4E5F4">安葬日期</td>
+			      <td width="20%" align="center" bgcolor="#D4E5F4">操作</td>
+		        </tr>
+			    <tr>
+			      <td width="7%" height="30" align="center" bgcolor="#FFFFFF">张果</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">男</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">89</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">吉林</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">汉</td>
+			      <td width="9%" align="center" bgcolor="#FFFFFF">父子</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">19460/03/01</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">2001/04/05</td>
+			      <td width="12%" align="center" bgcolor="#FFFFFF">2001/04/09</td>
+			      <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="#" >查看</a></td>
+		        </tr>
+			    <tr>
+			      <td width="7%" height="30" align="center" bgcolor="#FFFFFF">王春</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">女</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">89</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">吉林</td>
+			      <td width="7%" align="center" bgcolor="#FFFFFF">汉</td>
+			      <td width="9%" align="center" bgcolor="#FFFFFF">母子</td>
+			      <td align="center" bgcolor="#FFFFFF">19463/03/01</td>
+			      <td align="center" bgcolor="#FFFFFF">2002/04/05</td>
+			      <td align="center" bgcolor="#FFFFFF">2001204/09</td>
+			      <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="#" >查看</a></td>
+		        </tr>
+			    </table>
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				   <tr>
+				     <td>&nbsp;</td>
+		        </tr>
+		      </table>
+			  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+			    <tr>
+			      <td width="91%" bgcolor="#EBF4FA"><table width="200" border="0" align="left" cellpadding="0" cellspacing="0">
+			        <tr>
+			          <td width="20" align="right"><img src="../images/tab-01.jpg" width="8" height="27" /></td>
+			          <td width="99" align="center" class="tab-img-01">收费清单</td>
+			          <td width="81" align="left" valign="bottom"><img src="../images/tab-03.jpg" /></td>
+		            </tr>
+		          </table></td>
+			      <td width="9%" align="center" bgcolor="#EBF4FA">&nbsp;</td>
+		        </tr>
+		      </table>
+			  <table width="100%" cellpadding="0" cellspacing="1"    bgcolor="#a6c6da">
+			    <tr>
+			      <td width="13%" height="30" align="center" bgcolor="#D4E5F4">项目名称</td>
+			      <td width="13%" align="center" bgcolor="#D4E5F4">单价</td>
+			      <td width="13%" align="center" bgcolor="#D4E5F4">数量</td>
+			      <td width="13%" align="center" bgcolor="#D4E5F4">应收款</td>
+			      <td width="10%" align="center" bgcolor="#D4E5F4">已收款</td>
+			      <td width="10%" align="center" bgcolor="#D4E5F4">本次收款</td>
+			      <td width="10%" align="center" bgcolor="#D4E5F4">优惠</td>
+			      <td width="20%" align="center" bgcolor="#D4E5F4">操作</td>
+		        </tr>
+			    <tr>
+			      <td width="13%" height="30" align="center" bgcolor="#FFFFFF">管理费</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">1950</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">1</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">1950</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">0.00</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">1950</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">0.0</td>
+			      <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="bzzjbz_rent_charge.html" >查看</a></td>
+		        </tr>
+			    <tr>
+			      <td width="13%" height="30" align="center" bgcolor="#FFFFFF">工程费</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">37500</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">1</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">37500</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">0.00</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">37500</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">0.0</td>
+			      <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="bzzjbz_rent_charge.html" >查看</a></td>
+		        </tr>
+			    <tr>
+			      <td width="13%" height="30" align="center" bgcolor="#FFFFFF">骨灰安葬</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">380</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">1</td>
+			      <td width="13%" align="center" bgcolor="#FFFFFF">380</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">0.00</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">390</td>
+			      <td width="10%" align="center" bgcolor="#FFFFFF">0.0</td>
+			      <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="bzzjbz_rent_charge.html" >查看</a></td>
+		        </tr>
+			    </table>
+	    </div>
+			  <table width="98%" cellpadding="0" cellspacing="0">
+                       <tr>
+                          <td height="60" align="center"><input  type="button" class="button-z" onclick="javascript:history.go(-1);" value="返回" /> </td>
+                       </tr>
+        </table>
+
+			 
+   	          
+		
+			<!-- 输入域 --><!--弹出域 -->
+	    </td>
+		</tr>
+	</table>
+ 
+ 
+</body>
+</html>

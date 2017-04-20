@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="gb2312"?> 
+<classes>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.priority.Role</name>
+		<desc>角色表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.user.User</name>
+		<desc>用户表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.office.Office</name>
+		<desc>部门表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.region.Region</name>
+		<desc>区域表</desc>
+	</class>
+	<class type="user">
+		<name>com.topsuntech.gOS.applog.en.Applog</name>
+		<desc>日志表</desc>
+	</class>
+	
+	<class type="user">
+		<name>com.topsuntech.gOS.user.en.userext.Userext</name>
+		<desc>子系统管理用户表</desc>
+	</class>
+	
+   <class>
+		<name>com.topsuntech.gUnit.gEU_util.entity.AjDept</name>
+		<desc>部门信息</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gUnit.gEU_util.entity.SjRegion</name>
+		<desc>区域表</desc>
+	</class>
+		
+	<class type="user">
+		<name>com.topsuntech.gUnit.gEU_util.entity.AjUser</name>
+		<desc>用户信息</desc>
+	</class> 
+	<class type="user">
+		<name>com.topsuntech.gUnit.gEU_util.entity.AjRole</name>
+		<desc>用户信息</desc>
+	</class>	
+	<class>
+		<name>com.topsuntech.gUnit.common.hib.entity.Sequence</name>
+		<desc>Sequence</desc>
+	</class>
+
+	<class>
+     <name>com.topsuntech.gUnit_xzqh.gEU_region.entity.GosRegionAdjust</name>
+     <desc>区划调整信息</desc>
+  </class>
+  <class>
+     <name>com.topsuntech.gUnit_xzqh.gEU_region.entity.GosRegionWarn</name>
+     <desc>区划预警信息</desc>
+  </class>
+  
+</classes>

@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../jscript/My97DatePicker/skin/WdatePicker.css"
+	" rel="stylesheet" type="text/css" />
+ 
+<link rel="stylesheet" type="text/css"
+	href="../js/easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css"
+	href="../js/easyui/themes/icon.css" />
+<script type="text/javascript" src="../js/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="../jscript/My97DatePicker/WdatePicker.js">
+	
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#display_userInfo_div").css("display","block");
+	$("#userinfo_div").css("display","none");
+	$("#charge_div").css("display","none");
+	$("#display_userInfo_div").click(function(){
+		$("#baseinfo_div").css("display","none");
+		$("#charge_div").css("display","none");
+		$("#userinfo_div").css("display","block");
+	});
+	
+	$("#display_userInfocharge_div").click(function(){
+		$("#baseinfo_div").css("display","none");
+		$("#charge_div").css("display","block");
+		$("#userinfo_div").css("display","none");
+		
+	});
+	
+	
+	$("#return_baseInfo_div").click(function(){
+		$("#userinfo_div").css("display","none");
+		$("#charge_div").css("display","none");
+		$("#baseinfo_div").css("display","block");
+	});
+	$("#display_charge_div").click(function(){
+		$("#userinfo_div").css("display","none");
+		$("#charge_div").css("display","block");
+		$("#baseinfo_div").css("display","none");
+	});
+	$("#return_userInfo_div").click(function(){
+		$("#charge_div").css("display","none");
+		$("#userinfo_div").css("display","none");
+		$("#baseinfo_div").css("display","block");
+	});
+	$("#return_baseinfo_div").click(function(){
+		$("#charge_div").css("display","none");
+		$("#userinfo_div").css("display","none");
+		$("#baseinfo_div").css("display","block");
+	});
+	$("#save_all").click(function(){
+		 alert("保存租用墓地信息成功！");
+	}); 
+	$("#category_window").window("close");
+	$("#category_window_btn").click(function(){
+		$("#category_tree").tree("loadData", treeData);
+		$("#category_window").window("open");
+	});
+	$("#rent_save_btn").click( function(){
+		var node = $('#category_tree').tree('getChecked');	
+		if(node.length<=0){
+		  alert("请选择一项分类");
+		}else{
+			$("#rent_input_category").val(node[0].text);
+			$("#category_window").window("close");
+		}
+		
+	});
+	$("#rent_cancel_btn").click( function(){
+		$("#category_window").window("close");
+	} );
+
+	
+	
+	
+	var treeData =
+				[ {
+				"text" : " 业务分类",
+				"children" : [ {
+				"id" : 1,
+				"text" : "墓地业务"
+
+				}, {
+				"id" : 2,
+				"text" : "骨灰堂业务",
+				"children" : [ {
+					"text" : "骨灰堂"
+				} ]
+				}, {
+				"id" : 3,
+				"text" : "立体安葬业务",
+				"children" : [ {
+					"text" : "骨灰墙"
+				}, {
+					"text" : "骨灰廊"
+				} ]
+				}, {
+				"id" : 4,
+				"text" : "生态葬业务",
+				"children" : [ {
+					"text" : "草坪葬"
+				}, {
+					"text" : "水葬"
+				}, {
+					"text" : "树葬"
+				} ]
+				} ]
+				} ];
+	$("#category_tree").tree("loadData", treeData);
+});
+	
+</script>
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+.word-4 {
+	color: #085b85;
+}
+
+.word2 {
+	color: #085b85;
+	text-decoration: underline;
+}
+
+.word-6 {
+	color: #085b85;
+	font-size: 14px;
+}
+
+.word3 {
+	color: #085b85;
+	font-size: 14px;
+}
+-->
+</style>
+</head>
+
+<body style="background-color: transparent">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"
+		height="100%">
+		<tr>
+			<td width="11" valign="top" class="td-bg"><img
+				src="../images/right-1.jpg" /></td>
+			<td align="center" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="31" align="left" valign="middle"
+							style="background: url(../images/right-3.jpg)"><img
+							src="../images/right-4.jpg" width="9" height="8"
+							align="absmiddle" /> 当前位置 &gt; 公墓业务管理 &gt; 墓地续租登记</td>
+					</tr>
+					<tr>
+						<td bgcolor="#FFFFFF" style="font-size: 12px;">&nbsp;</td>
+					</tr>
+				</table> <!-- 输入域 -->
+				<div id="baseinfo_div" >
+					<table id="baseInfo" width="98%" cellpadding="0" cellspacing="1"
+						bgcolor="#a6c6da">
+
+						<tr>
+							<td width="15%" height="35" align="right" bgcolor="#D4E5F4">业务编号：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield" type="text" id="textfield" class="input-1" />
+							</td>
+							<td width="15%" align="right" bgcolor="#D4E5F4">租穴人：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield2" type="text" id="textfield2" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+						<td width="15%" height="35" align="right" bgcolor="#D4E5F4">机构业务分类：</td>
+						<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <input  
+								name="textfield" type="text" id="rent_input_category" class="input-1" value="墓地业务" />
+							 
+						</td>
+						<td height="35" align="right" bgcolor="#D4E5F4">性别：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp;男 <input name="sex1"
+								type="radio" id="textfield35" /> 女<input name="sex1" type="radio"
+								id="textfield35" checked="checked" />
+							</td>
+                        </tr>
+						<tr>
+							 
+							<td align="right" bgcolor="#D4E5F4">身份证：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield6" type="text" id="textfield6" class="input-1" />
+							</td>
+							<td height="35" align="right" bgcolor="#D4E5F4">邮编：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right" bgcolor="#D4E5F4">家庭住址：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+							<td height="35" align="right" bgcolor="#D4E5F4">工作单位：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							
+							<td align="right" bgcolor="#D4E5F4">联系电话：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+							<td height="35" align="right" bgcolor="#D4E5F4">联系人：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							
+							<td align="right" bgcolor="#D4E5F4">电子邮件：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+							<td height="35" align="right" bgcolor="#D4E5F4">购墓时间：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="Wdate"
+								onfocus="WdatePicker()" />
+							</td>
+						</tr>
+						<tr>
+							
+							<td align="right" bgcolor="#D4E5F4">到期时间：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="Wdate"
+								onfocus="WdatePicker()" />
+							</td>
+							<td height="35" align="right" bgcolor="#D4E5F4">每期（年）：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							
+							<td height="35" align="right" bgcolor="#D4E5F4">墓型名称：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">穴别：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <select class="input-1" style="height:20px"><option value='0'>单穴</option><option value='1' selected="selected">双穴</option></select>
+							</td>
+						</tr>
+						<tr>
+							
+
+							<td height="35" align="right" bgcolor="#D4E5F4">按穴位置：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp;
+                              <table>
+							  <tr>
+							  <td><input
+								name="textfield3" type="text" id="textfield3" class="input-1" /></td>
+								<td><input type="button" value="选择安葬位置" /></td>
+							  </tr>
+							  </table>
+							</td>
+							<td align="right" bgcolor="#D4E5F4">占地面积（平方米）</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+							
+						</tr>
+						<tr>
+							
+							<td height="35" align="right" bgcolor="#D4E5F4">护盒尺寸：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">迁坟：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="checkbox" id="textfield4" />
+							</td>
+						</tr>
+						<tr>
+							
+
+							<td height="35" align="right" bgcolor="#D4E5F4">介绍站：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">墓位金额（元）：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							
+
+							<td height="35" align="right" bgcolor="#D4E5F4">其它金额（元）：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">预缴金额（元）：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							
+
+							<td height="35" align="right" bgcolor="#D4E5F4">经办人：</td>
+							<td align="left"  bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">备注：</td>
+							<td  align="left" bgcolor="#FFFFFF">&nbsp; 
+							<input name="textfield4" id="textfield4" class="input-1">
+									 </input></td>
+						</tr>
+						 
+					</table>
+
+					<!-- 保存 -->
+
+					<table width="30%" cellpadding="0" cellspacing="0" >
+						<tr >
+					
+					
+<td  height="60" >   <input id="display_userInfoSave_div" type='button' value='保存基本信息'/>  </td>
+   <td  height="60">    <input id='display_userInfocharge_div' type='button' value='登记费用清单'/>  </td>
+     <td  height="60" align="left">  <input id='display_userInfo_div' type='button' value='登记逝者信息'/>    </td>
+		 </tr >
+		 
+       
+						
+					</table>
+				</div> <!-- 输入域 -->
+				<div id="userinfo_div" >
+					<table id="baseInfo" width="98%" cellpadding="0" cellspacing="1"
+						bgcolor="#a6c6da">
+
+						<tr>
+							<td width="15%" height="35" align="right" bgcolor="#D4E5F4">逝者姓名：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield" type="text" id="textfield" class="input-1" />
+							</td>
+							<td width="15%" align="right" bgcolor="#D4E5F4">性别：</td>
+							<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;
+								&nbsp;男 <input name="sex" type="radio" id="textfield5" /> 女<input
+								name="sex" type="radio" id="textfield5" checked="checked" />
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">年龄：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield6" type="text" id="textfield6" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">籍贯：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield6" type="text" id="textfield6" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">名族：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">与租穴人关系：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">出生日期：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">辞世日期：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">安葬方式：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="input-1" />
+							</td>
+							<td align="right" bgcolor="#D4E5F4">敛式：</td>
+							<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield4" type="text" id="textfield4" class="input-1" />
+							</td>
+						</tr>
+						<tr>
+							<td height="35" align="right" bgcolor="#D4E5F4">安葬日期：</td>
+							<td   align="left" bgcolor="#FFFFFF">&nbsp; <input
+								name="textfield3" type="text" id="textfield3" class="Wdate"
+								onfocus="WdatePicker()" /></td>
+                            <td align="right" bgcolor="#D4E5F4">备注：</td>
+							<td  align="left" bgcolor="#FFFFFF">&nbsp; <input
+									name="textfield4" id="textfield4" class="input-1"/>
+							</td>
+						</tr>
+						 
+					</table>
+
+					<!-- 保存 -->
+					<table width="98%" cellpadding="0" cellspacing="0">
+						<tr>
+							<td height="60" align="left"><input value="创建逝者信息" type="button" />
+							</td>
+						</tr>
+					</table>
+
+					<table width="98%" cellpadding="0" cellspacing="1"
+						bgcolor="#a6c6da">
+						<tr>
+							<td width="7%" height="30" align="center" bgcolor="#D4E5F4">序号</td>
+							<td width="7%" align="center" bgcolor="#D4E5F4">逝者姓名</td>
+							<td width="7%" align="center" bgcolor="#D4E5F4">性别</td>
+							<td width="7%" align="center" bgcolor="#D4E5F4">年龄</td>
+							<td width="7%" align="center" bgcolor="#D4E5F4">籍贯</td>
+							<td width="7%" align="center" bgcolor="#D4E5F4">民族</td>
+							<td width="9%" align="center" bgcolor="#D4E5F4">与租穴人关系</td>
+							<td width="7%" align="center" bgcolor="#D4E5F4">出生日期</td>
+							<td width="7%" align="center" bgcolor="#D4E5F4">辞世日期</td>
+						
+							<td width="7%" align="center" bgcolor="#D4E5F4">出生日子</td>
+							
+							<td width="7%" align="center" bgcolor="#D4E5F4">安葬日期</td>
+						
+							<td width="30%" align="center" bgcolor="#D4E5F4">操作</td>
+						
+						</tr>
+						<tr>
+							<td width="7%" height="30" align="center" bgcolor="#FFFFFF"><input
+								type='checkbox' /></td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">***</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">男</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">89</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">吉林</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">汉</td>
+							<td width="9%" align="center" bgcolor="#FFFFFF">子孙</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							
+							<td width="7%" align="center" bgcolor="#FFFFFF">1901/01/01</td>
+							 <td align="center" bgcolor="#FFFFFF"class="word-7" width="30%"><a href="#" >查看</a>&nbsp;&nbsp;&nbsp;<a href="bzzjbz-mod.html">编辑</a>&nbsp;&nbsp;&nbsp;<a href="#">删除</a></td>
+						</tr>
+						<tr>
+							<td width="7%" height="30" align="center" bgcolor="#FFFFFF"><input
+								type='checkbox' /></td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">***</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">男</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">89</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">吉林</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">汉</td>
+							<td width="9%" align="center" bgcolor="#FFFFFF">子孙</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							
+							<td width="7%" align="center" bgcolor="#FFFFFF">1901/01/01</td>
+						 <td align="center" bgcolor="#FFFFFF"class="word-7" width="30%"><a href="#" >查看</a>&nbsp;&nbsp;&nbsp;<a href="bzzjbz-mod.html">编辑</a>&nbsp;&nbsp;&nbsp;<a href="#">删除</a></td>
+						</tr>
+						<tr>
+							<td width="7%" height="30" align="center" bgcolor="#FFFFFF"><input
+								type='checkbox' /></td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">***</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">男</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">89</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">吉林</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">汉</td>
+							<td width="9%" align="center" bgcolor="#FFFFFF">子孙</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							
+							<td width="7%" align="center" bgcolor="#FFFFFF">1900/01/01</td>
+							
+							<td width="7%" align="center" bgcolor="#FFFFFF">1901/01/01</td>
+							 <td align="center" bgcolor="#FFFFFF"class="word-7" width="30%"><a href="#" >查看</a>&nbsp;&nbsp;&nbsp;<a href="bzzjbz-mod.html">编辑</a>&nbsp;&nbsp;&nbsp;<a href="#">删除</a></td>
+						</tr>
+					</table>
+					<table width="98%" cellpadding="0" cellspacing="0">
+						<tr>
+							<td height="30" align="right">当前第1页&nbsp;&nbsp;&nbsp;&nbsp;共1页&nbsp;&nbsp;&nbsp;&nbsp;7条/页&nbsp;&nbsp;&nbsp;&nbsp;上一页&nbsp;&nbsp;&nbsp;&nbsp;下一页</td>
+						</tr>
+					</table>
+					 
+				</div> <!-- 输入域 -->
+				<div id="charge_div">
+				<table   width="98%" cellpadding="0" cellspacing="1"
+					bgcolor="#a6c6da">
+
+					<tr>
+						<td width="15%" height="35" align="right" bgcolor="#D4E5F4">项目名称：</td>
+						<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield" type="text" id="textfield" class="input-1" /></td>
+						<td width="15%" align="right" bgcolor="#D4E5F4">单价：</td>
+						<td width="35%" align="left" bgcolor="#FFFFFF">&nbsp; &nbsp; <input
+							name="textfield" type="text" id="textfield" class="input-1" /></td>
+					</tr>
+					<tr>
+						<td height="35" align="right" bgcolor="#D4E5F4">数量：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield6" type="text" id="textfield6" class="input-1" />
+						</td>
+						<td align="right" bgcolor="#D4E5F4">应收款：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield6" type="text" id="textfield6" class="input-1" />
+						</td>
+					</tr>
+					<tr>
+						<td height="35" align="right" bgcolor="#D4E5F4">已收款：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield3" type="text" id="textfield3" class="input-1" />
+						</td>
+						<td align="right" bgcolor="#D4E5F4">本次收款：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield4" type="text" id="textfield4" class="input-1" />
+						</td>
+					</tr>
+					<tr>
+						<td height="35" align="right" bgcolor="#D4E5F4">优惠价格：</td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp; <input
+							name="textfield3" type="text" id="textfield3" class="input-1" />
+						</td>
+						<td align="right" bgcolor="#D4E5F4"></td>
+						<td align="left" bgcolor="#FFFFFF">&nbsp;</td>
+					</tr>
+
+
+
+				</table> <!-- 保存 -->
+				<table width="98%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="60" align="left"><input id="save_userInfo_btn" type="button"value="创建收费项目"/></td>
+					</tr>
+				</table>
+				<table width="98%" cellpadding="0" cellspacing="1" bgcolor="#a6c6da">
+					<tr>
+						<td width="7%" height="30" align="center" bgcolor="#D4E5F4">序号</td>
+						<td width="13%" align="center" bgcolor="#D4E5F4">项目名称</td>
+						<td width="13%" align="center" bgcolor="#D4E5F4">单价</td>
+						<td width="13%" align="center" bgcolor="#D4E5F4">数量</td>
+						<td width="13%" align="center" bgcolor="#D4E5F4">应收款</td>
+						<td width="10%" align="center" bgcolor="#D4E5F4">已收款</td>
+						<td width="10%" align="center" bgcolor="#D4E5F4">本次收款</td>
+						<td width="10%" align="center" bgcolor="#D4E5F4">优惠</td>
+                        <td width="20%" align="center" bgcolor="#D4E5F4">操作</td>
+					</tr>
+					<tr>
+						<td width="7%" height="30" align="center" bgcolor="#FFFFFF"><input
+							type='checkbox' />
+						</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">墓穴管理费</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">1950</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">1</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">1950</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">0.00</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">1950</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">0.0</td>
+						 <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="#" >查看</a>&nbsp;&nbsp;&nbsp;<a href="bzzjbz-mod.html">编辑</a>&nbsp;&nbsp;&nbsp;<a href="#">删除</a></td>
+					</tr>
+					 
+					<tr>
+						<td width="7%" height="30" align="center" bgcolor="#FFFFFF"><input
+							type='checkbox' />
+						</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">墓穴工程费</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">37500</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">1</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">37500</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">0.00</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">37500</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">0.0</td>
+												 <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="#" >查看</a>&nbsp;&nbsp;&nbsp;<a href="bzzjbz-mod.html">编辑</a>&nbsp;&nbsp;&nbsp;<a href="#">删除</a></td>
+					</tr>
+					<tr>
+						<td width="7%" height="30" align="center" bgcolor="#FFFFFF">
+							<input type='checkbox' /></td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">骨灰安葬</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">380</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">1</td>
+						<td width="13%" align="center" bgcolor="#FFFFFF">380</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">0.00</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">390</td>
+						<td width="10%" align="center" bgcolor="#FFFFFF">0.0</td>
+												 <td align="center" bgcolor="#FFFFFF"class="word-7" width="20%"><a href="#" >查看</a>&nbsp;&nbsp;&nbsp;<a href="bzzjbz-mod.html">编辑</a>&nbsp;&nbsp;&nbsp;<a href="#">删除</a></td>
+					</tr>
+				</table>
+		<table width="98%" cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="30" align="right">当前第1页&nbsp;&nbsp;&nbsp;&nbsp;共1页&nbsp;&nbsp;&nbsp;&nbsp;7条/页&nbsp;&nbsp;&nbsp;&nbsp;上一页&nbsp;&nbsp;&nbsp;&nbsp;下一页</td>
+			</tr>
+		</table>
+		   
+		</div>
+		</td>
+		</tr>
+	</table>
+		<div class="easyui-window" id="category_window" data-options="modal:true,right:'10px',down:'10px',closed:true,closable:true,minimizable:false,maximizable:false,resizable:false,collapsible:false" style="width:300px;height:400px;padding:10px;" title="业务分类">
+
+		<div class="easyui-layout" data-options="fit:true">
+			<div data-options="region:'center'" style="padding: 10px;">
+				<div id="category_tree" class="easyui-tree"
+					data-options="animate:true,checkbox:true"></div>
+			</div>
+			<div data-options="region:'south',border:false"
+				style="text-align: right; padding: 5px 0 0;">
+				<input id="rent_save_btn" type="button" value="保存"
+					class="yellowBtn" />
+				 <input id="rent_cancel_btn" type="button"
+					value="取消" class="whiteBtn" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>

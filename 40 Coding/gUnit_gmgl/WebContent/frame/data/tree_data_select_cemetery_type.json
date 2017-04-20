@@ -1,0 +1,64 @@
+
+[{    
+    "id":1,    
+    "text":"机构业务", 
+	"state":"open",   		
+    "children":[{      
+    "id":1,    
+    "text":"墓地业务", 
+    "state":"open",	
+    "children":[{    
+        "text":"莲花碑1号",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"莲花碑2号"
+    },{    
+        "text":"莲花碑3号"
+    },{    
+        "text":"莲花碑4号"
+    }]    
+},{    
+    "text":"立体安葬业务",    
+    "state":"open",    
+    "children":[{    
+        "text":"怀思1碑",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"怀思2碑"
+    },{    
+        "text":"怀思3碑"
+    },{    
+        "text":"怀思4碑"
+    }]    
+},{    
+    "text":"生态葬业务",    
+    "state":"open",    
+    "children":[{    
+        "text":"草塘1号",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"草塘2号"
+    },{    
+        "text":"草塘3号"
+    },{    
+        "text":"草塘4号"
+    }]    
+},{    
+    "text":"骨灰堂业务",    
+    "state":"open",    
+    "children":[{      
+        "text":"菊花碑1号",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"菊花碑2号"
+    },{    
+        "text":"菊花碑3号"
+    },{    
+        "text":"菊花碑4号"
+    }]    
+}]  
+}] 

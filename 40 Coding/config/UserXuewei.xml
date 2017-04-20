@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- 
+	这个类用来存储用户学位信息
+--><xuewei>
+	<userXuewei id="1" name="学士" />
+	<userXuewei id="3" name="硕士" />
+	<userXuewei id="4" name="博士" />
+	<userXuewei id="5" name="大专" />
+	<userXuewei id="6" name="大本" />
+	<userXuewei id="7" name="其他" />
+</xuewei>

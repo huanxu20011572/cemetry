@@ -1,0 +1,234 @@
+body{background-color:#ffffff;color:#000000;margin-left:0;margin-top:0;
+font-size:12px;font-family:宋体;}
+
+
+BODY {
+SCROLLBAR-FACE-COLOR: #ECCAB1; //滚动条凸出部分的颜色
+SCROLLBAR-HIGHLIGHT-COLOR: #ECCAB1;//滚动条空白部分的颜色
+SCROLLBAR-SHADOW-COLOR:  #ECCAB1;//立体滚动条阴影的颜色
+SCROLLBAR-3DLIGHT-COLOR: #ECCAB1;//滚动条亮边的颜色
+SCROLLBAR-ARROW-COLOR:  #ECCAB1;//上下按钮上三角箭头的颜色
+SCROLLBAR-TRACK-COLOR: #ECCAB1;//滚动条的背景颜色
+SCROLLBAR-DARKSHADOW-COLOR:  #ECCAB1;//滚动条强阴影的颜色
+SCROLLBAR-BASE-COLOR: #ECCAB1；//滚动条的基本颜色
+}
+
+
+A:link {color: #0000ff;text-decoration:none;}
+A:visited {color:#0000ff;text-decoration:none;}
+A:active {color: #ff6600;text-decoration:none;}
+A:hover {color: #ff6600;text-decoration:none;}
+
+
+A.a1:link {color: #000000;text-decoration:none;}
+A.a1:visited {color:#000000;text-decoration:none;}
+A.a1:active {color: #7AB03C;text-decoration:none;}
+A.a1:hover {color: #7AB03C;text-decoration:none;}
+
+A.a2:link {color: #000000;text-decoration:none;}
+A.a2:visited {color:#000000;text-decoration:none;}
+A.a2:active {color: #ff6600;text-decoration:none;}
+A.a2:hover {color: #ff6600;text-decoration:none;}
+
+.table1 {background-color:#FAF8EB;width:100%;height:80px;cellpadding:0;cellspacing:0;border:0;valign:top}
+.table2 {background-color:#E27000;width:100%;height:9px;cellpadding:0;cellspacing:0;border:0;valign:top}
+.td1 {font-size:12px;font-family:宋体;font-weight:normal;text-align: center;vertical-align: bottom;}
+.td2 {font-size:12px;font-family:"宋体";font-weight:normal;text-align: left;line-height: 20px;}
+.tr1{font-size:12px;font-family:"宋体";font-weight:normal;text-align: center;line-height: 20px; background-color:#FFFFFF;}
+.tr2{font-size:12px;	font-family:"宋体";	font-weight:bold;	text-align:center;	line-height: 20px;	background-color:#FBF7EC;	color: #000000;}
+.tr3{font-size:12px;font-family:"宋体";font-weight:normal;text-align: center;line-height: 20px; background-color:#FCF6E7;}
+
+.tr21{font-size:12px;font-family:"宋体";font-weight:normal;text-align: right;line-height: 20px; background-color:#FFFFFF;}
+.tr22{font-size:12px;font-family:"宋体";font-weight:bold;text-align:right;line-height: 20px;background-color:#FBF7EC;	color: #000000;}
+.tr23{font-size:12px;font-family:"宋体";font-weight:normal;text-align: right;line-height: 20px; background-color:#FCF6E7;}
+
+.td41 {text-align: center;}
+
+
+.td3 {font-size:12px;font-family:宋体;font-weight:normal;height:16;background-color:#E8F2F8;}
+.td4 {font-size:12px;font-family:宋体;font-weight:normal;height:23;text-align: left;background-color:#F0CEB4;}
+.td5 {font-size:12px;font-family:宋体;font-weight:normal;height:23;text-align: right;background-image:url(bg_bg_line.gif);}
+
+.table3 {background-image: url(index_left.gif);height: 100%;width: 201px;vertical-align: top;}
+.td6 {	font-size:12px;	font-family:"宋体";font-weight:normal;height:20;text-align: left;line-height: 20px;}
+.td7 {font-size:12px;font-family:宋体;font-weight:normal;height:8;}
+.td8 {font-size:12px;font-family:宋体;font-weight:normal;text-align: right;height:20;}
+.td9 {font-size:12px;font-family:"宋体";font-weight:bold;color:#E66F02;height:20;}
+
+.table4 {width: 200px;vertical-align: top;}
+.table5 {font-size:12px;font-family:宋体;font-weight:normal;}
+.td10 {background-color:#E66F02;height:1}
+.td11 {background-image:url(index_bg.gif);height:1}
+.td12 {font-size:12px;font-family:宋体;font-weight:bold;color:6EA724}
+.td13 {background-image: url(index_right.gif);}
+.button {color:#000000;background-color: #ECCAB1; border: 1 solid #C85A05; height:20; width:46;}
+.button1 {color:#000000;background-color: #ECCAB1; border: 1 solid #C85A05; height:20; width:66;}
+.button2 {color:#000000;background-color: #ECCAB1; border: 1 solid #C85A05; height:20; width:96;}
+
+/*.page{font-size:12px;font-family:宋体;font-weight:normal;width: 100%;height:21;background-image: url(line.gif);}*/
+.table6{fvertical-align: top;font-size: 9pt;color: #000000;line-height: 20px;}
+.table7{font-size:12px;font-family:宋体;font-weight:normal;width: 100%;height:21;background-image: url(bg_line.gif);}
+.table8{font-size:9pt;color:#000000;}
+.table9 {width: 170px;font-size: 9pt;line-height: 20px;color: #000000;background-color: #FBF7EC;border: 1px solid #ffb702;height: 470px;}
+.table10 {background-color: #FBF7EC;width: 100%;text-align: right;height: 469px;border: 1px solid #EECCB4;}
+.td14 {font-size:12px;font-family:宋体;font-weight:bold;background-color:#ffb702;height:20}          
+.td15 {font-size: 9pt; font-weight: bold; color: #000000; background-color: #ffb702; height: 20px}
+.td16 {font-size:12px;font-family:宋体;height:21;text-align: right;}
+.td19 {font-size:12px;font-family:"宋体";font-weight:bold;text-align:left;line-height: 20px;}
+.td20 {width: 1px;background-color: #ECCAB1;}
+
+.td21 {  height: 445px}
+.td22 {text-align:right}
+.td23 {font-size:12px;font-family:宋体;}
+.td24 {  background-image: url(POINT_1.GIF); width: 1px}
+.td25 {  background-color: #EA8200; height: 1px}
+.td26 {  font-size: 10pt; font-weight: bold; color: #FFFFFF; background-image: url(line_1.gif); height: 20px}
+.td27 {  font-size: 12px; line-height: 22px; color: #6F4000}
+.table11 { font-family: "宋体";font-size: 9pt;	font-weight: normal;	color: #000000;background-color: #FBF7EC;}
+.td31 {  background-image:  url(bg_grbg2.gif); height: 16px}
+.td32 {  font-size: 9pt; line-height: 22px; color: #3E3E3E}
+
+.unnamed1 {  font-size: 12px; line-height: 22px; color: #000000}
+.subtable{background-color:#ffffff;color:#000000;font-size:12px;font-family:宋体;}
+.topFolder {
+	BORDER-BOTTOM: buttonface 0px solid; BORDER-LEFT: buttonface 0px solid; BORDER-RIGHT: buttonface 0px solid; BORDER-TOP: buttonface 0px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.topItem {
+	BORDER-BOTTOM: buttonface 0px solid; BORDER-LEFT: buttonface 0px solid; BORDER-RIGHT: buttonface 0px solid; BORDER-TOP: buttonface 0px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.topItem A:link {text-decoration:none;color:#006500;}
+.topItem A:active {text-decoration:none;color:#BD4121;}
+.topItem A:visited {text-decoration:none;color:#006500;}
+.topItem A:hover {text-decoration:none;color:#BD4121;}
+
+.subFolder {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.subItem {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.subItem A:link {text-decoration:none;color:#006500;}
+.subItem A:active {text-decoration:none;color:#BD4121;}
+.subItem A:visited {text-decoration:none;color:#006500;}
+.subItem A:hover {text-decoration:none;color:#BD4121;}
+.sub {
+	BORDER-BOTTOM: buttonhighlight 0px solid; BORDER-LEFT: buttonshadow 0px solid; BORDER-RIGHT: buttonhighlight 0px solid; DISPLAY: none; PADDING-TOP: 0px
+}
+.sub .sub {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-RIGHT: 0px; BORDER-TOP: 0px
+}
+.icon {
+	HEIGHT: 16px; MARGIN-RIGHT: 5px; VERTICAL-ALIGN: top; WIDTH: 16px
+}
+.outer {
+	BORDER-BOTTOM: buttonhighlight 0px solid; BORDER-LEFT: buttonshadow 0px solid; BORDER-RIGHT: buttonhighlight 0px solid; BORDER-TOP: buttonshadow 0px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.inner {
+	BORDER-BOTTOM: buttonshadow 0px solid; BORDER-LEFT: buttonhighlight 0px solid; BORDER-RIGHT: buttonshadow 0px solid; BORDER-TOP: buttonhighlight 0px solid; OVERFLOW: hidden; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.scrollButton {
+	BORDER-BOTTOM: buttonface 0px solid;
+	BORDER-LEFT: buttonface 0px solid;
+	BORDER-RIGHT: buttonface 0px solid;
+	BORDER-TOP: buttonface 0px solid;
+	COLOR: #006666;
+	CURSOR: default;
+	DISPLAY: none;
+	FONT-FAMILY: webdings;
+	FONT-SIZE: 10px;
+	HEIGHT: 16px;
+	OVERFLOW: hidden;
+	POSITION: absolute;
+	TEXT-ALIGN: center;
+	WIDTH: 50px;
+	left: 107px;
+	top: 301px;
+
+
+}
+.flat {
+	BORDER-BOTTOM: buttonface 0px solid; BORDER-LEFT: buttonface 0px solid; BORDER-RIGHT: buttonface 0px solid; BORDER-TOP: buttonface 0px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.favMenu {
+ color:#006500 CURSOR: hand; FONT: menu
+}
+.favMenu DIV {
+	WIDTH: 100%
+}
+
+.favMenu A:link {text-decoration:none;color:#006500;}
+.favMenu A:active {text-decoration:none;color:#BD4121;}
+.favMenu A:visited {text-decoration:none;color:#006500;}
+.favMenu A:hover {text-decoration:none;color:#BD4121;}
+
+     A {
+         font-family:Verdana, Arial,Helvetica;
+         font-size:11px;
+         font-weight:normal;
+         color:blue;
+         text-decoration:none;
+     }
+
+     A:hover {
+         font-family:Verdana, Arial,Helvetica;
+         font-size:11px;
+         font-weight:normal;
+         color:blue;
+         text-decoration:underline;
+     }
+     
+     P, TD, INPUT, SELECT {
+         font-family:Verdana, Arial,Helvetica;
+         font-size:11px;
+         font-weight:normal;
+         color:#000000;
+     }
+
+
+
+
+     .header {
+         font-family:Verdana, Arial,Helvetica;
+         font-size:11px;
+         font-weight:bold;
+         color:white;
+         text-decoration:none;
+     }
+     .headerblack {
+         font-family:Verdana, Arial,Helvetica;
+         font-size:11px;
+         font-weight:bold;
+         color:black;
+         text-decoration:none;
+     }
+
+     .textbold {
+         font-family:Verdana, Arial,Helvetica;
+         font-size:11px;
+         font-weight:bold;
+         color:black;
+         text-decoration:none;
+     }
+
+     .headerstart {
+         font-family:Verdana, Arial,Helvetica;
+         font-size:18px;
+         font-weight:bold;
+         color:black;
+         text-decoration:none;
+     }
+
+     .tablebg1 {
+         bgcolor:white;
+         layer-background-color:white;
+         background:white;
+     }
+
+     .tablebg2 {
+         bgcolor:#C1D1D7;
+         layer-background-color:#C1D1D7;
+         background:#C1D1D7;
+     }
+.PriorityTable {
+	border: 5px outset #0000FF;
+}

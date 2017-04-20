@@ -1,0 +1,28 @@
+
+body{ margin:0px; font-size:12px; background-color:#f6f6f6}
+img,input{ vertical-align:middle}
+
+.login-word-1{ font-size:12px; color:#FFF;}
+
+.login-bg-1{ background:url(../images/login-body-1.jpg) top right no-repeat}
+.login-bg-2{ background:url(../images/login-body-2.jpg) top left no-repeat}
+.login-bg-3{ background:url(../images/login-body-3.jpg) top right no-repeat}
+.login-bg-4{ background:url(../images/login-body-4.jpg) top left no-repeat}
+
+.login-bg-5{ background:url(../images/login-body-5.jpg) top right no-repeat}
+.login-bg-6{ background:url(../images/login-body-6.jpg) top left no-repeat}
+.login-bg-7{ background:url(../images/login-body-7.jpg) top right no-repeat}
+.login-bg-8{ background:url(../images/login-body-8.jpg) top left no-repeat}
+
+
+.login-bg-9{ background:url(../images/login-body-9.jpg) top right no-repeat}
+.login-bg-10{ background:url(../images/login-body-10.jpg) top left no-repeat}
+.login-bg-11{ background:url(../images/login-body-11.jpg) top right no-repeat}
+.login-bg-12{ background:url(../images/login-body-12.jpg) top left no-repeat}
+
+
+
+
+.login-input-1{ width:168px; height:22px; line-height:22px; border:0px; }
+
+

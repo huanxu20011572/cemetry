@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 2.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-2.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@123.57.7.91:8095:cemetery</property>
+        <property name="dialect">net.sf.hibernate.dialect.OracleDialect</property>
+        <property name="connection.username">bj_cemetery</property>
+        <property name="connection.password">bj_cemetery1635</property>
+        <property name="show_sql">true</property>
+
+		
+				<property name="hibernate.connection.provider_class">net.sf.hibernate.connection.C3P0ConnectionProvider</property>
+				<property name="hibernate.c3p0.preferredTestQuery">select 1 from dual</property>
+				<property name="hibernate.c3p0.max_size">20</property>        
+				<property name="hibernate.c3p0.min_size">5</property>        
+				<property name="hibernate.c3p0.timeout">80</property>        
+				<property name="hibernate.c3p0.max_statements">100</property>        
+				<property name="hibernate.c3p0.idle_test_period">60</property>
+ 
+        <mapping resource="com/topsuntech/gOS/meta/DefaultColumnMeta.hbm.xml"/>
+        <mapping resource="com/topsuntech/gOS/meta/CustomColumnMeta.hbm.xml"/>
+        <mapping resource="com/topsuntech/gOS/meta/CustomColumnRange.hbm.xml"/>
+        <mapping resource="com/topsuntech/gOS/meta/DefaultColumnRange.hbm.xml"/>
+        <mapping resource="com/topsuntech/gOS/meta/CustomRelation.hbm.xml"/>
+        <mapping resource="com/topsuntech/gOS/meta/CustomSchema.hbm.xml"/>
+        <mapping resource="com/topsuntech/gOS/meta/QuerySchema.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>

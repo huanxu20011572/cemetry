@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../jscript/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+.word-4 {	color: #085b85;
+}
+.word2 {	color: #085b85;
+	text-decoration:underline;
+}
+.word-6 {	color: #085b85;
+	font-size:14px;
+}
+.word3 {	color: #085b85;
+	font-size:14px;
+}
+-->
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#cemetrery_rerent_add").click(function(){
+	 
+	  if($("input[name='checkCol'][checked]").length<1)
+	   { 
+	     alert("选择合葬数据");
+	     return false;
+       }
+    });
+});
+ 
+</script>
+</head>
+
+<body style="background-color:transparent">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td width="11" valign="top" class="td-bg"><img src="../images/right-1.jpg" /></td>
+    <td align="center" valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="31" align="left" valign="middle" style="background:url(../images/right-3.jpg)"><img src="../images/right-4.jpg" width="9" height="8" align="absmiddle" /> 当前位置 &gt;业务办理&gt;合葬登记&gt;列表</td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" style="font-size:12px;">&nbsp;</td>
+      </tr>
+    </table>
+	 <table width="98%" cellpadding="0" cellspacing="0" bgcolor="#a6c6da">
+        <tr>
+		  <td width='90%'  bgcolor="#FFFFFF"></td>
+		  <td align="right" bgcolor="#FFFFFF">
+		     <form action="../frame/hzdj_dengji.html"method="post">
+		         <input name="button" type="submit" class="button-z" id="button" value="打印" />
+		     </form>
+	      </td>
+		  <td bgcolor="#FFFFFF" align ='right'>
+		     <form action="../frame/hzdj_dengji.html"method="post">
+	              <input name="button2" type="submit" class="button-z" id="button2" value="返回" />
+		     </form>
+		  </td>
+        </tr>
+      </table>
+      
+ <table border=2 cellSpacing=0 borderColor=#cccccc cellPadding=3 width="100%" bgColor=#ffffff align=left>
+     
+    <tr>
+      <td colSpan=14 align=middle><font size="6">北京市XXXX公墓业务单</font></td>
+    </tr>
+    <tr>
+      <td>&nbsp;办理日期：</td>
+      <td colSpan=8>&nbsp;</td>
+      <td>&nbsp;业务编号：</td>
+      <td colSpan=4>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>承租人姓名：</td>
+      <td colSpan=2>&nbsp;</td>
+      <td colSpan=2>&nbsp;身份证号：</td>
+      <td colSpan=5>&nbsp;</td>
+      <td>&nbsp;邮政编码：</td>
+      <td colSpan=3>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;家庭住址：</td>
+      <td colSpan=13>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;工作单位：</td>
+      <td colSpan=13>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;联系电话：</td>
+      <td colSpan=13>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align=middle>&nbsp;逝者姓名</td>
+      <td align=middle>&nbsp;性别</td>
+      <td colSpan=2 align=middle>&nbsp;出生日期</td>
+      <td colSpan=3 align=middle>&nbsp;辞世日期</td>
+      <td colSpan=2 align=middle>&nbsp;籍贯</td>
+      <td colSpan=2 align=middle>&nbsp;与承租人关系</td>
+      <td colSpan=3 align=middle>&nbsp;骨灰安葬方式</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td colSpan=2>&nbsp;</td>
+      <td colSpan=3>&nbsp;</td>
+      <td colSpan=2>&nbsp;</td>
+      <td colSpan=2>&nbsp;</td>
+      <td colSpan=3>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td colSpan=2>&nbsp;</td>
+      <td colSpan=3>&nbsp;</td>
+      <td colSpan=2>&nbsp;</td>
+      <td colSpan=2>&nbsp;</td>
+      <td colSpan=3>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp; </td>
+      <td>&nbsp;</td>
+      <td colSpan=2>&nbsp; </td>
+      <td colSpan=3>&nbsp; </td>
+      <td colSpan=2>&nbsp; </td>
+      <td colSpan=2>&nbsp; </td>
+      <td colSpan=3>&nbsp; </td>
+    </tr>
+    <tr>
+      <td align=middle>&nbsp;业务类型</td>
+      <td>&nbsp;</td>
+      <td colSpan=2 align=middle>&nbsp;安葬类别</td>
+      <td colSpan=3>&nbsp;</td>
+      <td colSpan=2 align=middle>&nbsp;墓位价格</td>
+      <td colSpan=5>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colSpan=3>&nbsp;墓位金额：</td>
+      <td colSpan=5>&nbsp;</td>
+      <td>&nbsp;其他金额：</td>
+      <td colSpan=5>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colSpan=3>&nbsp;合计金额（人民币大写）：</td>
+      <td colSpan=11>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colSpan=3>&nbsp;承租人（签字）：</td>
+      <td colSpan=5>&nbsp;</td>
+      <td>&nbsp;经办人（签字）：</td>
+      <td colSpan=5>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align=middle>备<BR>注</td>
+      <td colSpan=13>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;联系地址：</td>
+      <td colSpan=8 align=left>&nbsp;北京市海淀区XXXX公墓</td>
+      
+      <td>&nbsp;联系电话：</td>
+      <td colSpan=4 align=left>&nbsp;010-6666666&nbsp; </td>
+    </tr>
+
+ 
+      </table>
+       </td>
+  </tr>
+</table>
+</body>
+</html>

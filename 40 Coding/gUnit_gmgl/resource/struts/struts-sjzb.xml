@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+	<form-bean name="deptBasicInfo" type="com.topsuntech.gUnit.gEU_sjzb.framework.actionforms.ZqqyUserForm" />
+	<form-bean name="commonAuditForm" type="com.topsuntech.gUnit.gEU_commonAudit.framework.actionforms.CommonAuditForm" />
+	<form-bean name="userInfo" type="com.topsuntech.gUnit.gEU_popedom.framework.actionforms.UserForm"/>
+	
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+  </global-forwards>
+  <!-- ========== Action Mapping Definitions ============================== -->
+
+  <action-mappings>
+
+    <action path="/auditDept" name="deptBasicInfo" type="com.topsuntech.gUnit.gEU_sjzb.framework.actions.AuditAction" scope="request">
+      <forward name="userlist" path="/audit_list.jsp" />
+      <forward name="deptinfoList" path="/audit_query_list.jsp" />
+      <forward name="sortList" path="/audit_sort_list.jsp" />
+      <forward name="querySortList" path="/audit_query_sort_list.jsp" />
+      
+    </action>
+      <action path="/verfifyPassword" name="userInfo" type="com.topsuntech.gUnit.gEU_popedom.framework.actions.UserAction" scope="session">
+      <forward name="success" path="/userdispatch.jsp" /> 
+    </action>
+    
+    
+		<action path="/audit" name="commonAuditForm" type="com.topsuntech.gUnit.gEU_sjzb.framework.actions.AuditAction" scope="session">
+      <forward name="showAudit" path="/archive_piece_audit.jsp" /> 
+    </action>
+		<action path="/auditPiece" name="commonAuditForm" type="com.topsuntech.gUnit.gEU_sjzb.framework.actions.AuditAction" scope="session">
+      <forward name="audit" path="/auditDept.do?action=listDeptByRegion" /> 
+    </action>
+		<action path="/userbasicInfo" name="deptBasicInfo" type="com.topsuntech.gUnit.gEU_sjzb.framework.actions.ZqqyUserAction" scope="session">
+      <forward name="add" path="/zqqy_user_add.jsp"/>	
+	  <forward name="addzf" path="/zqqy_user_add_zf.jsp"/>
+		  <forward name="error" path="/zqqy_user_add.jsp"/>
+		  <forward name="success" path="/dispatch.jsp"/>
+		  <forward name="successzf" path="/zf_addsuccess.jsp"/>
+		  <forward name="zforg" path="/zqqy_zf_redirect.jsp"/>
+		  <forward name="showEdit" path="/zqqy_user_edit.jsp"/>
+		  <forward name="editerror" path="/zqqy_user_edit.jsp"/>
+		  <forward name="repeatCorporationAll" path="/repeatCorporationAll_list.jsp"/>
+		  <forward name="tomodifypassword" path="/zqqyuser_modify_password.jsp"/>
+    </action>		
+		<action path="/qxUser" name="userInfo" type="com.topsuntech.gUnit.gEU_popedom.framework.actions.UserAction" scope="session">
+		  <forward name="success" path="/user_list.jsp"/>
+    </action>
+    <action path="/deleteUser" name="userInfo" type="com.topsuntech.gUnit.gEU_popedom.framework.actions.UserAction" scope="session">
+      <forward name="success" path="/userdispatch.jsp" /> 
+    </action>
+   <action path="/addUser" name="userInfo" type="com.topsuntech.gUnit.gEU_popedom.framework.actions.UserAction" scope="session">
+      <forward name="success" path="/userdispatch.jsp"/>		
+      <forward name="showEdit" path="/user_edit.jsp"/>
+      <forward name="error" path="/user_edit.jsp"/> 
+   </action>
+   <action path="/editUser" name="userInfo" type="com.topsuntech.gUnit.gEU_popedom.framework.actions.UserAction" scope="session">
+      <forward name="success" path="/userdispatch.jsp"/>		
+      <forward name="showEdit" path="/user_edit.jsp"/>
+      <forward name="error" path="/user_edit.jsp"/> 
+   </action>
+   <action path="/showUser" name="userInfo" type="com.topsuntech.gUnit.gEU_popedom.framework.actions.UserAction" scope="session">
+		  <forward name="showDetail" path="/user_view.jsp"/> 
+   </action>   
+   	<action path="/showZqqyUser" name="deptBasicInfo" type="com.topsuntech.gUnit.gEU_sjzb.framework.actions.ZqqyUserAction" scope="request">
+		  <forward name="success" path="/zqqyuser_detail.jsp"/>
+	</action>
+  </action-mappings>
+
+  <message-resources
+    parameter="com.topsuntech.gOS.user.ApplicationResources"
+    null="false" />
+  <!-- ========== Message Resources Definitions =========================== -->
+</struts-config>

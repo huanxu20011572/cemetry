@@ -1,0 +1,96 @@
+.groupHeader, .groupHeaderOver, .groupHeaderClick {
+    background-color: #d6d3ce;
+    color: black;
+    text-align: center;
+    font-family: tahoma, arial;
+    font-size: 11;
+    border-left: 1 solid white;
+    border-top: 1 solid white;
+    cursor: hand;
+}
+
+.groupHeader {
+    border-right: 1 solid #0074AD;
+    border-bottom: 1 solid #0074AD; 
+    padding: 3;
+}
+
+.groupHeaderOver {
+    border: 2 outset;
+    padding: 2;
+}
+
+.groupHeaderClick {
+    border: 2 inset;
+    padding: 2;
+}
+
+/* the color for the background */
+.groupPanel, .groupPanelHidden {
+    height: 100%;
+    background-color: white;
+    border-left: 1 solid black;
+    border-top: 1 solid black;
+    color: black;
+    text-align: center;
+    vertical-align: top;
+}
+
+.clippedRegion {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.groupPanelHidden {
+    display: none;
+}
+
+.outlookPanel {
+    border-top: 1 solid #0074AD;
+    border-left: 1 solid #0074AD;   
+    border-right: 1 solid black;
+    border-bottom: 1 solid black;
+    width: 100%;
+    height: 100%;
+}
+
+.iconSection {
+    margin-top: 8;
+    margin-bottom: 0;
+}
+
+.icon {
+    padding: 3;
+    width: 32;
+    height: 32;
+}
+
+.iconOver {
+    border-top: 1 solid #d6d3ce;
+    border-left: 1 solid #d6d3ce;
+    border-right: 1 solid black;
+    border-bottom: 1 solid black;
+    padding: 2;
+    width: 34;
+    height: 34;
+}
+
+.iconClick {
+    border-top: 1 solid black;
+    border-left: 1 solid black;
+    border-right: 1 solid #d6d3ce;
+    border-bottom: 1 solid #d6d3ce;
+    padding: 2;
+    width: 34;
+    height: 34;
+}
+
+.iconLabel {
+    padding: 1;
+    font-family: tahoma, arial;
+    font-size: 11;
+    cursor: default;
+}
+
+// #848284

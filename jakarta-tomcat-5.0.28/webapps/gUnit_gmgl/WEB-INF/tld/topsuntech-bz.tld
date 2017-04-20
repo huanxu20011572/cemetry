@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+    PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+    "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>gOS_bz</shortname>
+    <uri>http://www.topsuntech.com/jsptags/newtree-taglib</uri>
+    <info>for bz system   </info>    
+    <tag>    
+    	<name>diccode2name</name>    	          
+    	<tagclass>com.topsuntech.gUnit.gEU_bzCommon.taglib.DictionaryNamedTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the funeral goods and  catalog tree</info>
+        <attribute>
+    	   <name>dicCode</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+        <attribute>
+    	   <name>insi</name>
+    	   <required>false</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>
+    <tag>    
+    	<name>dic2name</name>    	          
+    	<tagclass>com.topsuntech.gUnit.gEU_dict.taglib.DictionaryNamedTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the funeral goods and  catalog tree</info>
+        <attribute>
+    	   <name>dicCode</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+        <attribute>
+    	   <name>type</name>
+    	   <required>false</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>
+    <tag>    
+    	<name>insid2name</name>    	          
+    	<tagclass>com.topsuntech.gUnit.gEU_bzCommon.taglib.InstituteNamedTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info> transform institite id to name </info>
+        <attribute>
+    	   <name>id</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>
+    
+    <tag>    
+    	<name>userid2name</name>    	          
+    	<tagclass>com.topsuntech.gUnit.gEU_bzCommon.taglib.UserNamedTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info> transform operator/user id to name </info>
+        <attribute>
+    	   <name>id</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag> 
+        
+    <tag>    
+    	<name>goodsTree</name>
+    	<tagclass>com.topsuntech.gUnit.gEU_Ypfw.goods.util.tags.GoodsTreeTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the funeral goods and  catalog tree</info>
+        <attribute>
+    	   <name>bygid</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+        <attribute>
+    	   <name>type</name>
+    	   <required>false</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>    	
+    </tag>
+    
+
+     <tag>    
+    	<name>kbsCataTree</name>
+    	<tagclass>com.topsuntech.gUnit.gEU_kbs.catalog.util.tags.KBSCatalogTreeTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the KBS  catalog tree</info>
+        <attribute>
+    	   <name>insititid</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>
+    
+      <tag>    
+    	<name>kbsContentTree</name>
+    	<tagclass>com.topsuntech.gUnit.gEU_kbs.content.util.tags.KBSContentTreeTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the KBS  catalog tree</info>
+        <attribute>
+    	   <name>insititid</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag>  
+    
+      <tag>    
+    	<name>kbsContentQueryTree</name>
+    	<tagclass>com.topsuntech.gUnit.gEU_kbs.content.util.tags.KBSContentQueryTreeTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the KBS  catalog tree</info>
+        <attribute>
+    	   <name>insititid</name>
+    	   <required>true</required>
+    	   <rtexprvalue>false</rtexprvalue>
+    	</attribute>
+    </tag> 
+
+    <tag>
+    	<name>catalogTree</name>
+    	<tagclass>com.topsuntech.gUnit.gEU_Ypfw.catalog.util.tags.CatalogTag</tagclass>
+    	<bodycontent>empty</bodycontent>
+    	<info>generate the goods catalog tree</info>
+
+    </tag>    
+    
+     
+</taglib>

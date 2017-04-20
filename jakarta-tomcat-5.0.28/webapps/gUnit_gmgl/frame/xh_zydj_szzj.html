@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../jscript/jquery-easyui-1.3.2/jquery-1.8.0.min.js"></script>
+<title>登记-逝者增加</title>
+<style type="text/css">
+<!--
+.word-4 {	color: #085b85;
+}
+.word2 {	color: #085b85;
+	text-decoration:underline;
+}
+.word-6 {	color: #085b85;
+	font-size:14px;
+}
+.word3 {	color: #085b85;
+	font-size:14px;
+}
+-->
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#cemetrery_rerent_add").click(function(){
+	 
+	  if($("input[name='checkCol'][checked]").length<1)
+	   { 
+	     alert("选择合葬数据");
+	     return false;
+       }
+    });
+});
+ 
+</script>
+</head>
+
+<body style="background-color:transparent">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td width="11" valign="top" class="td-bg"><img src="../images/right-1.jpg" /></td>
+    <td align="center" valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="31" align="left" valign="middle" style="background:url(../images/right-3.jpg)"><img src="../images/right-4.jpg" width="9" height="8" align="absmiddle" /> 当前位置 &gt; 租用登记 &gt; 逝者信息登记</td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" style="font-size:12px;">&nbsp;</td>
+      </tr>
+    </table>
+	
+      <table width="98%" cellpadding="0" cellspacing="1" bgcolor="#a6c6da">
+
+        <tr>
+          <td width="15%" height="35" align="right" bgcolor="#D4E5F4">逝者姓名：</td>
+          <td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;
+            <input name="textfield2" type="text" id="textfield2" class="input-1" />
+          <span class="word-7">*</span></td>
+          <td width="15%" align="right" bgcolor="#D4E5F4">性别：</td>
+          <td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;
+          <input name="textfield2" type="radio" id="textfield2"  />男
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <input name="textfield2" type="radio" id="textfield2"   />女
+		  </td>
+        </tr>
+		 <tr>
+          <td width="15%" height="35" align="right" bgcolor="#D4E5F4">证件类别：</td>
+          <td width="0%" align="left" bgcolor="#FFFFFF">&nbsp;
+            <select name="select" style='width:180px'>
+              <option>火化证 </option>
+              <option>死亡证</option>
+              <option>迁坟证</option>
+              <option>骨灰寄存证</option>
+              <option>其他</option>
+            </select>
+           <span class="word-7">*</span></td>
+          <td height="35" align="right" bgcolor="#D4E5F4">身份证号：</td>
+          <td align="left" bgcolor="#FFFFFF"><input name="textfield" type="text" id="textfield" class="input-1" />            &nbsp;<span class="word-7">*</span></td>
+        </tr>
+        <tr>
+          <td height="35" align="right" bgcolor="#D4E5F4">民族：</td>
+          <td align="left" bgcolor="#FFFFFF">&nbsp;
+            <select style='width:180px'>
+              <option select='selected'>汉族 </option>
+              <option>回族</option>
+              <option>侗族</option>
+            </select></td>
+          <td width="15%" height="35" align="right" bgcolor="#D4E5F4">证件编号：</td>
+          <td width="35%" align="left" bgcolor="#FFFFFF">&nbsp;
+            <input name="textfield2" type="text" id="textfield2" class="input-1" />	    
+		  </td>      
+        </tr>
+		 <tr>
+		  <td align="right" bgcolor="#D4E5F4">国籍：</td>
+          <td align="left" bgcolor="#FFFFFF">&nbsp;
+            <select style='width:180px'>
+              <option select='selected'>中国 </option>
+              <option>美国</option>
+              <option>英国</option>
+              
+             </select>
+          </td>
+          <td bgcolor='#d4e5f4' height='35' align='right'>年龄：</td>
+          <td bgcolor='#ffffff' align='left'>&nbsp;
+            <input id='textfield3' class='input-1' name='textfield3' /></td>
+        </tr>
+		<tr>
+		  <td height="35" align='right' bgcolor='#d4e5f4'>与承租人关系：</td>
+		  <td bgcolor='#ffffff' align='left'>&nbsp;
+		    <select style='width:180px'>
+		      <option select='selected'>父子 </option>
+		      <option>母子</option>
+		      <option>兄弟</option>
+          </select></td>
+		  <td bgcolor='#d4e5f4' height='35' align='right'>出生日期：</td>
+		  <td bgcolor='#ffffff' align='left'>&nbsp;
+		    <input id='textfield3' class='input-1' name='textfield3' /></td>
+        </tr>
+    <tr>
+      <td bgColor='#d4e5f4' height='35' align='right'>火化殡仪馆：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <Input id='textfield3' class='input-1' name='textfield3'>
+        <span class="word-7">*</span></td>
+      <td bgColor='#d4e5f4' align='right'>死亡日期：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <Input id='cemetreryBox_payment' class='input-1' name='textfield4'>
+        <span class="word-7">*</span></td>
+    </tr>
+    <tr>
+      <td bgColor='#d4e5f4' height='35' align='right'>预约安葬日期：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <Input id='textfield3' class='input-1' name='textfield3'></td>
+      <td bgColor='#d4e5f4' align='right'>实际安葬日期：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <Input id='cemetreryBox_payment' class='input-1' name='textfield4'></td>
+    </tr>
+    <tr>
+      <td bgColor='#d4e5f4' height='35' align='right'>安放物：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <select style='width:180px'>
+			     <option select='selected'>骨灰</option>
+			     <option>遗物</option>
+				 <option>灵位</option>
+				 <option>遗骨</option>
+                 <option>其他</option>  				  
+			 </select>
+        <span class="word-7">*</span></td>
+      <td bgColor='#d4e5f4' align='right'>安葬人：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <Input id='cemetreryBox_payment' class='input-1' name='textfield4'></td>
+    </tr>
+    <tr>
+      <td bgColor='#d4e5f4' height='35' align='right'>登记人：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <Input id='textfield3' class='input-1' value='陈XXX' name='textfield3'></td>
+      <td bgColor='#d4e5f4' align='right'>登记日期：</td>
+      <td bgColor='#ffffff' align='left'>&nbsp; 
+        <Input id='cemetreryBox_payment' class='input-1' value='2010/1/5' name='textfield4'></td>
+    </tr>
+    <tr>
+      <td bgColor='#d4e5f4' height='35' align='right'>备注：</td>
+      <td colspan='3' bgColor='#ffffff'align='left'>&nbsp; 
+         <textarea name="textfield44"  id="textfield44" style="width:800px;height:200px" > </textarea> 
+      
+    </tr>
+
+        <tr>
+          <table >
+		    <tr>
+               <td height="35"  colspan="4" align="right"  >			    
+			      <input name="button" type="submit" class="button-z" id="button" value="保存" /> 
+			   </td>
+                
+               <td height="35"  colspan="4" align="right"  > 
+			      <form action="../frame/xh_zydj_dj.html"method="post">
+			      <input name="button2" type="submit" class="button-z" id="button2" value="返回" />
+				  </form>
+				</td>
+              
+            </tr>
+          </table>
+        </tr>
+		 
+      </table>
+	  
+	  
+     
+      
+	  </td>
+  </tr>
+</table>
+</body>
+</html>

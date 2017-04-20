@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.topsuntech.gOS.meta.DefaultColumnMeta" table="DEFAULTCOLUMNMETA">
+		<id name="id" column="ID" type="integer">
+			<generator class="sequence">
+				<param name="sequence">DCM_ID_SEQ</param>
+			</generator>
+		</id>
+		<property name="tableName" type="string"/>
+		<property name="columnName" type="string"/>
+		<property name="showName" type="string"/>
+		<property name="type" type="string"/>
+		<property name="format" type="string"/>
+		<property name="pkOrFk" type="boolean"/>
+		<property name="isShow" type="boolean"/>
+		<property name="isQuery" type="boolean"/>
+		<property name="description" type="string"/>
+		<property name="showOrder" type="integer"/>
+		<property name="queryOrder" type="integer"/>
+		<set name="columnRanges" table="DEFAULTCOLUMNRANGE" inverse="true" cascade="all">
+			<key column="columnId"/>
+        		<one-to-many class="com.topsuntech.gOS.meta.DefaultColumnRange"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

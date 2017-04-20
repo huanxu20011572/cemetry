@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gb2312"?>
+<skin>
+    <define skinID="1" name="name1" displayName="梦幻系列" default="true">
+        <cssFile>/images/default.css</cssFile>
+        <cssMail>/images/mail.css</cssMail>
+    </define>
+    <define skinID="2" name="name2" displayName="水晶系列">
+        <cssFile>/images/default_blue.css</cssFile>
+        <cssMail>/images/mail_blue.css</cssMail>
+    </define>
+</skin>

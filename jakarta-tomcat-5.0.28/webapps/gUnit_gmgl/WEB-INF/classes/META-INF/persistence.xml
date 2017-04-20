@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="gUnit_gmgl">
+
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesCemeteryCharge</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesCemeteryFile</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesCemeteryRegistry</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesDeparted</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.CemeteryService</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.CemeteryCertificate</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.BusinessData</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.Departed</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryCharge</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryChargeData</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryCommodity</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryFile</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryLocation</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryRegistry</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryType</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryZone</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_charge.entity.ChargeData</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_charge.entity.ChargeType</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_system.entity.Dict</class>
+		<class>com.topsuntech.gUnit_gmgl.gEU_business.entity.VisitReturn</class>
+		
+		
+	</persistence-unit>
+</persistence>

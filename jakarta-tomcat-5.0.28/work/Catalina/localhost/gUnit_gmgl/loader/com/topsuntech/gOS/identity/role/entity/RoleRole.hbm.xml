@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+<hibernate-mapping>
+	<class name="com.topsuntech.gOS.identity.role.entity.RoleRole" table="GOS_N_ROLE_ROLE">
+		<id name="id" type="long">
+			<generator class="sequence">
+				<param name="sequence">GOS_ROLE_SEQ</param>
+			</generator>
+		</id>
+		<property name="roleId" column="ROLE_ID" type="long" />
+		<property name="grantedRoleId" column="GRANTED_ROLE_ID" type="long" />
+	</class>
+</hibernate-mapping>

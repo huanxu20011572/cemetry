@@ -1,0 +1,14 @@
+2014-12-24 20:16:50 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2014-12-24 20:17:20 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'
+2014-12-24 20:36:51 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2014-12-24 20:37:09 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'
+2014-12-24 21:13:14 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2014-12-24 21:13:44 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'
+2014-12-24 21:14:54 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2014-12-24 21:15:05 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'
+2014-12-24 21:16:27 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2014-12-24 21:16:37 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'
+2014-12-24 21:39:52 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2014-12-24 21:40:03 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'
+2014-12-24 22:24:10 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2014-12-24 22:24:21 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GB2312"?>
+<meta>
+  <bean>
+    <name>MetaProperty</name>
+    <title>元数据资源属性</title>
+    <description>保存元数据所描述的资源的属性</description>
+    <table>GOS_PROPERTY</table>
+    <primary>true</primary>
+    <attribute>
+      <primary-key>true</primary-key>
+      <foreign-key>false</foreign-key>
+      <name>id</name>
+      <title>主键</title>
+      <type>long</type>
+      <show-in-list>false</show-in-list>
+      <test-data></test-data>
+      <show-in-detail>true</show-in-detail>
+      <complex-query>false</complex-query>
+    </attribute>
+    <attribute>
+      <primary-key>false</primary-key>
+      <foreign-key>false</foreign-key>
+      <name>name</name>
+      <title>属性名称</title>
+      <type>string</type>
+      <show-in-list>true</show-in-list>
+      <test-data></test-data>
+      <show-in-detail>true</show-in-detail>
+      <complex-query>false</complex-query>
+    </attribute>
+    <attribute>
+      <primary-key>false</primary-key>
+      <foreign-key>false</foreign-key>
+      <name>value</name>
+      <title>属性值</title>
+      <type>string</type>
+      <show-in-list>true</show-in-list>
+      <test-data></test-data>
+      <show-in-detail>true</show-in-detail>
+      <complex-query>false</complex-query>
+    </attribute>
+
+  </bean>
+  <scheme />
+</meta>

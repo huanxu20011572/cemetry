@@ -1,0 +1,198 @@
+body{background-color:#ffffff;color:#000000;margin-left:0;margin-top:0;margin-width:0;margin-height:0;margin:0px;font-size:14px;font-family:'宋体';font-weight:normal;line-height: 18px;}
+table{color:#000000;font-size:14px;font-family:'宋体';font-weight:normal;}
+textarea{overflow-x:hidden;overflow-y:hidden;}
+
+.text12 {/*12号字体 高21*/
+	font-family: '仿宋_GB2312';
+	font-size: 14px;
+	color: #000000;
+	line-height: 21px;
+}
+.text14 {/*14号字体 高25*/
+	font-size: 14px;
+	line-height: 25px;
+}
+.text16 {/*16号字体 */
+	font-family: '文鼎CS大宋''宋体';
+	font-size: 24px;
+	letter-spacing: 1px;
+	line-height: 200%;
+}
+/*14号字体 表格样式*/
+.f14pt-boder1 { /*整体边框*/
+	border: 1px solid #000000;
+	font-size: 14px;
+	line-height: 20px;
+}
+.f14pt-boder2 {/*右底边框*/
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	font-size: 14px;
+	line-height: 20px;
+}
+.f14pt-boder3 {/*底边框*/
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	font-size: 14px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	line-height: 20px;
+}
+.f14pt-boder4 {/*右边框*/
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+/*12号字体 表格样式*/
+.f12pt-boder1 { /*整体边框*/
+	border: 1px solid #000000;
+	font-size: 12px;
+	line-height: 20px;
+}
+.f12pt-boder2 {/*右底边框*/
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	font-size: 14px;
+	line-height: 20px;
+}
+.f12pt-boder3 {/*底边框*/
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	font-size: 14px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	line-height: 20px;
+}
+.f12pt-boder4 {/*右边框*/
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+/*16号字体 表格样式*/
+.f14pt-redboder1 {
+	border: 1 solid #CC0000;
+	font-size: 16px;
+	line-height: 20px;
+	color: #CC0000;
+	font-weight: bolder;
+
+
+}
+.f14pt-redboder2 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CC0000;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CC0000;
+	font-size: 16px;
+	line-height: 20px;
+	color: #CC0000;
+	font-weight: bolder;
+
+
+}
+.f14pt-redboder3 {
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CC0000;
+	font-size: 16px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	line-height: 20px;
+	color: #CC0000;
+	font-weight: bolder;
+
+
+}
+.f14pt-redboder4 {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CC0000;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FF0000;
+
+}
+
+.14cuhei {
+	font-size: 16px;
+	font-weight: normal;
+	color: #000000;
+	line-height: 20px;
+	font-family: "黑体";
+}
+
+/*14号红色字体*/
+.text14-red {font-size: 14px;line-height: 20px;color: #FF0000;}
+.input {
+	font-size: 16px;
+	color: #CC0000;
+	border: 0px none;
+}
+.input14 {
+	font-size: 14px;
+	color: #000000;
+	border: 0px none;
+	text-align:center;
+}
+.input14-l {
+	font-size: 14px;
+	color: #000000;
+	border: 0px none;
+}
+.16redfont {
+	font-size: 16px;
+	font-weight: bolder;
+	color: #CC0000;
+}
+.input16 {
+
+	font-size: 16px;
+	color: #000000;
+	border: 0px none;
+}
+.FONT18 {
+	font-family: "黑体";
+	font-size: 22px;
+	font-weight: bold;
+	color: #000000;
+	line-height: 160%;
+}
+.boder14-left-01{/*底边框*/
+	font-family: Arial;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	font-size: 14px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+}
+
+.boder14-left-02{/*底边框*/
+	font-family: Arial;
+	font-size: 14px;
+	border: 0px none #FFFFFF;
+	text-align: center;
+}

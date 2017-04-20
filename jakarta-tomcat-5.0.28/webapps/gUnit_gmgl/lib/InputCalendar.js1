@@ -1,0 +1,114 @@
+function isDate(strDate){
+	var regYear = /\d{4}[-]/g;	//year pattern
+	var regMonth;
+	var regDay =  /\d{1,2}/g;;
+	var chrSeperator;
+	var arr,str;
+	if ((arr = regYear.exec(strDate)) == null)
+		return false;
+	var intYearlen = arr.lastIndex - arr.index - 1;
+	if (arr.index != 0 || (intYearlen != 4 && intYearlen != 2))
+		return false;
+	str = arr[0];
+	chrSeperator = str.charAt(str.length - 1);  // get the seperator ('-' or '/')
+	intYear = parseInt(str.substr(0, str.length - 1));	// get the year
+	if (intYear < 1900 || intYear > 2099)  //Error Year
+		return false;
+
+	strDate = strDate.substr(arr.lastIndex);
+	if (chrSeperator == "-")
+		regMonth = /\d{1,2}[-]/g;
+	else
+		regMonth = /\d{1,2}[/]/g;
+	if ((arr = regMonth.exec(strDate)) == null)
+		return false;
+	if (arr.index != 0)
+		return false;
+	str = arr[0];
+	if (str.charAt(0) == '0') {
+		intMonth = parseInt(str.substr(1, str.length - 2)); // get the month
+	} else {
+		intMonth = parseInt(str.substr(0, str.length - 1)); // get the month
+	}
+	if (intMonth < 1 || intMonth > 12) //Error Month
+		return false;
+
+	strDate = strDate.substr(arr.lastIndex);
+
+	if ((arr = regDay.exec(strDate)) == null)
+		return false;
+	if (arr.index != 0 || arr.lastIndex != strDate.length)
+		return false;
+	str = arr[0];
+	if (str.charAt(0) == '0') {
+		intDay = parseInt(str.substr(1, str.length - 1)); // get the day
+	} else {
+		intDay = parseInt(str); // get the day
+	}
+	if (intDay < 1 || intDay > 31)  //Error Day
+		return false;
+
+	datDate = new Date(intYear, intMonth - 1, intDay); //Test the Date
+	if (isNaN(datDate))  //Error Date Format
+		return false;
+	if (datDate.getMonth() != intMonth - 1 || datDate.getDate() != intDay)  //invalid date such as '1999/02/29' and '1999/04/31'
+		return false;
+	return datDate;  //Return the Date in parsed format
+}
+
+function CheckDate(oIn, clean){
+    var v = oIn.value;
+
+    if (v == null || v == ""){
+        if (clean){
+            return;
+        }
+        alert("请输入日期 yyyy-mm-dd (年/月/日)");
+        oIn.focus();
+        return;
+    }
+    if (!isDate(oIn.value)){
+        alert("请输入有效的日期格式yyyy-mm-dd (年/月/日)");
+        oIn.focus();
+        oIn.select();
+    }
+}
+
+function Calendar(name, refDate, starYear, endYear, width, height, border, defaultDay, clean, dayOffset){
+	this.refDate = refDate;
+	this.starYear = starYear;
+	this.endYear = endYear;
+	this.width = width;
+	this.height = height;
+	this.border = border;
+	this.clean = clean;
+	var inputValue = "";
+	if(name==null || name==""){return;}
+	if(this.refDate == null || this.refDate == ""){
+		var nowDate;
+		if(defaultDay == null || defaultDay == ""){
+	    	nowDate = new Date();
+	    	this.dayOffset = dayOffset;
+	    	if (dayOffset != null && dayOffset != ""){
+	    	    nowDate.setTime(nowDate.getTime() + 86400000 * parseInt(dayOffset));
+	    	}
+	    	this.refDate = nowDate.getYear() + "-" + (nowDate.getMonth() + 1) + "-" + nowDate.getDate();
+	    	if (defaultDay == null){
+	    	    inputValue = this.refDate;
+	    	}
+	    }else{
+	    	this.refDate = defaultDay;
+	    	inputValue = this.refDate;
+	    }
+	}
+    else{
+        inputValue = this.refDate;
+    }
+	if(this.width==null || this.width==""){this.width=80;}
+	if(this.height==null || this.height==""){this.height=22;}
+	this.backgroundColor = "white";
+	var str="";
+	str = '<input id="_Text' + name + '" onblur="CheckDate(this, ' + this.clean + ')"';
+	str += ' name="' + name + '" style="background-color:' + this.backgroundColor + ';width:' + (this.width) + 'px;height:' + this.height + '" value="' + inputValue + '">\n';
+	document.write(str);
+}

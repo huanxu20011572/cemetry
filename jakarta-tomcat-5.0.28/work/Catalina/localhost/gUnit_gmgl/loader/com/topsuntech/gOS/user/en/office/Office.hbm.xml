@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<!-- 
+    Created by Middlegen Hibernate plugin
+
+    http://boss.bekk.no/boss/middlegen/
+    http://hibernate.sourceforge.net/
+-->
+
+<class name="com.topsuntech.gOS.user.en.office.Office" table="GOS_DEPT">
+	<id name="id" type="long">
+		<generator class="sequence">
+			<param name="sequence">GOS_DEPT_SEQ</param>
+		</generator>
+	</id>
+
+    <property name="num" type="string" column="DEPT_CODE"/>
+    <property name="name" type="string"  />
+    <property
+        name="cat"
+        type="string"
+    />
+    <property
+        name="regionid"
+        type="long"
+        insert="false"
+        update="false"
+    />  
+    <property
+        name="levelid"
+        type="long"
+    />    
+    <property
+        name="createdate"
+        type="date"
+    />
+    <property
+        name="creatorid"
+        type="long"
+    />
+    <property
+        name="description"
+        type="string"
+    />
+        <property
+    	name="bzsm" 
+    	type="long"
+    />
+    <property
+    	name="syrs"
+    	type="long"
+    />
+    <property
+    	name="faren"
+    	type="long"
+    />
+    <property
+    	name="bzxs"
+    	type="string"
+    />
+	 <property
+    	name="ldzzs"
+    	type="long"
+    />
+    <property
+    	name="ldfzs"
+    	type="long"
+    />
+    <property
+    	name="jfxs"
+    	type="string"
+    />
+    <property
+    	name="shortname"
+    	type="string"
+    />
+    
+    <property
+    	name="frzhengshu"
+    	type="string"
+    />
+    
+    <property
+    	name="officephone"
+    	type="string"
+    />
+    
+    <property
+    	name="officecode"
+    	type="string"
+    />
+    
+    <property
+    	name="officeaddr"
+    	type="string"
+    />
+    
+    <property
+    	name="officeduty"
+    	type="string"
+    />
+    
+    <property 
+    	name="order"
+    	column="disporder"
+    	type="string"
+    />
+    
+    <property 
+    	name="parentId"
+    	column="PARENT_ID"
+    	type="long"
+    />
+ 
+ 	<property name="officemail" type="string"/>
+ 	<property name="officetime" type="string"/>
+ 	<property name="traffictype" type="string"/>
+   
+    <many-to-one
+    	name="region"
+    	class="com.topsuntech.gOS.user.en.region.Region"
+    	column="regionid"
+    />
+    
+    <!-- associations -->
+
+</class>
+</hibernate-mapping>

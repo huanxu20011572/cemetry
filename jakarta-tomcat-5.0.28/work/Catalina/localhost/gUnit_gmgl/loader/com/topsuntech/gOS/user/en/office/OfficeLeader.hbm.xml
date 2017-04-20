@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<!-- 
+    Created by Middlegen Hibernate plugin
+
+    http://boss.bekk.no/boss/middlegen/
+    http://hibernate.sourceforge.net/
+-->
+
+<class name="com.topsuntech.gOS.user.en.office.OfficeLeader" table="GOS_DEPT_LEADER">
+	<id name="id" type="long">
+		<generator class="sequence">
+			<param name="sequence">GOS_DEPT_LEADER_SEQ</param>
+		</generator>
+	</id>
+
+    <property name="deptid" type="long"/>
+    <property name="userid" type="long"/>
+    <property name="position" type="string"/>
+    <property name="isupper" type="boolean"/>
+    <property name="officeseq" type="int"/>	
+    <property
+        name="createdate"
+        type="date"
+    />
+    <property
+        name="creatorid"
+        type="long"
+    />
+    <property
+        name="description"
+        type="string"
+    />
+    
+<!--    <many-to-one name="user" column="userid" insert="false" update="false" outer-join="true"/>-->
+    
+    <!-- associations -->
+
+</class>
+</hibernate-mapping>

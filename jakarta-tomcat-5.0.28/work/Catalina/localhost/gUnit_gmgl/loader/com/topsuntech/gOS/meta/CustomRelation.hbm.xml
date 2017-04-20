@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.topsuntech.gOS.meta.CustomRelation" table="CUSTOMRELATION">
+		<id name="id" column="ID" type="integer">
+			<generator class="sequence">
+				<param name="sequence">CRELATION_ID_SEQ</param>
+			</generator>
+		</id>
+		<property name="schemaId" type="integer" not-null="true"/>
+		<property name="columnId" type="integer" not-null="true"/>
+		<many-to-one 	name="columnMeta" 
+				class="com.topsuntech.gOS.meta.CustomColumnMeta" 
+				column="columnId" 
+				cascade="all"
+				insert="false"
+				update="false"/>
+	</class>
+</hibernate-mapping>

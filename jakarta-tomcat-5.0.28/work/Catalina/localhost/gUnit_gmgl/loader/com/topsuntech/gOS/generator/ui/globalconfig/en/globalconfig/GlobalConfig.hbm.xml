@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.topsuntech.gOS.generator.ui.globalconfig.en.globalconfig.GlobalConfig" 
+    table="GOS_AUTO_GLOBAL_CONFIG"
+>
+    <id
+        name="id"
+        type="long"
+    >
+			<generator class="native" />
+    </id>
+    <property
+        name="webroot"
+        type="string"
+    />
+    <property
+        name="srcroot"
+        type="string"
+    />
+    <property
+        name="htmlroot"
+        type="string"
+    />
+    <property
+        name="tabletemplate"
+        type="string"
+    />
+    <property
+        name="configtemplate"
+        type="string"
+    />
+    <property
+        name="packageroot"
+        type="string"
+    />
+    <property
+        name="templatename"
+        type="string"
+    />
+</class>
+</hibernate-mapping>

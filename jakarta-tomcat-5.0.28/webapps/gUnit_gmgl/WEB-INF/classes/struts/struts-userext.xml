@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+	<form-bean name="userextForm" type="com.topsuntech.gOS.userext.actions.UserextForm" />
+	<form-bean name="searchForm" type="com.topsuntech.gOS.user.actions.SearchForm"/>
+	
+	<form-bean name="userQueryForm" type="com.topsuntech.gOS.identity.model.action.UnavailDynaActionForm">
+		<form-property name="quCode" type="java.lang.String"/>
+		<form-property name="streetCode" type="java.lang.String"/>
+		<form-property name="dept" type="java.lang.String"/>
+		<form-property name="deptid" type="java.lang.Long"/>
+		<form-property name="loginId" type="java.lang.String"/>
+		<form-property name="userName" type="java.lang.String"/>
+		<form-property name="roleId" type="java.lang.String"/>
+		<form-property name="priorityId" type="java.lang.String"/>
+		<form-property name="priorityName" type="java.lang.String"/>
+		<form-property name="category" type="java.lang.String"/>
+		<form-property name="currentPage" type="java.lang.Integer"/>
+	</form-bean>
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+  </global-forwards>
+  <!-- ========== Action Mapping Definitions ============================== -->
+
+  <action-mappings>
+    <action type="org.apache.struts.actions.SwitchAction" path="/toModule" />
+
+    <action path="/UserextSelect" name="userextForm" type="com.topsuntech.gOS.userext.actions.UserextAction" scope="session">
+      <forward name="list" path="/manager_list.jsp" />
+      <forward name="listUser" path="/user_list.jsp" />
+      <forward name="listUserPri" path="/user_list_pri.jsp" />
+      <forward name="listOffice" path="/zxtjggl.jsp" />
+      <forward name="view" path="/view.jsp" />
+      <forward name="priorityChoose" path="/priority_choose.jsp"/>
+      <forward name="backPriority" path="/UserextSelect.do?action=accredit" redirect="true"/>
+      <forward name="finishPriority" path="/refresh.jsp"/>
+      <forward name="deletesuccess" path="/UserextSelect.do?action=list&amp;creatorid=0" redirect="true"/>
+    </action>
+
+	 <action path="/UserextSelectZi" name="userextForm" type="com.topsuntech.gOS.userext.actions.UserextAction" scope="session">
+      <forward name="list" path="/zimanager_list.jsp" />
+      <forward name="listUser" path="/ziuser_list.jsp" />
+      <forward name="listUserPri" path="/ziuser_list_pri.jsp" />
+      <forward name="listOffice" path="/zizxtjggl.jsp" />
+      <forward name="view" path="/ziview.jsp" />
+      <forward name="priorityChoose" path="/zipriority_choose.jsp"/>
+      <forward name="backPriority" path="/UserextSelectZi.do?action=accredit" redirect="true"/>
+      <forward name="finishPriority" path="/zirefresh.jsp"/>
+      <forward name="deletesuccess" path="/UserextSelectZi.do?action=list" redirect="true"/>
+    </action>
+
+	 <action path="/DeptSelect" name="userextForm" type="com.topsuntech.gOS.userext.actions.UserextAction" scope="session">
+      <forward name="list" path="/deptmanager_list.jsp" />
+      <forward name="listUser" path="/user_list.jsp" />
+      <forward name="listUserPri" path="/user_list_pri.jsp" />
+      <forward name="listOffice" path="/zxtjggl.jsp" />
+      <forward name="view" path="/view.jsp" />
+      <forward name="priorityChoose" path="/priority_choose.jsp"/>
+      <forward name="backPriority" path="/UserextSelect.do?action=accredit" redirect="true"/>
+      <forward name="finishPriority" path="/refresh.jsp"/>
+      <forward name="deletesuccess" path="/DeptSelect.do?action=list" redirect="true"/>
+    </action>
+    
+    <action path="/UserextSearch" name="searchForm" type="com.topsuntech.gOS.userext.actions.UserextAction" scope="session">
+    	<forward name="searchresult" path="/user_search_list.jsp"/>
+    </action>
+    
+    <action path="/UserextCreate" name="userextForm" type="com.topsuntech.gOS.userext.actions.UserextAction" scope="session">
+      <forward name="subman_1" path="/subman_1.jsp" />
+      <forward name="subman_2" path="/subman_2.jsp" />
+      <forward name="subman_3" path="/subman_3.jsp" />
+      <forward name="subman_23" path="/subman_23.jsp" />
+      <forward name="errorback" path="/errorback.jsp" />
+      <forward name="logman_2" path="/UserextCreate.do?action=step3"/>
+      <forward name="logman_23" path="/logman_23.jsp" />
+      <forward name="logman_3" path="/logman_3.jsp" />
+      <forward name="finish" path="/UserextSelect.do?action=list&amp;creatorid=0" redirect="true"/>
+    </action>
+     <action path="/UserListAll"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="method" scope="session">    
+		 <forward name="success" path="/subman_1.jsp" />
+	 </action>
+	 
+	 <!--action path="/UserListAllzi"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="method" scope="session">    
+		 <forward name="success" path="/zisubman_1.jsp" />
+	 </action>
+	 <action path="/UserListDept"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="method" scope="session">    
+		 <forward name="success" path="/deptsubman_1.jsp" />
+	 </action-->
+	 
+	 <action path="/UserextNewCreate" name="userextForm" type="com.topsuntech.gOS.userext.actions.UserextAction" scope="session">
+        <forward name="subman_1" path="/zisubman_1.jsp" />
+	    <forward name="subman_2" path="/zisubman_2.jsp" />
+	    <forward name="subman_3" path="/zisubman_3.jsp" />
+		<forward name="errorback" path="/errorback.jsp" />
+	    <forward name="logman_2" path="/UserextNewCreate.do?action=step3"/>
+	    <forward name="subman_23" path="/zisubman_23.jsp"/>
+	    <forward name="logman_23" path="/zilogman_23.jsp" />
+        <forward name="logman_3" path="/zilogman_3.jsp" />
+	    <forward name="finish" path="/UserextSelectZi.do?action=list" redirect="true"/>
+    </action>
+    <action path="/UserextDeptCreate" name="userextForm" type="com.topsuntech.gOS.userext.actions.UserextAction" scope="session">
+        <forward name="subman_1" path="/deptsubman_1.jsp" />
+	    <forward name="subman_2" path="/deptsubman_2.jsp" />
+	    <forward name="subman_3" path="/deptsubman_3.jsp" />
+		<forward name="errorback" path="/errorback.jsp" />
+	    <forward name="logman_2" path="/UserextDeptCreate.do?action=step3"/>
+	    <forward name="subman_23" path="/deptsub_redirt.jsp"/>
+	    <forward name="logman_23" path="/deptlogman_23.jsp" />
+        <forward name="logman_3" path="/deptlogman_3.jsp" />
+	    <forward name="finish" path="/DeptSelect.do?action=list" redirect="true"/>
+    </action>
+    
+    <!-- ========== IDY Action  ============================== -->
+    
+  	<action path="/treeView" type="com.topsuntech.gOS.identity.model.action.TreeViewAction" parameter="doMethod" />
+  	
+  	<action path="/subUserQuery" name="userQueryForm" type="com.topsuntech.gOS.identity.model.action.IdyMethodAction" parameter="userQuery.execute:userList" scope="request">
+  		<forward name="success" path="/zisubman_1.jsp" />
+  	</action>
+  	
+  	<action path="/deptUserQuery" name="userQueryForm" type="com.topsuntech.gOS.identity.model.action.IdyMethodAction" parameter="userQuery.execute:userList" scope="request">
+  		<forward name="success" path="/deptsubman_1.jsp" />
+  	</action>
+  	
+  	<action path="/subUserQueryList" name="userQueryForm" type="com.topsuntech.gOS.identity.model.action.IdyMethodAction" parameter="userQuery.execute:userList" scope="session">
+  		<forward name="success" path="/user_list.jsp" />
+  	</action>
+  	
+  	<action path="/deptUserQueryList" name="userQueryForm" type="com.topsuntech.gOS.identity.model.action.IdyMethodAction" parameter="userQuery.execute:userList" scope="request">
+  		<forward name="success" path="/user_list.jsp" />
+  	</action>
+  	
+  	<action path="/showChoosOfficePriority" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod" scope="request">
+  		<forward name="success" path="/office_priority_choose.jsp" />
+  	</action>
+  	
+  	<action path="/updateUserextSubstrAndPriority" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjUserAction" parameter="doMethod">
+  	</action>
+  </action-mappings>
+
+  <message-resources
+    parameter="com.topsuntech.gOS.user.ApplicationResources"
+    null="false" />
+  <!-- ========== Message Resources Definitions =========================== -->
+</struts-config>

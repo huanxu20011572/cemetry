@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.topsuntech.gOS.applog.en.Smslog"
+        table="BJMZJ.GOS_SMSLOG"
+        dynamic-update="true"
+        dynamic-insert="true"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+        >
+            <generator class="sequence">
+                <param name="sequence">GOS_SMSLOG_SEQ</param>
+            </generator>
+        </id>
+
+        <property
+            name="appenddate"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="appenddate"
+        />
+
+        <property
+            name="info"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="info"
+            length="256"
+        />
+
+        <property
+            name="note"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="note"
+            length="256"
+        />
+
+        <property
+            name="receiver"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="receiver"
+            length="50"
+        />
+
+        <property
+            name="receiverid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="receiverid"
+        />
+
+        <property
+            name="receiverphone"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="receiverphone"
+            length="20"
+        />
+
+        <property
+            name="sender"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="sender"
+            length="50"
+        />
+
+        <property
+            name="senderid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="senderid"
+        />
+
+        <property
+            name="succeed"
+            type="boolean"
+            update="true"
+            insert="true"
+            column="succeed"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Smslog.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

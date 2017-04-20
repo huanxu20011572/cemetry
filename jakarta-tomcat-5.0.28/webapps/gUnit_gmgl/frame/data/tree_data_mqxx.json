@@ -1,0 +1,51 @@
+
+[{      
+    "text":"菊园区（500/10）", 
+    "state":"open",	
+    "children":[{    
+        "text":"1排（12/5）",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排（12/6）"
+    },{    
+        "text":"3排（12/7）"
+    }]    
+},{    
+    "text":"竹园区（400/20）",    
+    "state":"open",    
+    "children":[{    
+        "text":"1排（12/9）",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排（12/10）"
+    },{    
+        "text":"3排（12/11）"
+    }]    
+},{    
+    "text":"兰园区（500/10）",    
+    "state":"open",    
+    "children":[{    
+        "text":"1排（12/5）",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排（12/6）"
+    },{    
+        "text":"3排（12/7）"
+    }]    
+},{    
+    "text":"梅园区（400/20）",    
+    "state":"open",    
+    "children":[{      
+        "text":"1排（12/9）",  
+		"state":"open",   		
+        "checked":false   
+    },{    
+        "text":"2排（12/10）"
+    },{    
+        "text":"3排（12/11）"
+    }]    
+}]  
+

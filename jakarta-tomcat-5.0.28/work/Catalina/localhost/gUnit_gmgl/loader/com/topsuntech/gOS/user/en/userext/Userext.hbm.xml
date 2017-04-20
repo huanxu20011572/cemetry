@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+
+<class 
+    name="com.topsuntech.gOS.user.en.userext.Userext" 
+    table="GOS_USEREXT"
+>
+    <id name="id" type="long">
+    	<generator class="assigned"></generator>
+    </id>
+    
+    <property name="issuperman"/>
+    <property name="issubman"/>
+    <property name="isdeptman"/>
+    <property name="islogman"/>
+    <property name="subcreatorid"/>
+    <property name="deptcreatorid"/>
+    <property name="logcreatorid"/>
+    <property name="substr"/>
+    <property name="deptstr"/>
+    <property name="logstr"/>
+    <property name="priority"/>
+    
+    <one-to-one
+    	name="user"
+    	cascade="none"
+    />
+
+    <!-- associations -->
+
+</class>
+</hibernate-mapping>

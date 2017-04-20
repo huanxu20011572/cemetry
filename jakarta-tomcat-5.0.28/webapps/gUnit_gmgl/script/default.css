@@ -1,0 +1,116 @@
+body{background-color:#ffffff;color:#000000;margin-left:0;margin-top:0;margin-width:0;margin-height:0;margin:0px;font-size:12px;font-family:宋体;font-weight:normal}
+
+<STYLE> 
+BODY {
+SCROLLBAR-FACE-COLOR: #ECCAB1; //滚动条凸出部分的颜色
+SCROLLBAR-HIGHLIGHT-COLOR: #ECCAB1;//滚动条空白部分的颜色
+SCROLLBAR-SHADOW-COLOR:  #ECCAB1;//立体滚动条阴影的颜色
+SCROLLBAR-3DLIGHT-COLOR: #ECCAB1;//滚动条亮边的颜色
+SCROLLBAR-ARROW-COLOR:  #ECCAB1;//上下按钮上三角箭头的颜色
+SCROLLBAR-TRACK-COLOR: #ECCAB1;//滚动条的背景颜色
+SCROLLBAR-DARKSHADOW-COLOR:  #ECCAB1;//滚动条强阴影的颜色
+SCROLLBAR-BASE-COLOR: #ECCAB1；//滚动条的基本颜色
+}
+</STYLE> 
+
+A:link {font-size:12px;font-family:宋体;color: #0000ff;text-decoration: none;}
+A:visited {font-size:12px;font-family:宋体;color:#0000ff;text-decoration:none;}
+A:active {font-size:12px;font-family:宋体;color: #ff6600;text-decoration:none;}
+A:hover {font-size:12px;font-family:宋体;color: #ff6600;text-decoration:none;}
+A:link {font-size:12px;font-family:宋体;color: #0000ff;text-decoration:none;}
+
+A.a2:link {font-size:12px;font-family:宋体;color: #000000;text-decoration:none;}
+A.a2:visited {font-size:12px;font-family:宋体;color:#000000;text-decoration:none;}
+A.a2:active {font-size:12px;font-family:宋体;color: #ff6600;text-decoration:none;}
+A.a2:hover {font-size:12px;font-family:宋体;color: #ff6600;text-decoration:none;}
+
+.banner_td {width: 500px;height: 60px;background-image:url(banner.gif);}
+.table1 {background-color:#FAF8EB;width:100%;height:80;cellpadding:0;cellspacing:0;border:0;valign:top}
+.table2 {background-color:#E27000;width:100%;height:9px;cellpadding:0;cellspacing:0;border:0;valign:top}
+.td1 {font-size:12px;font-family:宋体;font-weight:normal;text-align: center;vertical-align: bottom;}
+.td2 {font-size:12px;font-family:"宋体";font-weight:normal;text-align: left;line-height: 20px;}
+.td3 {font-size:12px;font-family:宋体;font-weight:normal;height:16;background-color:#E8F2F8;}
+.tr1{font-size:12px;font-family:"宋体";font-weight:normal;text-align: center;line-height: 20px; background-color:#FFFFFF;}
+.tr2{font-size:12px;	font-family:"宋体";	font-weight:bold;	text-align:center;	line-height: 20px;	background-color:#FBF7EC;	color: #000000;}
+.tr3{font-size:12px;font-family:"宋体";font-weight:normal;text-align: center;line-height: 20px; background-color:#FBF7EC;}
+.td4 {font-size:12px;font-family:宋体;font-weight:normal;height:23;text-align: left;background-color:#F0CEB4;}
+.td5 {font-size:12px;font-family:宋体;font-weight:normal;height:23;text-align: right;background-image:url(bg_line.gif);}
+
+.table3 {background-image:  url(bg_left.gif);height: 100%;width: 201px;vertical-align: top;}
+.td6 {font-size:12px;	font-family:"宋体";font-weight:normal;height:20;text-align: left;line-height: 20px;}
+.td7 {font-size:12px;font-family:宋体;font-weight:normal;height:8;}
+.td8 {font-size:12px;font-family:宋体;font-weight:normal;text-align: right;height:20;}
+.td9 {font-size:12px;font-family:"宋体";font-weight:bold;color:#E66F02;height:20;}
+
+.table4 {width: 200px;vertical-align: top;}
+.table5 {font-size: 9pt;color: #000000;}
+.td10 {background-color:#E66F02;height:1}
+.td11 {background-image:url(index_bg.gif);height:1}
+.td12 {font-size:12px;font-family:宋体;font-weight:bold;color:6EA724}
+.td13 {background-image:   url(bg_right.gif);}
+.button {font-size:12px;font-family:宋体;font-weight:normal;color:#000000;background-color: #ECCAB1; border: 1 solid  #C85A05; height:20; width:46;}
+.button1 {font-size:12px;font-family:宋体;font-weight:normal;color:#000000;background-color: #ECCAB1; border: 1 solid #C85A05; height:20; width:66;}
+.button2 {font-size:12px;font-family:宋体;font-weight:normal;color:#000000;background-color: #ECCAB1; border: 1 solid #C85A05; height:20; width:96;}
+
+.table6{fvertical-align: top;font-size: 9pt;color: #000000;line-height: 20px;}
+.table7{font-size:12px;font-family:宋体;font-weight:normal;width: 100%;height:21;background-image: url(bg_line.gif);}
+.page{font-size:12px;font-family:宋体;font-weight:normal;width: 100%;height:21;background-image: url(bg_line.gif);}
+
+.table8{font-size:9pt;color:#000000;font-weight:normal;}
+.table9 {width: 170px;font-size: 9pt;line-height: 20px;color: #000000;background-color: #FBF7EC;border: 1px solid #ffb702;}
+.table10 {background-color: #FBF7EC;width: 100%;height: 511px;text-align: right;border: 1px solid #ECCAB1;}
+.table_template {background-color: #FBF7EC;width: 100%;text-align: right;border: 1px solid #ECCAB1;//右帧新模版大表格样式}
+.td18 {font-size:12px;font-family:宋体;font-weight:normal;background-color: #FBF7EC;vertical-align: top;height: 458px;}
+.td18_1 {font-size:12px;font-family:宋体;font-weight:normal;background-color: #FBF7EC;vertical-align: top;height: 100%;//右帧新模版大表格行高样式}
+.tableWindow {background-color: FBF7EC;border: 1px solid FFB702;font-size: 12px;line-height: 22px;color: #000000;}
+
+.td14 {font-size:12px;font-family:宋体;font-weight:bold;background-color:#ffb702;height:20}      
+.addressbook {font-size:12px;font-family:宋体;font-weight:normal;height:21;background-image: url(bg_line.gif);} 
+    
+.td15 {font-size: 9pt; font-weight: bold; color: #000000; background-color: #ffb702; height: 20px}
+.td16 {font-size:12px;font-family:宋体;height:21;text-align: right;}
+.td19 {font-size:12px;font-family:"宋体";font-weight:bold;text-align:left;line-height: 20px;}
+.td20 {width: 1px;background-color: #ECCAB1;}
+
+.td22 {text-align:right;background-color: #FBF7EC;}
+.td23 {font-size:12px;font-family:宋体;background-color: #FBF7EC;}
+.td_forum{font-size:12px;font-family:宋体;background-color: #FBF7EC;align:center}
+.td_forum_white{font-size:12px;font-family:宋体;background-color: #FFFFFF;}
+
+.td24 {  background-image: url(POINT_1.GIF); width: 1px}
+.td25 {  background-color: #EA8200; height: 1px}
+.td26 {  font-size: 10pt; font-weight: bold; color: #FFFFFF; background-image: url(line_1.gif); height: 20px}
+.td27 {  font-size: 12px; line-height: 22px; color: #6F4000}
+.table11 { font-family: "宋体";	font-size: 9pt;font-weight: normal;color: #000000;background-color: #FBF7EC;}
+.table11_left {width: 170px; font-family: "宋体";font-size: 9pt;font-weight: normal;color: #000000;background-color: #FBF7EC;}
+.table_main {font-size: 9pt;color: #000000;background-color: #ECCAB1;}
+
+.td28 {  background-image: url(zyzx_bg1.gif); height: 22px}
+.td29 {  background-image:  url(bg_xxgc2.gif); height: 16px}
+.td30 {  font-family: "宋体"; font-size: 9pt; line-height: 22px; color: #333434}
+
+.td31 {  background-image:  url(bg_grbg2.gif); height: 16px}
+.td32 {  font-size: 9pt; line-height: 22px; color: #3E3E3E}
+.td33 {  font-size: 9pt; line-height: 22px; color: 516434}
+.td34 {  font-size: 9pt; line-height: 22px; color: #333333}
+
+.td35 {  background-image:  url(bg_nbjl2.gif); height: 16px}
+.bg_tr {     font-size: 9pt;  background-color: #DFEFC3;}
+.bg_tr_blue {     font-size: 9pt;  background-color: #CDD9FC;}
+.toptd {border-top-width: 1px;border-right-width: 0px;border-bottom-width: 1px;	border-left-width: 0px;border-top-color: #EECCB2;	border-bottom-color: #EECCB2;border-top-style: solid;border-left-style: solid;}
+
+.subtable{background-color:#ffffff;color:#000000;font-size:12px;font-family:宋体;}
+
+.unnamed1 {  font-size: 12px; line-height: 22px; color: #000000}
+.index_bg_zxgg {background-image: url(header_dzgg.gif); height: 22px}
+.index_bg_zyzx {background-image: url(header_zyzx.gif); height: 22px}
+.index_bg_yhdl {background-image: url(header_yhdl.gif); height: 22px}
+.index_bg_wslt {background-image: url(header_wslt.gif); height: 22px}
+.redcolor {color: #FF0000;}
+.td36 {background-image: url(bg_rcxz1.gif);//日常行政首页线条背景}
+.td37 {font-size: 9pt;	color: 825B11;line-height: 22px;//日常行政首页字体颜色}
+
+.tag_left {background-image: url(pic_left.gif); width: 26px; height: 22px//标签左边背景样式}
+.tag_bg {background-image: url(pic_bg.gif); width: 56px; height: 22px//标签背景样式}
+.tag_mid {background-image: url(pic_mid.gif); width: 36px; height: 22px//标签中间背景样式}
+.tag_right {background-image: url(pic_right.gif); width: 19px; height: 22px//标签右边背景样式}

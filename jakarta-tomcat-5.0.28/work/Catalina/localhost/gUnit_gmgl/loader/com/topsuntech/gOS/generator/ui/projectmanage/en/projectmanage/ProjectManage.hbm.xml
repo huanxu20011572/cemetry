@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.topsuntech.gOS.generator.ui.projectmanage.en.projectmanage.ProjectManage" 
+    table="GOS_AUTO_PROJECT"
+>
+    <id
+        name="id"
+        type="long"
+    >
+			<generator class="native" />
+    </id>
+    <property
+        name="name"
+        type="string"
+    />
+    <property
+        name="database"
+        type="string"
+    />
+    <property
+        name="technology"
+        type="string"
+    />
+    <property
+        name="appserver"
+        type="string"
+    />
+    <property
+        name="clientname"
+        type="string"
+    />
+    <property
+        name="starttime"
+        type="date"
+    />
+    <property
+        name="finishtime"
+        type="date"
+    />
+    <property
+        name="description"
+        type="string"
+    />
+    <property
+        name="createdate"
+        type="date"
+    />
+    <property
+        name="creatorid"
+        type="long"
+    />
+</class>
+</hibernate-mapping>

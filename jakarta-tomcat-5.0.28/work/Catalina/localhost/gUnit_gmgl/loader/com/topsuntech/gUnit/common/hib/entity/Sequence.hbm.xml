@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+<hibernate-mapping>
+
+	<class name="com.topsuntech.gUnit.common.hib.entity.Sequence" table="COMMON_SEQUENCE_GENERATOR">
+		<id column="KEY" name="key" length="16" type="string">
+			<generator class="assigned"/>
+		</id>
+		<property name="start" length="8"  type="integer" column="START_SEQ"/>
+		<property name="currentDate" type="date" column="CURRENTDATE"/>
+		<property name="type" length="2" type="byte" column="TYPE"/>
+		<property name="format" length="16" type="string" column="FORMAT"/>
+		<property name="current" length="8" type="integer" column="CURRENT_SEQ"/>
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>gEU_jz</shortname>
+    <uri>http://www.topsuntech.com/gTaglib-bjjz</uri>
+    
+    <tag>
+        <name>node</name>
+        <tagclass>com.topsuntech.gUnit.gEU_node.taglib.DictionaryTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <attribute>
+            <name>key</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>storeroom</name>
+        <tagclass>com.topsuntech.gUnit.gEU_kcgl.taglib.StoreroomTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <attribute>
+            <name>key</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>nodevo</name>
+        <tagclass>com.topsuntech.gUnit.gEU_kcgl.taglib.NodeVOTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <attribute>
+            <name>key</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

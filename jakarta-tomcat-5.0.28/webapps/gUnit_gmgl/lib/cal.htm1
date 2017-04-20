@@ -1,0 +1,13 @@
+<html>
+<head>
+<script language="JavaScript" src="inputcalendar.js"></script>
+</head>
+<body>
+    <script>
+        new Calendar("test", "", "2001", "2003", null, null, null, "", true)
+    </script>
+    <script>
+        new Calendar("start", "", "2001", "2003")
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+    PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+    "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>address</shortname>
+    <uri>http://www.topsuntech.com/jsptags/address-taglib</uri>
+    <info>
+        A tag library used to generate address book.
+    </info>
+
+
+    <tag>
+        <name>allAddress</name>
+        <tagclass>com.topsuntech.gOS.addressbook.tags.AllAddressTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate all address arrays.
+        </info>
+    </tag>
+
+    <tag>
+        <name>selectedAddress</name>
+        <tagclass>com.topsuntech.gOS.addressbook.tags.SelectedAddressTag</tagclass>
+        <bodycontent>JSp</bodycontent>
+        <info>
+            Generate all selected address arrays.
+        </info>    
+    </tag>
+
+    <tag>
+        <name>mergeToUser</name>
+        <tagclass>com.topsuntech.gOS.addressbook.tags.MergeToUserTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Merge address list to user list.
+        </info>    
+    </tag>
+    
+    <tag>
+        <name>priorityTree</name>
+        <tagclass>com.topsuntech.gOS.addressbook.tags.PriorityTreeTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+            Generate priority tree.
+        </info>
+    </tag>    
+    
+    <tag>
+        <name>officeTree</name>
+        <tagclass>com.topsuntech.gOS.addressbook.tags.OfficeTreeTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>
+            Generate office tree.
+        </info>
+    </tag>        
+
+    <tag>
+        <name>selectedOfficeTree</name>
+        <tagclass>com.topsuntech.gOS.addressbook.tags.SelectedOfficeTreeTag</tagclass>
+        <bodycontent>JSP</bodycontent>
+        <info>
+            Generate office tree.
+        </info>
+    </tag>        
+    
+</taglib>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<!-- 静态方法dao，用于静态方法中使用 -->
+	<bean id="staticBaseDAO" class="com.topsuntech.gUnit.gEU_util.dao.StaticBaseDAO">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<!-- 公共dicts，非业务方法静态变量 -->
+	<bean id="dicts" class="com.topsuntech.gUnit.gEU_util.tools.Dicts" init-method="init">
+		<property name="staticBaseDAO" ref="staticBaseDAO"/>
+	</bean>
+	
+	<!-- 殡葬dicts，业务方法静态变量 -->
+	<bean id="tjbzDicts" class="com.topsuntech.gUnit.gEU_bzhhUtil.tools.TjbzDicts" init-method="init">
+		<property name="staticBaseDAO" ref="staticBaseDAO"/>
+	</bean>
+</beans>

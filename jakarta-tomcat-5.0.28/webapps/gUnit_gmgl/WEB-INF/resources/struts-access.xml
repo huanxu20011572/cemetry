@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<accessControl>
+    <loginCheck require="false" defaultURL="/login.jsp">
+        <module path="/" name="root">            
+            <action path="/top" require="false" />
+            <action path="/login" require="false" />
+        </module>
+        <module path="/nbjl" name="wslt">
+            <pattern path="/" require="false" >
+                <includes path="/*" />
+            </pattern>
+        </module>
+        <module path="/rcxz" name="rcxz">
+            <action path="/index" require="false" >
+                <parameters>
+                    <param name="module" value="clgl" />
+                </parameters>
+            </action>
+            <action path="/module" require="false" >
+                <parameters>
+                    <param name="module" value="clgl" />
+                </parameters>
+            </action>
+        </module>
+        <module path="/rcxz/clgl" name="clgl">
+            <pattern path="/" require="false" >
+                <includes path="/*" />
+            </pattern>
+        </module>
+        
+        <module path="/main/system/user_mgm" name="user_mgm">
+            <action path="/registAdd" require="false" />
+        </module>
+        
+        <module path="/gunit" name="gunit">
+            <pattern path="/" require="false" >
+                <includes path="/*" />
+            </pattern>
+        </module>
+        
+
+    </loginCheck>
+</accessControl>

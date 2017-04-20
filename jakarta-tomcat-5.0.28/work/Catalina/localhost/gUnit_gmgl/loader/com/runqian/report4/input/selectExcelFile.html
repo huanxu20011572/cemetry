@@ -1,0 +1,46 @@
+<script language=javascript>
+        //var _excel_AA  = "请选择Excel文件：";
+        //var _excel_BB = "导入到报表数据录入页面";
+        //var _excel_CC = "直接导入到数据库";
+        //var _excel_DD = "确定";
+        //var _excel_II = "关闭";
+        //var _excel_font_f = "宋体";
+        _initSelectExcelFile();
+        var _excel_div3_class = "FONT-SIZE: 16px; COLOR: royalblue; FONT-FAMILY:" + _excel_font_f ;
+        var _excel_div4_class = "FONT-SIZE: 14px; COLOR: royalblue; FONT-FAMILY:" + _excel_font_f ;
+        var _excel_div5_class = "font-size:13px;font-style:italic; color:tomato;font-family:" + _excel_font_f + ";";
+
+	document.body.bgcolor = "#ffe4e1";
+</script>
+
+<style id="page_style"></style>
+
+<DIV class="div3">
+        <script language=javascript>document.write( _excel_AA );</script>
+</DIV>
+<script language=javascript>page_style.styleSheet.addRule( ".div3", _excel_div3_class );</script>
+<br>
+<input type=file name=file1 style="width:350px" size=35>
+<div id=uptype><p>
+<input type=radio name=r1 checked onclick="document.form1.importTo.value = 'web';" >
+<span class="span1">
+          <script language=javascript>document.write( _excel_BB );</script>
+</span>
+
+<input id=importToDB type=radio name=r1 onclick="document.form1.importTo.value = 'db';" >
+<span id=importToDBLabel class="span1">
+          <script language=javascript>document.write( _excel_CC );</script>
+</span>
+<script language=javascript>page_style.styleSheet.addRule( ".span1", _excel_div4_class );</script>
+</div><p>
+<INPUT type=submit id=okbtn  style="border:none; WIDTH: 45px; COLOR: fuchsia; HEIGHT: 20px; BACKGROUND-COLOR: gold">
+<INPUT type=button id=closebtn  style="border:none; WIDTH: 45px; COLOR: fuchsia; HEIGHT: 20px; BACKGROUND-COLOR: gold">
+<p>
+<!--  下面是上载文件类型说明的字体样式  -->
+<div class="div5">
+<script language=javascript>
+  page_style.styleSheet.addRule( ".div5", _excel_div5_class );
+  document.getElementById( "okbtn" ).value = _excel_DD;
+  document.getElementById( "closebtn" ).value = _excel_II;
+</script>
+

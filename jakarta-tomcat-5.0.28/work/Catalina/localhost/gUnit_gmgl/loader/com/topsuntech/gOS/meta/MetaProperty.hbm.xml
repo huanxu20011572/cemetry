@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.topsuntech.gOS.meta.MetaProperty" 
+    table="GOS_PROPERTY"
+>
+    <id
+        name="id"
+        type="long"
+    >
+	<generator class="sequence">
+		<param name="sequence">HIBERNATE_SEQUENCE</param>
+	</generator>
+    </id>
+
+    <property
+        name="name"
+        type="string"
+    />
+    <property
+        name="value"
+        type="string"
+    />
+</class>
+</hibernate-mapping>

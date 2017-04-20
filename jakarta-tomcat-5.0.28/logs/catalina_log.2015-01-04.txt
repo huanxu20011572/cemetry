@@ -1,0 +1,4 @@
+2015-01-04 19:35:33 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2015-01-04 19:36:09 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'
+2015-01-04 19:39:52 StandardContext[/gUnit_gmgl]Initializing Spring root WebApplicationContext
+2015-01-04 19:40:04 StandardContext[/gUnit_gmgl]Initializing Spring FrameworkServlet 'actionfj'

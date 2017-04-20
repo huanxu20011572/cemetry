@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.topsuntech.gOS.generator.ui.autotable.en.autotable.AutoTable" 
+    table="GOS_AUTO_TABLE"
+>
+    <id
+        name="id"
+        type="long"
+    >
+			<generator class="native" />
+    </id>
+    <property
+        name="name"
+        type="string"
+    />
+    <property
+        name="generator_type"
+        type="string"
+    />
+    <property
+        name="module_name"
+        type="string"
+    />
+    <property
+        name="module_name_en"
+        type="string"
+    />
+    <property
+        name="table_name"
+        type="string"
+    />
+    <property
+        name="table_name_en"
+        type="string"
+    />
+    <property
+        name="table_description"
+        type="string"
+    />
+    <property
+        name="jsp_dir"
+        type="string"
+    />
+    <property
+        name="template"
+        type="string"
+    />
+    <property
+        name="input_column"
+        type="int"
+    />
+    <property
+        name="creatorid"
+        type="long"
+    />
+    <property
+        name="createdate"
+        type="date"
+    />
+    <property
+        name="projectid"
+        type="long"
+    />
+    <property
+        name="modify_log"
+        type="string"
+    />
+</class>
+</hibernate-mapping>

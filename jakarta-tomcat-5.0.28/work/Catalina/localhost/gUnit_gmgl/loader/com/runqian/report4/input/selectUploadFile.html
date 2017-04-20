@@ -1,0 +1,25 @@
+<script language=javascript>
+        //var __upload_font_f = "宋体";
+        //var __upload_AA = "请选择上载文件名：";
+        //var __upload_BB = "确定";
+        //var __upload_CC = "下载";
+        _initSelectUploadFile();
+        var __upload_div1_class = "FONT-SIZE: 16px; COLOR: royalblue; FONT-FAMILY:" + __upload_font_f + ";";
+        var __upload_div2_class = "font-size:13px;font-style:italic; color:tomato;font-family:" + __upload_font_f + ";";
+        document.body.bgcolor = "#ffe4e1";
+</script>
+<style id="page_style"></style>
+<DIV class="div1_class"><script language=javascript>document.write( __upload_AA );</script></DIV>
+<script language=javascript>page_style.styleSheet.addRule( ".div1_class", __upload_div1_class );</script>
+<br>
+<input type=file name=file1 style="width:350px">
+<p>
+<span id=downloadDiv><input type=checkbox name=isDownload id=isDownload><span class="div1_class"><script language=javascript>document.write( __upload_CC + "  " );</script></span></span>
+<INPUT type=submit id=okbtn  style="border:none; WIDTH: 45px; COLOR: fuchsia; HEIGHT: 20px; BACKGROUND-COLOR: gold">
+<script language=javascript>
+	document.getElementById( "okbtn" ).value = __upload_BB;
+</script>
+<p>
+<!--  下面是上载文件类型说明的字体样式  -->
+<div class="div2_class">
+<script language=javascript>page_style.styleSheet.addRule( ".div2_class", __upload_div2_class );</script>

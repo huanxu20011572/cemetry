@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<!-- 
+    Created by Middlegen Hibernate plugin
+
+    http://boss.bekk.no/boss/middlegen/
+    http://hibernate.sourceforge.net/
+-->
+
+<class name="com.topsuntech.gUnit.common.hib.entity.BjmzjDept" table="bjmzj.GOS_DEPT">
+	<id name="id" type="long">
+		<generator class="sequence">
+			<param name="native" />
+		</generator>
+	</id>
+    <property name="name" type="string"  />
+    <property name="shortname" type="string"/>
+</class>
+</hibernate-mapping>

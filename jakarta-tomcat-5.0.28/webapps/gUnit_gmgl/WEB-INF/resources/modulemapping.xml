@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<urlmapping>
+    <mapping module="grbg">
+       <url name="calendar" target="top">/grbg/index.do?module=dbsyhome&amp;id={0}</url>
+    </mapping>
+</urlmapping>

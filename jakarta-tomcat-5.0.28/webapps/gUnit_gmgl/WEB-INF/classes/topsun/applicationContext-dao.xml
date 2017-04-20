@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+
+<beans default-lazy-init="true">
+
+	<import resource="idyQueryContext.xml"/>
+	
+	<bean id="dbWrapper" class="com.topsuntech.gOS.query.DBRegistry" factory-method="getDBWrapper">
+		<constructor-arg value="query"/> 
+	</bean>
+	
+	<bean id="userDao" class="com.topsuntech.gOS.identity.user.dao.UserDao">
+		<property name="dbWrapper" ref="dbWrapper"/>
+		<property name="officeDao" ref="officeDao"/>
+		<property name="subEntityClassName" value="com.topsuntech.gUnit.gEU_util.entity.AjUser"/>
+	</bean>
+	
+	<bean id="userManager" class="com.topsuntech.gUnit.gEU_system.service.AjUserManager" singleton="false">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	
+	<bean id="userFinder" class="com.topsuntech.gOS.identity.user.service.UserFinderImpl" singleton="false">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	
+	<bean id="officeDao" class="com.topsuntech.gOS.identity.office.dao.OfficeDao">
+		<property name="dbWrapper" ref="dbWrapper"/>
+		<property name="subEntityClassName" value="com.topsuntech.gUnit.gEU_util.entity.AjDept"/>
+	</bean>
+	
+	<bean id="officeManager" class="com.topsuntech.gOS.identity.office.service.OfficeManagerImpl" singleton="false">
+		<property name="officeDao" ref="officeDao"/>
+	</bean>
+	
+	<bean id="officeFinder" class="com.topsuntech.gUnit.gEU_system.service.AjDeptFinder" singleton="false">
+		<property name="officeDao" ref="officeDao"/>
+		<property name="userFinder" ref="userFinder"/>
+	</bean>
+	
+	<bean id="officeTreeViewCreator" class="com.topsuntech.gUnit.gEU_system.service.AjOfficeTreeViewCreator" singleton="false">
+		<property name="officeFinder" ref="officeFinder"/>
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	
+	<bean id="userOfficeTreeCreator" class="com.topsuntech.gOS.identity.office.service.UserOfficeTreeCreator" singleton="false">
+		<property name="officeFinder" ref="officeFinder"/>
+	</bean>
+	
+</beans>

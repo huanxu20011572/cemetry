@@ -1,0 +1,27 @@
+#apply.idCard1.error=此人所属家庭正在享受救助，因此不能对该人办理新申请业务。
+apply.idCard1.error=此人所属家庭正在{0}{1}享受<a href="{2}">{3}待遇</a>，无法操作。
+apply.idCard2.error=此人正在{0}{1}办理{2}业务，因此不能对该人办理新申请业务。
+apply.idCard3.error=此人正在{0}{1}办理情况变更业务，变更前的身份证号为{2}，变更后的身份证号为{3},因此不能对该人办理新申请业务。
+apply.idCard4.error=此身份证号码在系统中已存在，请重新填写。
+apply.idCard5.error=此人在系统中已存在，请勿重复提交。
+apply.idCard6.error=此人已经是该五保家庭的照料人，请勿重复添加。
+apply.idCard7.error=此人曾做过撤销业务,当前处于游离状态,若想恢复此人待遇,请找到其所属家庭做复审业务,在"承办复审业务工作区"点"添加成员",可为此人恢复待遇。
+apply.idCard8.error=此人所在家庭已办理了"撤销家庭待遇"业务,撤销原因是"就业渐退",目前该家庭还处于就业渐退期内,因此不能做新申请业务。
+apply.idCard9.error=该家庭是本月内迁入的，不能在本月内办理复审或撤销业务。
+apply.idCard10.error=申请人已经在{0}{1}{2}申请人为：{3}的家庭中存在，不能办理新申请业务。
+
+analys.noproject.error = {0}的享受项目未填写，请返回此人信息填写页面，重新填写。
+
+reaudit.union.error=所要做合户的家庭不属于本区域，因此不能办理合户变更业务！
+
+user.session.error=用户会话已过期，请重新登陆！
+user.notExist.error=该操作人员信息有误，请重新登陆！
+
+help.exist.error=该页已经有帮助信息，不能重复设置！
+
+standard.delete.error=不能修改或删除已启用或已停用的标准！
+
+salvage.familyInfo.error=该成员所在家庭正在办理其他业务，不能操作该成员信息！
+
+money.no.data = 没有符合条件的数据，请重新进行拨款定制！
+

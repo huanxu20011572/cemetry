@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+ http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+	default-autowire="byName">
+
+<!-- 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"> -->
+<!-- 		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver"></property> -->
+<!-- 		<property name="jdbcUrl" -->
+<!-- 			value="jdbc:oracle:thin:@121.42.42.152:8095:cemetery"></property> -->
+<!-- 		<property name="user" value="bj_cemetery"></property> -->
+<!-- 		<property name="password" value="bj_cemetery1635"></property> -->
+<!-- 	</bean> -->
+    <!-- proxool dataSource  -->
+    <bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+    	 
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="driverUrl" value="jdbc:oracle:thin:@123.57.7.91:8095:cemetery"/>
+        <property name="user" value="bj_cemetery"/>
+        <property name="password" value="bj_cemetery1635"/>
+        <property name="alias" value="DBPool"/>
+        <property name="houseKeepingTestSql" value="select * from dual"/>
+        <property name="maximumConnectionCount" value="500"/>
+        <property name="minimumConnectionCount" value="10"/>
+        <property name="statistics" value="10s,1m,1d"/>
+    </bean>
+
+	<bean id="sessionFactoryfj"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesCemeteryCharge</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesCemeteryFile</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesCemeteryRegistry</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.ArchivesDeparted</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.CemeteryCertificate</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.CemeteryService</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.BusinessData</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.Departed</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryCharge</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryCommodity</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryFile</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryLocation</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryRegistry</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryType</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_cemetery.entity.CemeteryZone</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_charge.entity.ChargeData</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_charge.entity.ChargeType</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_system.entity.Dict</value>
+				<value>com.topsuntech.gUnit_gmgl.gEU_business.entity.VisitReturn</value>
+			</list>
+		</property>
+		<property name="mappingDirectoryLocations">
+			<list>
+<!-- 				<value>classpath:com/topsuntech/gUnit_gmgl/gEU_business/entity/</value> -->
+<!-- 				<value>classpath:com/topsuntech/gUnit_gmgl/gEU_charge/entity/</value> -->
+<!-- 				<value>classpath:com/topsuntech/gUnit_gmgl/gEU_system/entity/</value> -->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle10gDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+
+	</bean>
+	
+    <!-- 定义事务管理器（声明式的事务） -->
+	<bean id="transactionManagerfj"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactoryfj" />
+	</bean>
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManagerfj">
+        <tx:attributes>
+            <tx:method name="save*"/>
+            <tx:method name="add*"/>
+            <tx:method name="update*"/>
+            <tx:method name="delete*"/>
+            <tx:method name="load" read-only="true"/>
+            <tx:method name="get" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    
+    <aop:config proxy-target-class="true">
+        <aop:pointcut id="interceptorPointCharge" expression="execution(* com.topsuntech.gUnit_gmgl.*.service.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCharge"/>
+    </aop:config>
+
+
+	<bean id="hibernateDao" class="com.topsuntech.gUnit_gmgl.core.HibernateBaseDao">
+		<property name="sessionFactory" ref="sessionFactoryfj" />
+	</bean>
+
+	<bean id="hibernateBaseService" class="com.topsuntech.gUnit_gmgl.core.HibernateBaseService">
+		<property name="hibernateDao" ref="hibernateDao" />
+	</bean>
+	<!-- <bean
+		class="org.springframework.web.servlet.mvc.HttpRequestMappingHandlerAdapter">
+		<property name="webBindingInitializer">
+			<bean class="com.topsuntech.gUnit_gmgl.core.DataBinding" />
+		</property>
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="writeAcceptCharset" value="false" />
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+							<value>*/*;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+				<bean
+					class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+			</list>
+		</property>
+	</bean> -->
+
+
+</beans>

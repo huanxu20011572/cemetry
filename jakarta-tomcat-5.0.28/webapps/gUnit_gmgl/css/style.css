@@ -1,0 +1,159 @@
+﻿@charset "utf-8";
+body { margin:0px; font-size:12px; color:#000;
+}
+.word-1{ font-size:12px; color:#FFF; text-decoration:none}
+.word-1 A{ font-size:12px; color:#FFF;text-decoration:none}
+
+.word-2{ font-size:12px; color:#c14f02; font-weight:bold; text-decoration:none}
+.word-2 A{ font-size:12px; color:#c14f02; font-weight:bold;text-decoration:none}
+.word-3{ font-size:14px; color:#333333; font-family:"微软雅黑","宋体"; text-decoration:none;}
+.word-3 A{ font-size:14px; color:#333333; font-family:"微软雅黑","宋体";text-decoration:none}
+.word-4{ font-size:12px; color: #085b85; }
+.word-4 A{ font-size:12px; color: #085b85; text-decoration:underline;}
+.word-5{ font-size:12px;color: #085b85; }
+.word-5 A{ font-size:12px;color: #085b85; }
+.word-6{ color: #085b85;	font-size:14px; }
+.word-6 a{ color: #085b85;	font-size:14px; }
+.word-7{ font-size:12px; color: #ff4500; }
+.word-7 A{ font-size:12px; color:#ff4500; text-decoration:underline;}
+.word-8{ font-size:12px; color:#000;}
+.word-9{ color: #000000;	font-size:14px; }
+.word-9 a{ color: #000000;	font-size:14px; }
+
+.topdiv{height:109px; background:url(../images/top-bg.jpg) repeat-x top}
+.topdiv-1{height:109px; background:url(../images/top-left.jpg) no-repeat left;}
+.topdiv-2{height:109px; background:url(../images/top-right.jpg) no-repeat right;}
+.leftdiv-bt-1 td{padding-left:10px; width:154px;  font-size:12px; font-weight:bold; color:#426273;background:url(../images/left-2.jpg) no-repeat left; text-align:left;}
+.leftdiv-bt-2 td{padding-left:10px; width:154px;  font-size:12px; font-weight:bold; color:#426273;background:url(../images/left-1.jpg) no-repeat left; text-align:left;}
+
+.td-line-1{ border-bottom:1px dotted #ffffff; background:url(../images/left-5.jpg) no-repeat 2px 7px; padding-left:11px;}
+.td-line-2{ border-bottom:1px dotted #ffffff; background:url(../images/left-6.jpg) no-repeat 2px 7px; padding-left:11px;}
+
+.mar-t{ margin-top:2px;}
+
+
+.td-bg{background:url(../images/right-2.jpg); background-color:#FFFfff}
+.td-bg-2{background:url(../images/right-2.jpg) repeat-y left top; background-color:#FFFfff}
+
+
+.td-bg-1{ background:url(../images/right-7.jpg) no-repeat right center;}
+.bor-1{ border:1px solid #b8ccd6; border-top:0px;}
+.pad-5{ padding:5px;}
+.input-1{
+	width:180px;
+	height:15px;
+	line-height:15px;
+}
+.input-2{ width:90%; height:15px; line-height:15px;}
+.input-3{ width:100px; height:15px; line-height:15px;}
+.input-5{ width:170px; height:15px; line-height:15px;}
+.input-6{ height:12px; line-height:12px;}
+
+.text-1{ width:90%; line-height:23px;}
+
+.td-pad{}
+.td-pad td{padding:2px;}
+.line-30{ line-height:30px;}
+
+.select /*下拉框*/
+{
+	overflow:auto;
+	font-size:12px;
+	background-color:#ffffff;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button-z2 {
+	font-size: 12px;
+	color: #000;
+	background-image: url(../images/button_05.jpg);
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 60px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.button-z4 {
+	font-size: 12px;
+	color: #000;
+	background-image: url(../images/button_07.jpg);
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 88px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.button-z6 {
+	font-size: 12px;
+	color: #000;
+	background-image: url(../images/button_09.jpg);
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 140px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.button-z {
+	font-size: 12px;
+	color: #000;
+	background-image: url(../images/button-1_03.jpg);
+	background-repeat: no-repeat;
+	height: 21px;
+	width: 48px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.tab-img-01 {
+	background-image: url(../images/tab-02.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	font-size: 12px;
+	color: #000;
+}
+.tab-img-02 {
+	background-image: url(../images/tab-02.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	font-size: 12px;
+	color: #ff4500;
+    A:text-decoration:underline;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  
+  <form-beans>
+       <form-bean name="loginForm" type="com.topsuntech.gOS.user.actions.LoginForm" />
+	  
+  </form-beans>
+  
+  <global-forwards>
+       <forward name="login" contextRelative="true" path="/common/calogin_error.jsp" redirect="true" />
+       <forward name="error" path="/common/error.jsp" />
+  </global-forwards>
+  
+  
+  <action-mappings>
+    
+    <action path="/login" name="loginForm" type="com.topsuntech.gOS.user.actions.LoginAction">
+        <forward name="success" path="/login_manager.jsp" />
+    </action>
+
+     <action path="/portal"  type="com.topsuntech.gUnit.gEU_system.framework.actions.SjLoginAction" scope="request" parameter="method">
+			<forward name="street_portal" path="/portal/index_portal_street.jsp" redirect="true"/>
+			<forward name="country_portal" path="/portal/index_portal_country.jsp" redirect="true"/>
+			<forward name="city_portal" path="/portal/index_portal_city.jsp" redirect="true"/>
+			
+			<forward name="noqusuccess" path="/common/login_error.jsp" /> 
+		</action>
+    
+    
+  </action-mappings>
+  
+  <message-resources parameter="com.topsuntech.gOS.user.ApplicationResources_zh_CN.properties" key="error.login" />
+
+  
+  <plug-in className="com.topsuntech.gOS.gPortal.config.ConfigPlugIn" >
+    <set-property property="configFile" value="/WEB-INF/config.properties"/>
+  </plug-in>
+</struts-config>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<script type="text/javascript" src="jquery.js"></script>
+<title>JavaScript联动选择菜单</title>
+</head>
+<body>
+<h3>Demo1：省市二级联动ajax</h3>
+<div id="demo2">
+	<select name='region' id='region' style="width:120px;"></select>
+	<select name='region1' id='region1' style="width:120px;"></select>
+</div>
+<script type="text/javascript">
+$(function() {
+var url='dynamicSelect.do?action=findNodes&nodeName=F01&'+new Date().getTime();
+//父列表
+var region=$("#region");
+//子列表
+var childer=$("#region1");
+	region.empty();
+	region.append('<option value="">请选择</option>');
+	$.getJSON(url, function(data){
+	$.each(data, function(i,item){
+	 var option	= $('<option value="' + item.node_value + '">' + item.node_name + '</option>');
+	region.append(option);
+  });
+  region.attr('selectedIndex' , 0);
+  });
+  region.bind("change", function(){
+		var childVal=$(this).val();
+		//alert(childVal=='' || childVal.length<1);
+		if(childVal=='' || childVal.length<1){		
+		 return;
+		}
+	url='dynamicSelect.do?action=findChilderNodes&parentNodeTypeName=F01&childerNodeTypeName='+childVal+"&"+new Date().getTime();	
+	childer.empty();
+	childer.append('<option  value="">请选择</option>');
+	//alert(url);
+	 $.getJSON(url, function(data){
+		$.each(data, function(i,item){
+		 var option	= $('<option value="' + item.id + '">' + item.node_name + '</option>');
+			childer.append(option);
+		  });
+	  childer.attr('selectedIndex' , 0);	  
+	}); 	
+})	
+})
+</script>
+</div>
+</body>
+</html>

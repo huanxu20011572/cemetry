@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+
+<beans default-lazy-init="true">
+
+	<bean id="userQuery" class="com.topsuntech.gOS.identity.model.query.Watchman" singleton="false">
+		<property name="daoSupport" ref="userDao"/>
+		<property name="officeFinder" ref="officeFinder"/>
+		<property name="queryConfigs">
+			<list>
+				<bean class="com.topsuntech.gOS.identity.model.query.QueryConfig">
+					<property name="name" value="userList"/>
+					
+					<property name="countType" value="sql"/>
+					<property name="countString">
+						<value>
+						<![CDATA[
+						select count(*) from GOS_USER u join 
+						(select * from GOS_DEPT d where d.use_flag = 1 # ) gd on u.deptid = gd.id
+						where u.deptid = gd.id and u.deleted = 0 # # #
+						]]>
+						</value>
+					</property>
+					<property name="countConditions">
+						<list>
+							<value>start with d.id = :deptid connect by prior d.id = d.parent_id</value>
+							<value>and u.name like :%userName%</value>
+							<value>and u.system_role like '%,'||:roleId ||',%'</value>
+							<value>and u.priority like '%,'||:priorityId ||',%'</value>
+						</list>
+					</property>
+					
+					<property name="queryType" value="nsql"/>
+					<property name="queryString" >
+						<value>
+						<![CDATA[
+						select {u.*} from GOS_USER u join 
+						(select * from GOS_DEPT d where d.use_flag = 1 #) gd on u.deptid = gd.id
+						where u.deptid = gd.id and u.deleted = 0 # # # order by gd.ORDERBY_ITEM, u.ORDERBY_ITEM
+						]]>
+						</value>
+					</property>
+					<property name="queryConditions">
+						<list>
+							<value>start with d.id = :deptid connect by prior d.id = d.parent_id</value>
+							<value>and u.name like :%userName%</value>
+							<value>and u.system_role like '%,'||:roleId ||',%'</value>
+							<value>and u.priority like '%,'||:priorityId ||',%'</value>
+						</list>					
+					</property>
+					<property name="queryReturnAlias" >
+						<map>
+							<entry key="u" value="com.topsuntech.gOS.user.en.user.User"/>
+						</map>
+					</property>
+				</bean>
+				
+				<bean class="com.topsuntech.gOS.identity.model.query.QueryConfig">
+					<property name="name" value="managedSubUsers"/>
+					
+					<property name="countType" value="sql"/>
+					<property name="countString">
+						<value>
+						<![CDATA[
+						select count(*) from GOS_USER u join 
+						( select * from ( select d.id, d.parent_id from GOS_DEPT d join GOS_REGION r on d.regionid = r.id where d.use_flag = 1 # #
+						  start with d.id in (:currentUserManagedSubOfficeIds) connect by prior d.id = d.parent_id ) gd #) gosd on u.DEPTID = gosd.id
+						where u.DELETED = 0 # # # #
+						]]>
+						</value>
+					</property>
+					<property name="countConditions">
+						<list>
+							<value>and r.region_code like substr( :quCode ,0,6 )||'%'</value>
+							<value>and r.region_code like substr( :streetCode ,0,9)||'%'</value>
+							<value>start with gd.id = :deptid connect by prior gd.id = gd.parent_id</value>
+							<value>and u.loginId like :%loginId% </value>
+							<value>and u.name like :%userName%</value>
+							<value>and u.system_role like '%,'||:roleId ||',%'</value>
+							<value>and u.priority like '%,'||:priorityId ||',%'</value>
+						</list>
+					</property>
+					
+					<property name="queryType" value="nsql"/>
+					<property name="queryString" >
+						<value>
+						<![CDATA[
+						select {u.*} from GOS_USER u join 
+						( select * from ( select d.id, d.parent_id, d.ORDERBY_ITEM from GOS_DEPT d join GOS_REGION r on d.regionid = r.id where d.use_flag = 1 # #
+						  start with d.id in (:currentUserManagedSubOfficeIds) connect by prior d.id = d.parent_id ) gd #) gosd on u.DEPTID = gosd.id
+						where u.DELETED = 0 # # # # order by gosd.ORDERBY_ITEM, u.ORDERBY_ITEM
+						]]>
+						</value>
+					</property>
+					<property name="queryConditions">
+						<list>
+							<value>and r.region_code like substr( :quCode ,0,6 )||'%'</value>
+							<value>and r.region_code like substr( :streetCode ,0,9)||'%'</value>
+							<value>start with gd.id = :deptid connect by prior gd.id = gd.parent_id</value>
+							<value>and u.loginId like :%loginId% </value>
+							<value>and u.name like :%userName%</value>
+							<value>and u.system_role like '%,'||:roleId ||',%'</value>
+							<value>and u.priority like '%,'||:priorityId ||',%'</value>
+						</list>					
+					</property>
+					<property name="queryReturnAlias" >
+						<map>
+							<entry key="u" value="com.topsuntech.gOS.user.en.user.User"/>
+						</map>
+					</property>
+				</bean>
+				
+				<bean class="com.topsuntech.gOS.identity.model.query.QueryConfig">
+					<property name="name" value="managedDeptUsers"/>
+					
+					<property name="countType" value="sql"/>
+					<property name="countString">
+						<value>
+						<![CDATA[
+						select count(*) from GOS_USER u join
+						( select d.id from GOS_DEPT d start with d.id in (:currentUserManagedDeptOfficeIds) connect by prior d.id = d.parent_id ) gd on u.DEPTID = gd.id
+						where u.DELETED = 0 # #
+						]]>
+						</value>
+					</property>
+					<property name="countConditions">
+						<list>
+							<value>and u.name like :%userName%</value>
+							<value>and u.id = :userId </value>
+						</list>
+					</property>
+					
+					<property name="queryType" value="nsql"/>
+					<property name="queryString" >
+						<value>
+						<![CDATA[
+						select {u.*} from GOS_USER u join
+						( select d.id, d.ORDERBY_ITEM from GOS_DEPT d start with d.id in (:currentUserManagedDeptOfficeIds) connect by prior d.id = d.parent_id ) gd on u.DEPTID = gd.id
+						where u.DELETED = 0 # # order by gd.ORDERBY_ITEM, u.ORDERBY_ITEM
+						]]>
+						</value>
+					</property>
+					<property name="queryConditions">
+						<list>
+							<value>and u.name like :%userName%</value>
+							<value>and u.id = :userId </value>
+						</list>					
+					</property>
+					<property name="queryReturnAlias" >
+						<map>
+							<entry key="u" value="com.topsuntech.gOS.user.en.user.User"/>
+						</map>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

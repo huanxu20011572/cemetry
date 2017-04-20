@@ -1,0 +1,38 @@
+<Context>
+ 
+			<Resource auth="Container" description="Oracle DataBase" name="jdbc/cemetery" type="javax.sql.DataSource"/>
+				<ResourceParams name="jdbc/cemetery">
+				<parameter>
+					<name>factory</name>
+					<value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+				</parameter>
+				<parameter>
+					<name>driverClassName</name>
+					<value>oracle.jdbc.driver.OracleDriver</value>
+				</parameter>
+				<parameter>
+					<name>url</name>
+					<value>jdbc:oracle:thin:@121.42.42.152:8095:cemetery</value>
+				</parameter>
+				<parameter>
+					<name>username</name>
+					<value>bj_cemetery</value>
+				</parameter>
+				<parameter>
+					<name>password</name>
+					<value>bj_cemetery1635</value>
+				</parameter>
+				<parameter>
+					<name>maxWait</name>
+					<value>5000</value>
+				</parameter>
+				<parameter>
+					<name>maxActive</name>
+					<value>100</value>
+				</parameter>
+				<parameter>
+					<name>maxIdle</name>
+					<value>10</value>
+				</parameter>
+				</ResourceParams>
+</Context>

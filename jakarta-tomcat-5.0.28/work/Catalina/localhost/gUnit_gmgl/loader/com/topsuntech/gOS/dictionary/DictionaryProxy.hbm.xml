@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.topsuntech.gOS.dictionary.DictionaryProxy" 
+    table="GOS_DICTIONARY"
+>
+    <id
+        name="id"
+        type="long"
+    >
+			<generator class="native"/>
+    </id>
+
+    <property
+        name="name"
+        type="string"
+    />
+    <property
+        name="description"
+        type="string"
+    />
+    <property
+        name="type"
+        type="string"
+    />
+    <property
+        name="innercode"
+        type="string"
+    />
+
+    <property
+        name="create"
+        column="CREATEDATE"
+        type="timestamp"
+    />
+    
+</class>
+</hibernate-mapping>

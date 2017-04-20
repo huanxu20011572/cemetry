@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.topsuntech.gOS.meta.QuerySchema" table="QUERYSCHEMA">
+		<id name="id" type="integer">
+			<generator class="sequence">
+				<param name="sequence">QSCHEMA_ID_SEQ</param>
+			</generator>
+		</id>
+		<property name="schemaId" type="integer"/>
+		<property name="type" type="integer"/>
+		<property name="class1" type="string"/>
+		<property name="column1" type="string"/>
+		<property name="class2" type="string"/>
+		<property name="column2" type="string"/>
+		<property name="literal" type="string"/>
+		<property name="relation" type="integer"/>
+	</class>
+</hibernate-mapping>

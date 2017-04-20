@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+	<form-bean name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actionforms.DictionaryForm" />
+  </form-beans>
+  
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+  </global-forwards>
+  
+  <!-- ========== Action Mapping Definitions ============================== -->
+  <action-mappings>   
+    <!--common-->
+    <action path="/addParentNode" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DictionaryAction" scope="request">
+        <forward name="success" path="/dictionary_list.jsp"/>
+    </action>
+    <action path="/addNode" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DictionaryAction" scope="request">
+        <forward name="success" path="/dictionary_detail_list.jsp"/>
+    </action>
+    <action path="/modifyNode" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DictionaryAction" scope="session">
+        <forward name="success" path="/dictionary_detail_list.jsp"/>
+        <forward name="error" path="/dictionary_detail_list.jsp"/>
+    </action>
+    <action path="/moveUpNode" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DictionaryAction" scope="request">
+        <forward name="success" path="/dictionary_detail_list.jsp"/>
+        <forward name="error" path="/dictionary_detail_list.jsp"/>
+    </action>
+    <action path="/moveDownNode" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DictionaryAction" scope="request">
+        <forward name="success" path="/dictionary_detail_list.jsp"/>
+        <forward name="error" path="/dictionary_detail_list.jsp"/>
+    </action>
+    <action path="/getNodeList" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DictionaryAction" scope="request">
+        <forward name="success" path="/iframe_dictionary_list.jsp"/>
+        <forward name="error" path="/iframe_dictionary_list.jsp"/>
+    </action>
+    
+    <!--search and list-->
+    <action path="/listNode" type="com.topsuntech.gUnit.gEU_dict.framework.actions.SearchAction" scope="request">
+        <forward name="success" path="/dictionary_list.jsp"/>
+    </action>
+    <action path="/findNode" type="com.topsuntech.gUnit.gEU_dict.framework.actions.SearchAction" scope="request">
+        <forward name="success" path="/dictionary_detail_list.jsp"/>
+    </action>
+    
+    <action path="/opearteNode" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DictionaryAction" scope="request">
+        <forward name="success" path="/dictionary_detail_list.jsp"/>
+        <forward name="error" path="/dictionary_detail_list.jsp"/>
+    </action>
+
+	 <action path="/dynamicSelect" name="dictionaryForm" type="com.topsuntech.gUnit.gEU_dict.framework.actions.DynamicSelectAction"  parameter="action" scope="request" >      
+    </action>
+  </action-mappings>
+</struts-config>

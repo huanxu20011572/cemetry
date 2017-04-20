@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<!-- 
+    Created by Middlegen Hibernate plugin
+
+    http://boss.bekk.no/boss/middlegen/
+    http://hibernate.sourceforge.net/
+-->
+
+<class 
+    name="com.topsuntech.gOS.contact.en.contact.Contact" 
+    table="GOS_CONTACT"
+>
+    <id
+        name="id"
+        type="long"
+    >
+			<generator class="sequence">
+				<param name="sequence">GOS_CONTACT_SEQ</param>
+			</generator>
+			
+    </id>
+    <property
+        name="company"
+        type="string"
+    />
+    <property
+        name="corpengname"
+        type="string"
+    />
+    <property
+        name="email"
+        type="string"
+    />
+    <property
+        name="gender"
+        type="string"
+    />
+    <property
+        name="homeaddr"
+        type="string"
+    />
+    <property
+        name="homecode"
+        type="string"
+    />
+    <property
+        name="homephone"
+        type="string"
+    />
+    <property
+        name="mobile"
+        type="string"
+    />
+    <property
+        name="name"
+        type="string"
+    />
+    <property
+        name="officeaddr"
+        type="string"
+    />
+    <property
+        name="officecode"
+        type="string"
+    />
+    <property
+        name="officefax"
+        type="string"
+    />
+    <property
+        name="officephone"
+        type="string"
+    />
+    <property
+        name="pager"
+        type="string"
+    />
+    <property
+        name="zhiwu"
+        type="string"
+    />
+    
+    <property
+    	name="userid"
+    	type="long"
+    />
+        
+    <!-- associations -->
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+
+<class name="com.topsuntech.gUnit.gEU_util.entity.AjDept" table="gos_dept">
+	<id column="id" name="id" type="java.lang.Long">
+		<generator class="sequence">
+			<param name="sequence">gos_dept_seq</param>
+		</generator>
+	</id>
+	
+	<property column="NAME" name="name" type="java.lang.String"/>
+	<property column="LEVELID"  name="levelId" type="java.lang.Long"/>
+	<property column="role_lev"  name="roleLev" type="java.lang.Long"/>
+	<property column="CREATEDATE" name="createDate" length="7" type="java.util.Date"/>
+	<property column="CREATORID"  name="creatOrid" type="java.lang.Long"/>
+	<property column="PARENT_ID"  name="parentId" type="java.lang.Long"/>
+	<property column="DISPORDER"  name="disporder" type="java.lang.Long"/>
+	<property column="REGIONID" name="regionId" type="java.lang.Long"/>	
+	<property column="DEPT_CODE"  name="approveUnitCode" type="java.lang.String"/>
+	<property column="use_flag"  name="useFlag" type="java.lang.Long"/>
+    <property column="tree_node"  name="treeNode" type="java.lang.Long"/> 	
+   
+	<property column="dwlx"  name="dwlx" type="java.lang.Long"/>	
+    <property column="cybm"  name="cybm" type="java.lang.String"/>	
+    <property column="dwdm"  name="dwdm" type="java.lang.String"/>	
+    <property column="jgmx"  name="jgmx" type="java.lang.Long"/>	
+    <property column="ORDERBY_ITEM"  name="orderByItem" type="java.lang.Integer"/>	
+	<property column="IS_REGION"  name="isRegion" />	
+	<property column="CONTACT_PERSON"  name="contactPerson" />	
+	<property column="HEADER"  name="frzhengshu" />	
+	<property column="OFFICEADDR"  name="officeaddr" />	
+	<property column="OFFICEPHONE"  name="officephone" />	
+	<property column="OFFICECODE"  name="officecode" />
+
+</class>
+</hibernate-mapping>

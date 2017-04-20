@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+	<form-bean name="actorForm" type="com.topsuntech.gOS.user.actions.ActorForm" />
+  </form-beans>
+
+  <!-- ========== Global Forward Definitions ============================== -->
+  <global-forwards>
+  </global-forwards>
+  <!-- ========== Action Mapping Definitions ============================== -->
+
+  <action-mappings>
+    <action type="org.apache.struts.actions.SwitchAction" path="/toModule" />
+
+    <action path="/actorUpdate" name="actorForm" type="com.topsuntech.gOS.user.actions.ActorAction" scope="session">
+      <forward name="success" path="/../../../tree/roleList.do?method=getRolelist"/>
+      <forward name="tosuccess" path="/../../../tree/roleList.do?method=getRolelist" redirect="true"/>
+      <forward name="edit" path="/actor_edit.jsp" />
+      <forward name="error" path="/actor_edit.jsp" />
+    </action>
+    
+    <action path="/updateRoles"  type="com.topsuntech.gUnit.gEU_util.user.framework.actions.UserAction" 
+      parameter="method" scope="request">
+      <forward name="success" path="/../../tree/roleList.do?method=getRolelist" redirect="true"/>
+    </action>
+    
+  
+    <action path="/actorAdd" name="actorForm" type="com.topsuntech.gOS.user.actions.ActorAction" scope="session">
+      <forward name="showAdd" path="/actor_add.jsp"/>      
+      <forward name="success" path="/../../../tree/roleList.do?method=getRolelist" redirect="true"/>      
+      <forward name="error" path="/actor_add.jsp"/>
+    </action>
+
+    <action path="/actorClone" name="actorForm" type="com.topsuntech.gOS.user.actions.ActorAction" scope="session">
+      <forward name="success" path="/../../../tree/roleList.do?method=getRolelist" redirect="true"/>
+      <forward name="clone" path="/actor_clone.jsp"/>
+      <forward name="error" path="/actor_clone.jsp"/>
+    </action>
+
+    <action path="/actorDelete" type="com.topsuntech.gOS.user.actions.ActorAction">
+      <forward name="confirm" path="/actor_delete_confirm.jsp"/>
+      <forward name="success" path="/../../../tree/roleList.do?method=getRolelist" redirect="true"/>
+    </action>
+
+    <action path="/actorDeleteAll" type="com.topsuntech.gOS.user.actions.ActorAction">
+      <forward name="confirm" path="/actor_deleteall_confirm.jsp"/>
+      <forward name="success" path="/../../../tree/roleList.do?method=getRolelist" redirect="true"/>
+    </action>
+
+    <action path="/actorSelect" type="com.topsuntech.gOS.user.actions.ActorAction">
+      <forward name="success" path="/actor_detail.jsp"/>
+      <forward name="list" path="/actor_list.jsp"/>
+    </action>
+    
+    <!-- ========== New Action Definitions ============================== -->
+    <action path="/roleList" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" scope="request" parameter="doMethod">
+      <forward name="success" path="/role_list.jsp"/>
+    </action>
+    
+    <action path="/showRole" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" parameter="doMethod">
+      <forward name="success" path="/role_edit.jsp"/>
+    </action>
+    
+    <action path="/saveOrUpdateRole" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" parameter="doMethod">
+      <forward name="success" path="/roleList.do?doMethod=roleList" redirect="true"/>
+    </action>
+    
+    <action path="/saveOrUpdateSubRole" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" parameter="doMethod">
+      <forward name="success" path="/roleList.do?doMethod=subRoleList" redirect="true"/>
+    </action>
+    
+    <action path="/deleteRole" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" parameter="doMethod">
+      <forward name="success" path="/roleList.do?doMethod=roleList" redirect="true"/>
+    </action>
+    
+    <action path="/deleteSubRole" type="com.topsuntech.gUnit.gEU_system.framework.actions.SjRoleAction" parameter="doMethod">
+      <forward name="success" path="/roleList.do?doMethod=subRoleList" redirect="true"/>
+    </action>
+  </action-mappings>
+
+  <message-resources
+    parameter="com.topsuntech.gOS.user.ApplicationResources"
+    null="false" />
+  <!-- ========== Message Resources Definitions =========================== -->
+</struts-config>

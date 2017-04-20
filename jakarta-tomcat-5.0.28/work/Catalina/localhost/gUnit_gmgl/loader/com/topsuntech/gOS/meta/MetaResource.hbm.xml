@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.topsuntech.gOS.meta.MetaResource" 
+    table="GOS_RESOURCE"
+>
+    <id
+        name="id"
+        type="long"
+    >
+	<generator class="sequence">
+		<param name="sequence">HIBERNATE_SEQUENCE</param>
+	</generator>
+    </id>
+
+    <property
+        name="category"
+        type="string"
+    />
+    <property
+        name="type"
+        type="string"
+    />
+    <property
+        name="name"
+        type="string"
+    />
+    <property
+        name="alias"
+        type="string"
+    />
+    <property
+        name="namespace"
+        type="string"
+    />
+    <property
+        name="groupname"
+        type="string"
+    />
+    <property
+        name="groupid"
+        type="long"
+    />
+    <property
+        name="refid"
+        type="long"
+    />
+    <property
+        name="whereclause"
+        type="string"
+    />
+<!--    
+    <bag name="properties" cascade="all">
+        <key column="fid"/>
+        <one-to-many class="com.topsuntech.gOS.meta.MetaProperty"/>
+    </bag>
+-->    
+	<map name="properties" table="GOS_PROPERTY" order-by="name asc" outer-join="true">
+    	<key column="fid"/>
+    	<index column="name" type="string"/>
+    	<element column="value" type="string"/>
+	</map>
+</class>
+</hibernate-mapping>

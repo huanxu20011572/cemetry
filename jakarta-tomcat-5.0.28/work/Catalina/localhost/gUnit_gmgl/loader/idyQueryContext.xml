@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+
+<beans default-lazy-init="true">
+
+	<bean id="userQuery" class="com.topsuntech.gOS.identity.model.query.Watchman" singleton="false">
+		<property name="daoSupport" ref="userDao"/>
+		<property name="officeFinder" ref="officeFinder"/>
+		<property name="queryConfigs">
+			<list>
+				<bean class="com.topsuntech.gOS.identity.model.query.QueryConfig">
+					<property name="name" value="managedSubUsers"/>
+					
+					<property name="countType" value="sql"/>
+					<property name="countString">
+						<value>
+						<![CDATA[
+						select count(*) from GOS_USER u where u.DELETED = 0 # # and u.DEPTID in 
+						( select d.id from GOS_DEPT d start with d.id in (:currentUserManagedSubOfficeIds) connect by prior d.id = d.parent_id )
+						]]>
+						</value>
+					</property>
+					<property name="countConditions">
+						<list>
+							<value>and u.name like :%userName%</value>
+							<value>and u.id = :userId </value>
+						</list>
+					</property>
+					
+					<property name="queryType" value="nsql"/>
+					<property name="queryString" >
+						<value>
+						<![CDATA[
+						select {u.*} from GOS_USER u where u.DELETED = 0 # # and u.DEPTID in 
+						( select d.id from GOS_DEPT d start with d.id in (:currentUserManagedSubOfficeIds) connect by prior d.id = d.parent_id )
+						]]>
+						</value>
+					</property>
+					<property name="queryConditions">
+						<list>
+							<value>and u.name like :%userName%</value>
+							<value>and u.id = :userId </value>
+						</list>					
+					</property>
+					<property name="queryReturnAlias" >
+						<map>
+							<entry key="u" value="com.topsuntech.gOS.user.en.user.User"/>
+						</map>
+					</property>
+				</bean>
+				
+				<bean class="com.topsuntech.gOS.identity.model.query.QueryConfig">
+					<property name="name" value="managedDeptUsers"/>
+					
+					<property name="countType" value="sql"/>
+					<property name="countString">
+						<value>
+						<![CDATA[
+						select count(*) from GOS_USER u where u.DELETED = 0 # # and u.DEPTID in 
+						( select d.id from GOS_DEPT d start with d.id in (:currentUserManagedDeptOfficeIds) connect by prior d.id = d.parent_id )
+						]]>
+						</value>
+					</property>
+					<property name="countConditions">
+						<list>
+							<value>and u.name like :%userName%</value>
+							<value>and u.id = :userId </value>
+						</list>
+					</property>
+					
+					<property name="queryType" value="nsql"/>
+					<property name="queryString" >
+						<value>
+						<![CDATA[
+						select {u.*} from GOS_USER u where u.DELETED = 0 # # and u.DEPTID in 
+						( select d.id from GOS_DEPT d start with d.id in (:currentUserManagedDeptOfficeIds) connect by prior d.id = d.parent_id )
+						]]>
+						</value>
+					</property>
+					<property name="queryConditions">
+						<list>
+							<value>and u.name like :%userName%</value>
+							<value>and u.id = :userId </value>
+						</list>					
+					</property>
+					<property name="queryReturnAlias" >
+						<map>
+							<entry key="u" value="com.topsuntech.gOS.user.en.user.User"/>
+						</map>
+					</property>
+				</bean>
+				
+				<bean class="com.topsuntech.gOS.identity.model.query.QueryConfig">
+					<property name="name" value="extTest"/>
+					
+					<property name="countType" value="sql"/>
+					<property name="countString">
+						<value>
+						<![CDATA[
+						select count(*) from a
+						]]>
+						</value>
+					</property>
+					<property name="countConditions">
+						<list>
+							<value>and u.name like :%userName%</value>
+							<value>and u.id = :userId </value>
+						</list>
+					</property>
+					
+					<property name="queryType" value="nsql"/>
+					<property name="queryString" >
+						<value>
+						<![CDATA[
+						select {b.*} from a B_1_, b b where B_1_.id= b.id
+						]]>
+						</value>
+					</property>
+					<property name="queryReturnAlias" >
+						<map>
+							<entry key="b" value="test.EntityB"/>
+						</map>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

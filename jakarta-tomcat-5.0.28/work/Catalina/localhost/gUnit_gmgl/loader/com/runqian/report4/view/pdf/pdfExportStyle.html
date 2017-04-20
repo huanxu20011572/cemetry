@@ -1,0 +1,33 @@
+<script language=javascript>
+        //var _pdf_font_f = "宋体";
+        //var _pdf_EE = "请设置导出属性：";
+        //var _pdf_FF = "分页";
+        //var _pdf_GG = "不分页";
+        //var _pdf_HH = "确定";
+        //var _pdf_II = "导出文字为图形方式";
+        //var _pdf_JJ = "导出文字为文本方式";
+        _initPdfExportStyle();
+        var _pdf_div1_class = "FONT-SIZE: 16px; COLOR: royalblue;FONT-FAMILY: " + _pdf_font_f + ";";
+        var _pdf_div2_class = "FONT-SIZE: 13px; COLOR: forestgreen;FONT-FAMILY: " + _pdf_font_f + ";";
+        document.body.bgcolor = "#ffe4e1";
+</script>
+<style id="page_style"></style>
+<script language=javascript>page_style.styleSheet.addRule( ".div1_class", _pdf_div1_class );</script>
+<DIV  class="div1_class">
+	<script language=javascript>document.write( _pdf_EE );</script>
+</DIV>
+<br>
+<script language=javascript>page_style.styleSheet.addRule( ".div2_class", _pdf_div2_class );</script>
+<DIV  class="div2_class">
+<INPUT onclick="expStyle='graph'" type=radio CHECKED name=expStyle>&nbsp;<script language=javascript>document.write( _pdf_II );</script>
+<BR>
+<INPUT onclick="expStyle='text'" type=radio name=expStyle>&nbsp;<script language=javascript>document.write( _pdf_JJ );</script>
+<p>
+<INPUT onclick="paged=1" type=radio checked name=paged>&nbsp;<script language=javascript>document.write( _pdf_FF );</script>
+<INPUT onclick="paged=0" type=radio name=paged>&nbsp;<script language=javascript>document.write( _pdf_GG );</script>
+<P>
+<INPUT onclick=myOk() type=button ID="B_HH"  style="border:none; WIDTH: 45px; COLOR: fuchsia; HEIGHT: 20px; BACKGROUND-COLOR: gold">
+</DIV>
+<script language=javascript>
+	document.getElementById( "B_HH" ).value = _pdf_HH;
+</script>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.topsuntech.gOS.dictionary.DictionaryItemProxy" 
+    table="GOS_DICTIONARYITEM"
+>
+    <id
+        name="id"
+        type="long"
+    >
+			<generator class="native"/>
+    </id>
+
+    <property
+        name="value1"
+        type="string"
+    />
+    <property
+        name="type1"
+        type="string"
+    />
+    <property
+        name="value2"
+        type="string"
+    />
+    <property
+        name="type2"
+        type="string"
+    />
+    <property
+        name="value3"
+        type="string"
+    />
+    <property
+        name="type3"
+        type="string"
+    />
+    <property
+        name="type"
+        type="string"
+    />
+    <property
+        name="outercode"
+        type="string"
+    />
+    <property
+        name="innercode"
+        type="string"
+    />
+    
+    <property
+    	name="dictid"
+    	type="long"
+    />
+    <property
+    	name="dictcode"
+    	type="string"
+    />
+    <property
+    	name="order"
+    	type="long"
+    	column="SHOWORDER"
+    />
+
+</class>
+</hibernate-mapping>

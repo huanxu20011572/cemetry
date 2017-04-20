@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+    <class name="com.topsuntech.gUnit_xzqh.gEU_region.entity.GosRegionWarn" table="GOS_REGION_WARN" >
+        <id name="id" column="ID" type="java.lang.Long">
+            <generator class="sequence" >
+            	<param name="sequence">GOS_REGION_WARN_SEQ</param>
+            </generator>
+        </id>
+        <property name="warnName" column="WARN_NAME" type="java.lang.String" >
+        </property>
+        <property name="adjustDate" column="ADJUST_DATE" type="java.util.Date">
+        </property>
+        <property name="effectDate" column="EFFECT_DATE" type="java.util.Date">
+        </property>
+        <property name="warnContent" column="WARN_CONTENT"  type="java.lang.String">
+        </property>
+        <property name="warnLevel"  column="WARN_LEVEL"  type="java.lang.Long">
+        </property>
+        <property name="warnRegion"  column="WARN_REGION" type="java.lang.Long">
+        </property>
+        <property name="createDate"   column="CREATE_DATE" type="java.util.Date">
+        </property>
+        <property name="useFlag"   column="USE_FLAG" type="java.lang.Long">
+        </property>
+        <property name="createUserId"   column="CREATE_USER_ID"  type="java.lang.Long">
+        </property>
+        <property name="gosRegionAdjustId"   column="GOS_REGION_ADJUST_ID"  type="java.lang.Long">
+        </property>
+        <property name="adjustType"   column="ADJUST_TYPE"  type="java.lang.Long">
+        </property>
+        <property name="adjustLevel"   column="ADJUST_LEVEL"  type="java.lang.Long">
+        </property>
+    </class>
+</hibernate-mapping>

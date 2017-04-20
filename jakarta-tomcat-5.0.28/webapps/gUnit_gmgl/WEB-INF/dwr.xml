@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dwr>
+	<allow>		
+		<create creator="new" javascript="checkPwd" class="com.topsuntech.gUnit.gEU_system.service.UserService">
+			<include method="queryAjUserPwd"/>
+		</create>
+				
+		<create creator="new" javascript="checkLognid" class="com.topsuntech.gUnit.gEU_system.service.UserService">
+			<include method="checkUserLogid"/>
+		</create>
+		
+	</allow>
+</dwr>
